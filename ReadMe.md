@@ -19,6 +19,7 @@
 - [Project Scope](ReadMe.md)
 - [Database Schema](ReadMe.md#Database)
 - [Setup and Installation](ReadMe.md)
+- [Technologies Used](ReadMe.md)
 - [References](ReadMe.md)
 
 ## Structure
@@ -44,6 +45,20 @@ QR_Gen
 ## Database
 
 The database schema for this project has been designed on `dbdiagram.io`, and [can be assessed here:](https://dbdiagram.io/d/638aa967bae3ed7c454470c9)
+
+## Technologies Used
+
+HTML5 <a href="https://developer.mozilla.org/en-US/docs/Glossary/HTML5" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/html5-colored.svg" width="28" height="20" alt="HTML5" /></a>
+
+CSS3  <a href="https://www.w3.org/TR/CSS/#css" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/css3-colored.svg" width="28" height="20"  alt="CSS3" /></a>
+
+Javascript <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/javascript-colored.svg" width="28" height="20" alt="Javascript" /></a>
+
+Figma <a href="https://www.figma.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/figma-colored.svg" width="28" height="20"  alt="Python" /></a> 
+
+Laravel <a href="https://laravel.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/profileme-dev/main/public/icons/skills/laravel-colored.svg" width="28" height="20"  alt="Django" /></a>
+
+PHP <a href="https://www.php.net/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/profileme-dev/main/public/icons/skills/php-colored.svg" width="28" height="20" alt="Python" /></a>
 
 ## References
 

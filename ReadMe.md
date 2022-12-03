@@ -17,6 +17,7 @@
 - [Project Modalities](ReadMe.md#)
 - [Research Plan](ReadMe.md)
 - [Project Scope](ReadMe.md)
+- [Database Schema](ReadMe.md#Database)
 - [Setup and Installation](ReadMe.md)
 - [References](ReadMe.md)
 
@@ -40,4 +41,10 @@ QR_Gen
   3. Allow user to download (allow png, jpeg and pdf download format), or share code by email or social media
   4. Allow user save data and come back to it
 
+## Database
 
+The database schema for this project has been designed on `dbdiagram.io`, and [can be assessed here:](https://dbdiagram.io/d/638aa967bae3ed7c454470c9)
+
+## References
+
+- [Documentation](https://docs.google.com/document/d/18p9V39g_C216a7R_mXDo-8HAFGWnViipYBjA416KJaQ/edit?usp=sharing)

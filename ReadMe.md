@@ -12,12 +12,13 @@
 
 ## Table of Contents
 
-- User Flow
-- Project Modalities
-- Research Plan
-- Project Scope
-- Setup and Installation
-- References
+- [Structure](ReadMe.md#Structure)
+- [User Flow](ReadMe.md)
+- [Project Modalities](ReadMe.md#)
+- [Research Plan](ReadMe.md)
+- [Project Scope](ReadMe.md)
+- [Setup and Installation](ReadMe.md)
+- [References](ReadMe.md)
 
 ## Structure
 

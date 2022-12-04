@@ -12,20 +12,18 @@
 
 ## Table of Contents
 
-- [Structure](ReadMe.md#Structure)
+- [Project Modalities](ReadMe.md#Project)
 - [User Flow](ReadMe.md)
 - [Project Modalities](ReadMe.md#)
 - [Research Plan](ReadMe.md)
 - [Project Scope](ReadMe.md)
 - [Database Schema](ReadMe.md#Database)
-- [Setup and Installation](ReadMe.md)
+- [Setup and Installation](ReadMe.md#Setup)
+- [Useful Commands](Readme.md#Useful)
 - [Technologies Used](ReadMe.md)
 - [References](ReadMe.md)
 
-## Structure
-
-### Introduction
-A platform that allows users generate QR code that specifically does something when scanned. 
+# Project Modalities
 
 ### Project Name
 QR_Gen
@@ -40,11 +38,63 @@ QR_Gen
   1. Full access to the platform
   2. Allow setting on what should happen when QR is scanned - give at least 2 options
   3. Allow user to download (allow png, jpeg and pdf download format), or share code by email or social media
-  4. Allow user save data and come back to it
+  4. Allow user save data and come back to it.
 
 ## Database
 
-The database schema for this project has been designed on `dbdiagram.io`, and [can be assessed here:](https://dbdiagram.io/d/638aa967bae3ed7c454470c9)
+![TeamAntpp_QR_Gen](https://user-images.githubusercontent.com/85977511/205498564-f2184fdf-2757-4b56-9a7c-d61fe1e19d7c.png)
+
+The database schema for this project was designed on `dbdiagram.io`, and [can be assessed here:](https://dbdiagram.io/d/638aa967bae3ed7c454470c9)
+
+## Setup and Installation
+
+This project QR-Go uses Laravel Framework. The views will be built by the frontend developers and converted to `laravel blade` files.
+
+- Clone the repo `git clone https://github.com/zuri-training/TeamAntpp_QR_Gen.git`.
+
+- Navigate to the project folder using `cd TeamAntpp_QR_Gen`.
+
+> **QR-Go** replies heavily on `PHP 8.x.x` and `Laravel`. If you dont have php installed, follow this link on setting it up. [Setup PHP ON (mac,linux,windows) ](https://www.youtube.com/watch?v=mVzL2MRFANI)
+
+- Install all projects dependencies using `composer install`.
+
+> If you dont have composer installed, download composer with this [link](https://getcomposer.org/download/).
+
+- Start the project server locally.. `php artisan serve`. This should startup a local server @ `http://localhost:8000
+
+> make sure MYSQL server has started locally before running the above commands.
+
+## Useful Commands.
+
+### Creating a model and migrating the model.
+
+```
+php artisan make:model Users --migrate
+```
+
+### Migrate existing model
+
+```
+php artisan migrate
+```
+
+### Clear application cache
+
+```
+php artisan cache:clear
+```
+
+> If an error occur while migrating, cross check the `**.env**`  file and make sure you passed the correct database informations
+
+```php
+# mysql database setup
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=projectqrgo
+DB_USERNAME=root
+DB_PASSWORD= 
+```
 
 ## Technologies Used
 
@@ -63,3 +113,5 @@ PHP <a href="https://www.php.net/" target="_blank" rel="noreferrer"><img src="ht
 ## References
 
 - [Documentation](https://docs.google.com/document/d/18p9V39g_C216a7R_mXDo-8HAFGWnViipYBjA416KJaQ/edit?usp=sharing)
+- [Design Sketch]()
+- [Mood Board]()

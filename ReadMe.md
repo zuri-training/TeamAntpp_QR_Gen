@@ -113,5 +113,5 @@ PHP <a href="https://www.php.net/" target="_blank" rel="noreferrer"><img src="ht
 ## References
 
 - [Documentation](https://docs.google.com/document/d/18p9V39g_C216a7R_mXDo-8HAFGWnViipYBjA416KJaQ/edit?usp=sharing)
-- [Design Sketch]()
-- [Mood Board]()
+- [Design Sketch](https://www.figma.com/file/iKsqYnaNBsT43nqnpLkQfh/moodboards?t=V9BLm24BScYouKT4-6)
+- [Mood Board](https://www.figma.com/file/iKsqYnaNBsT43nqnpLkQfh/moodboards?t=V9BLm24BScYouKT4-6)

@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\GenController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use LaravelQRCode\Facades\QRCode;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,17 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('example/url', function () 
+{
+    return  QRCode::url('werneckbh.github.io/qr-code/')
+                  ->setSize(8)
+                  ->setMargin(2)
+                  ->png();
+                    
+});  
+
+Route::get('/test', [GenController::class, 'index']);
 
 Route::get('/', function () {
     return view('welcome');

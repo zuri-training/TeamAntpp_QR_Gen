@@ -94,11 +94,11 @@ php artisan cache:clear
 ```env
 # sqlite database setup
 DB_CONNECTION=sqlite
-DB_HOST=
-DB_PORT=
-DB_DATABASE=
-DB_USERNAME=
-DB_PASSWORD= 
+# DB_HOST=
+# DB_PORT=
+# DB_DATABASE=
+# DB_USERNAME=
+# DB_PASSWORD=
 ```
 
 ## Technologies Used

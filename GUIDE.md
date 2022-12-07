@@ -14,7 +14,7 @@ To keep this project clean, please use the [conventional commits](https://www.co
 ## Contribution Guidelines
 
 1. In your local machine, clone the repo `git clone https://github.com/zuri-training/TeamAntpp_QR_Gen.git`.
-2. Set the origin branch: `git remote add origin https://github.com/zuri-training/TeamAntpp_QR_Gen.git`
+2. Set the origin: `git remote add origin https://github.com/zuri-training/TeamAntpp_QR_Gen.git`
 3. Pull from origin `git pull origin main`
 5. After making changes, do `git add .`
 6. Commit your changes with a descriptive commit message : `git commit -m "your commit message"`.

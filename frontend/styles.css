@@ -16,7 +16,7 @@
   --secondary-btn-clicked: #80bae1;
   --secondary-btn-disabled: var(--white);
   --secondary-btn-disabled-text: #b4b6b9;
-  --grey :#d9d9d9;
+  --grey: #d9d9d9;
 }
 /* GENERAL STYLING */
 * {
@@ -68,21 +68,21 @@ a {
   width: 100%;
   background-color: var(--very-dark-blue);
 }
-/* .cta-btn{
-    color: var(--white);
-    padding: 1.1rem 2.5rem;
-    border-radius:  8px;
-    background-color: var(--primary-color);
-    font-weight: 500;
-    border: none;
-    transition: background-color 0.5s;
-    cursor: pointer;
+button:hover,
+#submit:hover,
+input[type="submit"]:hover {
+  background-color: var(--primary-btn-hover);
 }
-.cta-btn:hover{
-    background-color: var(--primary-btn-hover);
-} */
-
-/* header profile section */
+button:focus,
+#submit:focus,
+input[type="submit"]:hover {
+  background-color: var(--primary-btn-clicked);
+}
+button:disabled,
+#submit:disabled,
+input[type="submit"]:disabled {
+  background-color: var(--primary-btn-disabled);
+}
 .profile {
   display: flex;
   align-items: center;

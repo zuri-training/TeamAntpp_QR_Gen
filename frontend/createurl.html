@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Create Qr Code - QRGo</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="navbar">
+        <div class="logo">
+          <img src="images/transparent-logo.svg" alt="QR Go Logo" />
+        </div>
+        <nav class="nav-links-parent">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </nav>
+        <div>
+          <div class="profile">
+            <img src="images/profile-img.png" alt="" />
+            <div class="profile-details">
+              <div class="profile-dropdown">
+                <h4>
+                  <img
+                    class="arrow-down"
+                    src="images/keyboard_arrow_down.png"
+                    alt=""
+                  />
+                  Jane Doe
+                </h4>
+              </div>
+              <div class="profile-email">
+                <p>example@email.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="white-line"></div>
+      <div class="blue-line"></div>
+    </header>
+
+    <main class="create-qr">
+      <aside class="sidebar">
+        <ul>
+          <li class="sidebar-link">
+            <img src="images/create.svg" alt="" />Create
+          </li>
+          <li class="sidebar-link">
+            <img src="images/myqr.svg" alt="" />My Qr
+          </li>
+          <li class="sidebar-link">
+            <img src="images/settings.svg" alt="" />Settings
+          </li>
+        </ul>
+      </aside>
+
+      <section class="qr-flex">
+        <div class="enter-url">
+          <h1>Enter Url</h1>
+          <form class="input-url">
+            <div class="input-group">
+              <img src="images/link.svg" alt="" />
+              <input type="text" class="url" />
+            </div>
+
+            <input type="submit" value="Generate" id="submit-url"/>
+          </form>
+        </div>
+
+        <div class="generated-qr">
+          <div class="qr">
+            <img src="images/qrcode.svg" alt="" />
+          </div>
+          <div class="track-clicks">
+            <input type="radio" name="track" id="track" />
+            <label for="track">Track clicks</label>
+          </div>
+          <div class="download-qr">
+            <h3>Download</h3>
+            <button class="jpg download">JPG</button>
+            <button class="png download">PNG</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

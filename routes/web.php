@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\GenController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use LaravelQRCode\Facades\QRCode;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +16,29 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('example/url', function () 
+{
+    return  QRCode::url('werneckbh.github.io/qr-code/')
+                  ->setSize(8)
+                  ->setMargin(2)
+                  ->png();
+                    
+});  
+
+Route::get('/test', [GenController::class, 'index']);
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';

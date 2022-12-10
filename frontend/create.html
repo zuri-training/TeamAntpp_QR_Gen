@@ -4,19 +4,23 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles2.css" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Create Qr Code - QRGo</title>
   </head>
   <body>
     <header class="header">
       <div class="navbar">
+        <div class="back">
+          <img src="images/keyboard_arrow_down.png" alt="">
+          <p>Back</p>
+        </div>
         <div class="logo">
           <img src="images/transparent-logo2.svg" alt="QR Go Logo" />
         </div>
         <nav class="nav-links-parent">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#home.html">Home</a></li>
+          <li><a href="#about.html">About Us</a></li>
+          <li><a href="#contact.html">Contact Us</a></li>
         </nav>
         <div>
           <div class="profile">
@@ -32,12 +36,18 @@
                   Jane Doe
                 </h4>
               </div>
+              <ul class="dropdown-content">
+                <li class="dropdown"><a href="#profile">Profile</a></li>
+                <li><a href="#create.html">Create QR</a></li>
+                <li><a href="#" class="logout">Log out</a></li>
+              </ul>
               <div class="profile-email">
                 <p>example@email.com</p>
               </div>
             </div>
           </div>
         </div>
+        <img class="menubtn" src="images/menu.svg" alt="">
       </div>
       <div class="white-line"></div>
       <div class="blue-line"></div>
@@ -62,11 +72,11 @@
           <h1>Create QR for</h1>
           <div class="select-qr-method">
             <div class="url method">
-              <img src="images/Vector.png" alt="" />
+              <img src="images/bluelink.svg" alt="" />
               <h2>URL</h2>
             </div>
             <div class="file method">
-              <img src="images/Vector.png" alt="" />
+              <img src="images/Vector.svg" alt="" />
               <h2>File</h2>
             </div>
           </div>
@@ -75,15 +85,17 @@
         <div class="recents">
           <h2>Recent</h2>
           <table>
-            <tr class="table-heading">
-              <th>Name</th>
-              <th>Date</th>
-              <th>Clicks</th>
-            </tr>
+            <thead>
+              <tr class="table-heading">
+                <th>Name</th>
+                <th>Date</th>
+                <th>Clicks</th>
+              </tr>
+            </thead>
             <tr>
               <td>
                 <div>
-                  <img src="images/link.svg" alt="" />
+                  <img src="images/link.svg" alt="" class="method-img" />
                 </div>
                 https://www.somefancyurl.com
               </td>
@@ -92,7 +104,9 @@
             </tr>
             <tr>
               <td>
-                <div><img src="images/attach_file.svg" alt="" /></div>
+                <div>
+                  <img class="method-img" src="images/attach_file.svg" alt=""  />
+                </div>
                 myselfie.jpg
               </td>
               <td>12-Nov-2022</td>
@@ -101,7 +115,8 @@
             <tr>
               <td>
                 <div>
-                  <img src="images/attach_file.svg" alt="" /></div>
+                  <img src="images/attach_file.svg" alt="" class="method-img" />
+                </div>
                 myselfie.jpg
               </td>
               <td>12-Nov-2022</td>
@@ -111,5 +126,7 @@
         </div>
       </section>
     </main>
+
+    <script src="create.js"></script>
   </body>
 </html>

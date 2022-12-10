@@ -4,19 +4,23 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles2.css" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Create Qr Code - QRGo</title>
   </head>
   <body>
     <header class="header">
       <div class="navbar">
+        <div class="back">
+          <img src="images/keyboard_arrow_down.png" alt="">
+          <p>Back</p>
+        </div>
         <div class="logo">
           <img src="images/transparent-logo2.svg" alt="QR Go Logo" />
         </div>
         <nav class="nav-links-parent">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#home.html">Home</a></li>
+          <li><a href="#about.html">About Us</a></li>
+          <li><a href="#contact.html">Contact Us</a></li>
         </nav>
         <div>
           <div class="profile">
@@ -32,12 +36,18 @@
                   Jane Doe
                 </h4>
               </div>
+              <ul class="dropdown-content">
+                <li class="dropdown"><a href="#profile">Profile</a></li>
+                <li><a href="#create.html">Create QR</a></li>
+                <li><a href="#" class="logout">Log out</a></li>
+              </ul>
               <div class="profile-email">
                 <p>example@email.com</p>
               </div>
             </div>
           </div>
         </div>
+        <img class="menubtn" src="images/menu.svg" alt="">
       </div>
       <div class="white-line"></div>
       <div class="blue-line"></div>
@@ -64,7 +74,7 @@
           <form class="input-url">
             <div class="input-group">
               <img src="images/link.svg" alt="" />
-              <input type="text" class="url" />
+              <input type="text" class="url" placeholder="enter url here"/>
             </div>
 
             <input type="submit" value="Generate" id="submit-url"/>
@@ -76,7 +86,7 @@
             <img src="images/qrcode.svg" alt="" />
           </div>
           <div class="track-clicks">
-            <input type="radio" name="track" id="track" />
+            <input type="checkbox" name="track" id="track" />
             <label for="track">Track clicks</label>
           </div>
           <div class="download-qr">

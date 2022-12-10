@@ -8,11 +8,17 @@
   body {
     background-color: white;
   }
+  .section {
+    margin-top: 30px;
+    width: 50%;
+  }
+  .xerror {
+    color: red;
+  }
 .body {
     margin: 2rem;
     display: flex;
     justify-content: center;
-    align-items: center;
     height: 100vh;
     font-size: 15px;
     flex-direction:row;
@@ -122,7 +128,6 @@
    }
    span.forgot {
     float: right;
-    margin: 10px 0;
    }
   ::placeholder {
     color: rgb(10, 9, 9);
@@ -164,6 +169,7 @@
   }
   form {
     margin: 0 10%;
+    margin-bottom: 30px;
   }
   .forgot a {
     font-weight: 500;
@@ -201,6 +207,9 @@
       }
       .create a {
         text-decoration: none;
+      }
+      .section {
+        width: 100%;
       }
   }
  

@@ -99,18 +99,6 @@ button:hover,
 input[type="submit"]:hover {
   background-color: var(--primary-btn-hover);
 }
-/* button:focus,
-#submit-url:hover,
-.file-label:hover,
-input[type="submit"]:hover {
-  background-color: var(--primary-btn-clicked);
-} */
-/* button:disabled,
-#submit-url:hover,
-.file-label:hover,
-input[type="submit"]:disabled {
-  background-color: var(--primary-btn-disabled);
-} */
 .profile {
   display: flex;
   align-items: center;
@@ -343,7 +331,7 @@ th {
   /* width: 100%; */
   max-width: 100%;
   border-radius: 1rem;
-  border: 1px dashed var(--secondary-color-light);
+  border: 2px dashed var(--secondary-color-light);
   padding: 3rem;
   gap: 2rem;
 }
@@ -380,7 +368,7 @@ th {
   width: 100%;
 }
 .select-file {
-  border: 1px dashed var(--secondary-color-light);
+  border: 2px dashed var(--secondary-color-light);
   height: fit-content;
   padding: 10rem 2rem 1rem;
   position: relative;
@@ -400,7 +388,7 @@ th {
   background-color: var(--primary-color);
   display: none;
 }
-@media only screen and (max-width: 928px) {
+@media only screen and (max-width: 992px) {
   button,
   #submit-url,
   .file-label,

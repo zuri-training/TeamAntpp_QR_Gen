@@ -1,0 +1,217 @@
+*{
+    margin: 0%;
+    padding: 0%;
+  }
+  body {
+    background-color: white;
+  }
+.body {
+    width: 80%;
+    margin-left: 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 15px;
+    flex-direction:row;
+}
+.logo{
+    width:50%;
+    height:300px;
+    margin-left: -10%;
+    margin-top: -22%;
+   }
+   .Head {
+    margin-left: 30%;
+    justify-content:space-between;
+    font-family:sans-serif;
+    flex-direction: row;
+    margin-top: 5%;
+    display:flex;
+    font-size: large;
+}
+h3 {
+    margin-left: 16%;
+}
+h4 a {
+    color: black;
+    text-decoration: none;
+}
+.details2 {
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 2rem;
+    margin-left: 20%;
+}
+.welcome {
+    margin-left: 0%;
+    font-size: 30px;
+    font-family:sans-serif;
+    font-weight:bolder;
+    text-align: center;
+  }
+  .text{
+    padding-bottom: 1.5rem;
+    padding-top: 0.5rem;
+    margin-left: 3%;
+    margin-top:0.7rem;
+    font-size:16px;
+    font-family:sans-serif;
+    word-wrap:inherit;
+    text-align: center;
+}
+.container{
+    display:flex;
+    flex-direction: column;
+    margin-top: 4%;
+    margin-left: 35%;
+  }
+  .container1 {
+    display:flex;
+    flex-direction: column;
+    margin-top: 0%;
+    margin-left: 35%;
+  }
+  input {
+    width: 110%;
+    padding: 9px;
+    margin: 15px 0;
+    border: 1px solid rgb(202, 199, 199);
+    border-radius: 0.4rem;
+    outline: none;
+    background: transparent;
+    color: rgb(15, 15, 15);
+    font-size: 12px;
+    align-items:center;
+  }
+ /*the toggle pasword display well you could also check #togglePassword {
+    width:5%;
+    height:5%; 
+    margin-left: -5%;
+    display:inline;
+    vertical-align: middle;
+    color:black;
+  }*/
+  input[type=checkbox] {
+    width:0.7rem;
+    margin-left: 0%;
+    margin-top: 0%; 
+   }
+   span.forgot {
+    float: right;
+    padding:2px;
+   }
+  label {
+    font-family: sans-serif;
+    font-size: 14px;
+  } 
+  ::placeholder {
+    color: rgb(10, 9, 9);
+    font-weight: 100;
+  }
+  #loginbtn {
+    width:300px;
+    height: 40px;
+    margin-left: -1%;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    border: none;
+    background-color: #0176C3;
+    border-radius: 0.3rem;
+    color:white;
+ }
+ #loginbtn:hover {
+    color: rgb(78, 76, 76);
+}
+.create {
+    margin-left: 33%;
+    margin-top: 50;
+    text-decoration: none;
+    width:fit-content;
+    padding-top: 1rem;
+    text-align: center;
+    font-size: 13px;
+    font-family: sans-serif;
+    padding-left: 4rem;
+
+  }
+  /* help me wok on this it could not display well*/
+  .container2{
+    margin-left: 0%;
+    font-size: 11px;
+    margin-top: 2%;
+    justify-content: space-around;
+  }
+  
+  @media all and (max-width: 480px) {
+    .body {
+        flex-direction: column;
+    }
+    .logo {
+        margin-left: -35%;
+    }
+    .logo img {
+        width: 300px;
+        height: 300px;
+        position: absolute;
+        margin-top: 150%;
+    }
+    .Head {
+        position: absolute;
+        margin-top: 230%;
+    }
+    .QR {
+        color: #0176C3;
+    }
+    h3 {
+        margin-left: -25%;
+    }
+    h3 a {
+        color: black;
+        text-decoration: none;
+    }
+    h4 {
+        margin-top: 1%;
+    }
+    .welcome {
+        width: 80%;
+        margin-left: -10%;
+        margin-top: 130%;
+        margin-bottom: 160%;
+    }
+    .text {
+        width: 90%;
+        margin-left: -15%;
+        margin-top: -160%;
+        margin-bottom: 140%;
+    }
+    .container{
+        margin-left: 2.5%;
+      }
+      .container1 {
+        margin-top: 0%;
+        margin-left: 2.5%;
+      }
+      input {
+        width: 90%;
+      }
+      .forgot a {
+        font-family: sans-serif;
+        margin-left: -40%;
+        text-decoration: none;
+      }
+      #loginbtn {
+        background-color: #0176C3;
+      }
+      .create {
+        margin-left: -5%;
+        display: inline;
+        height: 200px;
+      }
+      .create a {
+        text-decoration: none;
+      }
+  }
+ 
+ 

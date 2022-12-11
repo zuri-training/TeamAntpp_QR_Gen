@@ -27,8 +27,12 @@ Route::get('example/url', function ()
 
 Route::get('/test', [GenController::class, 'index']);
 
-Route::get('/', function () {
+Route::get('/home', function () {
     return view('welcome');
+});
+
+Route::get('/', function () {
+    return view('landing');
 });
 
 Route::get('/dashboard', function () {

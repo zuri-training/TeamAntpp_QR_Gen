@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="css/login.css"/>
+</head>
+<body>
+    <main>
+    <div class="body">
+        <div class="logo">
+            <img src="images/QR GO LOGO.jpg" alt=""/>
+        </div>
+        <div class="section">      
+            <div class="Head">
+          <h3 class="signup signup-active"><a href="javascript:void(0);">Login</h3>
+          <h3 class="signup"><a href="signup.html">Sign up</a></h3>
+            </div>
+
+            <div class="details2">
+              <P class="welcome">Welcome back to <span class="QR">QR GO</span></P>
+       <p class="text">Login with your details you entered during registration </p></div>
+        <div>
+          <img class="logo-small" src="images/QR GO LOGO.jpg" alt=""/>
+        </div>
+            <div class="container">
+              <form>
+              <label for="email"><b>Email</b></label>
+              <input type="email" pattern="/^[a-zA-Z0-9.!#$.+@gmail\.com" 
+              placeholder="Enter email" name="email" id="email" required>
+              <label for="psw"><b>Password</b></label>
+              <input type="password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" 
+              placeholder="Enter password" name="psw" 
+              autocomplete="current password"  required>
+              <input type="checkbox" id="remember" name="remember" value="">
+                <label for="remember">Remember Password</label>
+                <span class="forgot"><a href="create new password">Forgot password?</a></span>
+                <a id="loginbtn" href="homepage.html">Login</a>
+                <div class="create">
+                  New here?
+                  <a href="signup.html">Create an account</a>
+                </div>
+            </form>
+            </div>
+            </div>
+    </div>
+    </main>
+</body>
+</html>

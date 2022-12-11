@@ -66,6 +66,11 @@ This project QR-Go uses Laravel Framework. The views will be built by the fronte
 
 ## Useful Commands.
 
+### Creating application key
+```
+php artisan key:generate
+```
+
 ### Creating a model and migrating the model.
 
 ```
@@ -86,14 +91,14 @@ php artisan cache:clear
 
 > If an error occur while migrating, cross check the `**.env**`  file and make sure you passed the correct database informations
 
-```php
-# mysql database setup
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=projectqrgo
-DB_USERNAME=root
-DB_PASSWORD= 
+```env
+# sqlite database setup
+DB_CONNECTION=sqlite
+# DB_HOST=
+# DB_PORT=
+# DB_DATABASE=
+# DB_USERNAME=
+# DB_PASSWORD=
 ```
 
 >Read the [guideline](https://github.com/zuri-training/TeamAntpp_QR_Gen/blob/main/GUIDE.md) doc for more information.

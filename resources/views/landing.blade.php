@@ -13,7 +13,7 @@
         <div class="container">
             <nav class="nav-bar">
             <div class="nav-logo">
-            <img class="connect" src="images/transparent-logo1.svg" alt="logo">
+            <img class="connect" src="{{ asset('assets/images/transparent-logo1.svg') }}" alt="logo">
                 <ul class="nav-items" id="nav-lists">
                     <li class="nav-item"><a href="#">Home</a></li>
                     <li class="nav-item"><a href="#">About Us</a></li>
@@ -38,7 +38,7 @@
                     <span>idea.</span>
                 </P>
             <div class="images">
-                <img class="images" src="images/image 6.png" alt="logo">
+                <img class="images" src="{{ asset('assets/images/image 6.png') }}" alt="logo">
             <div class="text">
                     <p>
                         Our platform allows you to effortlessly generate QR codes,<br>
@@ -53,9 +53,9 @@
     
         <footer>
             <div class="socials">
-                <img class="img1" src="images/facebook-logo.svg" alt="logo">
-                <img class="img2" src="images/twitter-logo.svg" alt="logo">
-                <img class="img3"src="images/youtube-logo.svg" alt="logo"><hr>
+                <img class="img1" src="{{ asset('assets/images/facebook-logo.svg') }}" alt="logo">
+                <img class="img2" src="{{ asset('assets/images/twitter-logo.svg') }}" alt="logo">
+                <img class="img3"src="{{ asset('assets/images/youtube-logo.svg') }}" alt="logo"><hr>
                 </div>
         </footer>
         

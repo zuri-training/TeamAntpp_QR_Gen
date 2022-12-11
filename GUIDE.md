@@ -14,10 +14,18 @@ To keep this project clean, please use the [conventional commits](https://www.co
 ## Contribution Guidelines
 
 1. In your local machine, clone the repo `git clone https://github.com/zuri-training/TeamAntpp_QR_Gen.git`.
+<<<<<<< HEAD
 2. Set the origin branch: `git remote add origin https://github.com/zuri-training/TeamAntpp_QR_Gen.git`
+3. Create your local branch using the standard `git checkout -b issueType/IssueNumber-IssueTitle`, for example a new feature of creating a controller will be `git checkout -b feat/BE-01-CreatedUserController`
+4. Pull from origin `git pull origin dev` to make sure your branch is in sync with the dev branch as at that time.
+=======
+2. Set the origin: `git remote add origin https://github.com/zuri-training/TeamAntpp_QR_Gen.git`
 3. Pull from origin `git pull origin main`
+>>>>>>> b366ed5b05ee4d4e461be6f752666f4e3cf2f05b
 5. After making changes, do `git add .`
 6. Commit your changes with a descriptive commit message : `git commit -m "your commit message"`.
-7. To make sure there are no conflicts, always run `git pull origin main`.
-8. Push changes to the main, run `git push origin main`.
+7. To make sure there are no conflicts, always run `git pull origin dev` again after you're done.
+8. Push changes to the main, run `git push origin dev`.
+9. Go to GitHub and create a PR, add enough description to your PR.
+10. Wait for your PR to get merged, or notify the lead to merge your PR.
 > NB: Ensure to describe your commit properly, and ensure you ALWAYS pull and merge any conflict before pushing your code.

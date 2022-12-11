@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup - Qr Go</title>
+    <link rel="stylesheet" type="text/css" href="css/login.css"/>
+</head>
+<body>
+    <main>
+    <div class="body">
+        <div class="logo">
+            <img src="images/QR GO LOGO.jpg" alt=""/>
+        </div>
+        <div class="section">      
+            <div class="Head">
+          <h3 class="signup"><a href="login.html">Login</h3>
+          <h3 class="signup signup-active"><a href="javascript:void(0);">Sign up</a></h3>
+            </div>
+
+            <div class="details2">
+              <P class="welcome">Generate a <span class="QR">QR GO</span></P>
+              <p class="text">Get started and generate a QR code on the go </p>
+            </div>
+        <div>
+          <img class="logo-small" src="images/QR GO LOGO.jpg" alt=""/>
+        </div>
+            <div class="container">
+              <form>
+              <label for="email"><b>Name</b></label>
+              <input type="name" placeholder="Enter your name" name="name" id="name" required>
+              <label for="email"><b>Email</b></label>
+              <input type="email" pattern="/^[a-zA-Z0-9.!#$.+@gmail\.com" 
+              placeholder="Enter email" name="email" id="email" required>
+              <label for="psw"><b>Password</b></label>
+              <input type="password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" placeholder="Enter password" name="psw" 
+              autocomplete="current password" required>
+              <input type="password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" placeholder="ReEnter password" name="psw2" 
+              autocomplete="current password" required>
+                <a id="loginbtn" href="homepage.html"><input type="submit" name="signup-submit" value="Create account"></a>
+                <div class="create">
+                  Already have an account?
+                  <a href="login.html">Login</a>
+                </div>
+            </form>
+            </div>
+            </div>
+    </div>
+    </main>
+</body>
+</html>

@@ -5,7 +5,7 @@
 </p>
 
 <h3 align="center">
-  <a href="https://github.com/zuri-training/TeamAntpp_QR_Gen/blob/main/GUIDE.md">Guideline</a> | <a href="https://github.com/zuri-training/TeamAntpp_QR_Gen/blob/main/ROUTE.md">Endpoint Routes</a> | <a href="https://github.com/zuri-training/TeamAntpp_QR_Gen/issues">Contribute</a>
+  <a href="https://github.com/zuri-training/TeamAntpp_QR_Gen/blob/main/GUIDE.md">Guidelines</a> | <a href="https://github.com/zuri-training/TeamAntpp_QR_Gen/blob/main/ROUTE.md">Endpoint Routes</a> | <a href="https://github.com/zuri-training/TeamAntpp_QR_Gen/issues">Contribute</a>
 </h3>
 
 ---
@@ -100,6 +100,8 @@ DB_CONNECTION=sqlite
 # DB_USERNAME=
 # DB_PASSWORD=
 ```
+
+>Read the [guideline](https://github.com/zuri-training/TeamAntpp_QR_Gen/blob/main/GUIDE.md) doc for more information.
 
 ## Technologies Used
 

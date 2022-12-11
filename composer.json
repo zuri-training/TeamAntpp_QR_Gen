@@ -8,6 +8,7 @@
         "php": "^8.0.2",
         "bacon/bacon-qr-code": "^2.0",
         "chillerlan/php-qrcode": "^4.3",
+        "endroid/qr-code": "^4.6",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",

@@ -97,7 +97,7 @@ span {
     margin-left: -78%;
 }
 .text p {
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 500;
 }
 .btn {
@@ -146,18 +146,54 @@ hr {
 }
 
 @media all and (max-width: 480px) {
+    body {
+        height: 480px;
+    }
     .container {
         height: 100px;
     }
     .connect {
         width: 70px;
         height: 50px;
-        margin-top: 4%;
+        margin-top: 10%;
         margin-bottom: -1%;
         margin-inline-start: 150px;
     }
-    .container-1 {
+    .nav-bar{
+        flex-direction: column;
+    }
+    .nav-items{
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+    .nav-item{
         margin: auto;
+    }
+    .nav-item a {
+        margin-top: 5%;
+        margin-left: -120%;
+        color: white;
+        font-size: 16px;
+    }
+    .menu-list {
+        background-color: black;
+    }
+    .menu {
+        display: block;
+        position: absolute;
+        top: 54px;
+        right: 26px;
+    }
+    .active {
+        display: block;
+    }
+    .blue-line {
+        margin-top: -2%;
+    }
+    .container-1 {
+        width: 90%;
         height: 100px;
         display: block;
     }
@@ -172,6 +208,9 @@ hr {
         font-size: 13px;
         margin-left: 45%;
         margin-top: 33%;
+        line-height: 24px;
+        font-weight: 500;
+        height: 80px;
     }
     .btn {
        display: none;
@@ -196,6 +235,7 @@ hr {
     .img1 {
         width: 10%;
         margin-left: 35%;
+        margin-top: 10%;
     }
     .img2 {
         width: 10%;
@@ -208,7 +248,7 @@ hr {
     hr {
         width: 80%;
         height: 4px;
-        margin-top: -13%;
+        margin-top: -14%;
         margin-left: 8%;
         background-color: #0176C3;
     }

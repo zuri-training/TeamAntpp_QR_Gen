@@ -19,17 +19,7 @@
     --secondary-btn-disabled-text: #b4b6b9;
     --grey: #d9d9d9;
 }
-/* HIDDEN ELEMENTS */
-.section-1-hidden{
-    display: none;
-}
-.hamburger{
-    display: none;
-}
 
-.hidden-nav hr{
-    border: 1px solid rgba(29, 36, 44, 0.2);
-}
 /* GENERAL STYLING */
 * {
     margin: 0;

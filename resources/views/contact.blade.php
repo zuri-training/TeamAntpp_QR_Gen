@@ -48,7 +48,7 @@
 
                 <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
                     <div class="text-center text-sm text-gray-500 sm:text-left">
-                      Contribute money for us to buy zobo.
+                      Work in Progress Here | Contribute money for us to buy zobo.
                     </div>
 
                     <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">

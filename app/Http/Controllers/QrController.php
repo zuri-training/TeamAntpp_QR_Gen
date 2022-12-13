@@ -138,18 +138,7 @@ class QrController extends Controller
                 return view('scanqr');
             }
 
-            public function scanqr(        /*
-|--------------------------------------------------------------------------
-| This function takes in A QR image and Read it 
-|--------------------------------------------------------------------------
-|
-|
-*/
-        $request->validate(['image'=>'required|image|mimes:png,jpg,svg|max:2048']);
-       $qrcode = new QrReader($request->image);
-        $text = $qrcode->text();
-        
-       return view('decoded')->with('data',$text);){
+            public function scanqr(){
 
                         /*
 |--------------------------------------------------------------------------

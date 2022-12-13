@@ -54,8 +54,8 @@
 }
 .h-menu-list{
     background-color: white;
-    width: 40px;
-    height: 4px;
+    width: 35px;
+    height: 3px;
     margin-bottom: 7px;
 }
 .h-started {
@@ -120,8 +120,8 @@
         position: absolute;
         left: 0px;
         top: 0;
-        width: 40px;
-        height: 4px;
+        width: 35px;
+        height: 3px;
         background-color: black;
         transform: rotate(90deg);
     }

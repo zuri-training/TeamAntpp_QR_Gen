@@ -7,6 +7,7 @@
     "require": {
         "php": "^8.0.2",
         "bacon/bacon-qr-code": "^2.0",
+        "barryvdh/laravel-dompdf": "^2.0",
         "chillerlan/php-qrcode": "^4.3",
         "endroid/qr-code": "^4.6",
         "guzzlehttp/guzzle": "^7.2",
@@ -14,6 +15,7 @@
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
         "ph-7/qrcode-generator-php-class": "^2.2",
+        "simplesoftwareio/simple-qrcode": "~4",
         "solitweb/laravel-dashboard-qr-code-tile": "^1.0",
         "werneckbh/laravel-qr-code": "^0.1.3"
     },

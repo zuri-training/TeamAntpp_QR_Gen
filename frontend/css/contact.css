@@ -217,21 +217,52 @@ hr {
     margin-left: 50%;
 }
 
-@media all and (max-width: 480px) {
+@media only screen and (max-width: 962px) {
     .container {
+        margin: auto;
         height: 100px;
     }
     .connect {
         width: 70px;
         height: 50px;
         margin-top: 8%;
-        margin-bottom: -1%;
         margin-inline-start: 150px;
     }
+    .nav-bar{
+        flex-direction: column;
+    }
+    .nav-items{
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+    .nav-item{
+        margin: auto;
+    }
+    .nav-item a {
+        margin-top: 5%;
+        margin-left: -120%;
+        color: white;
+        font-size: 16px;
+    }
+    .menu-list {
+        background-color: black;
+    }
+    .menu {
+        display: block;
+        position: absolute;
+        top: 54px;
+        right: 30px;
+    }
+    .active {
+        display: block;
+    }
     .blue-line {
-        margin-top: -1%;
+        margin-top: 27%;
     }
     .container-1 {
+        margin: auto;
         display: block;
     }
     h1 {
@@ -253,7 +284,7 @@ hr {
         margin-left: -10%;
     }
     .form-list {
-        margin-left: -2.5%;
+        margin: auto;
     }
     input {
         width: 90%;
@@ -269,6 +300,7 @@ hr {
         width: 90%; 
     }
     .footer-links {
+        margin: auto;
         margin-top: 65%;
     }
     .footer-img {

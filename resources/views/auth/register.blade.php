@@ -50,7 +50,7 @@
                 <x-input-label class="labell" for="password_confirmation" :value="__('Confirm Password')" />
                 <x-text-input id="password" class="inputt"
                                 type="password"
-                                name="password"
+                                name="password_confirmation"
                                 required autocomplete="current-password" />
                 <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2 xerror" />
             </div>         

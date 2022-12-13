@@ -27,8 +27,17 @@ Route::get('example/url', function ()
 
 Route::get('/test', [GenController::class, 'index']);
 
-Route::get('/', function () {
+Route::get('/home', function () {
     return view('welcome');
+})->name('home');
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
+Route::get('/', function () {
+    return view('landing');
 });
 
 Route::get('/dashboard', function () {

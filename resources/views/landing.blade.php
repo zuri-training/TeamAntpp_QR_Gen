@@ -4,40 +4,44 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/cssheader.css') }}"/>
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/landing.css') }}"/>
         <link rel="icon" href="{{ asset('favicon.ico') }}">
         <title>Project QR-Go</title>
     <script src="https://kit.fontawesome.com/46d7328699.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/hscript.js') }}"></script>      
     </head>
 <body>
-    <header>
-        <div class="container">
-            <nav class="nav-bar">
-            <div class="nav-logo">
-                <img class="connect" src="{{ asset('assets/images/transparent-logo1.svg') }}" alt="logo">
+    <header class="hheader">
+        <div class="h-header">
+            <nav class="h-nav-bar">
+            <div class="h-nav-logo">
+                <img class="h-connect" src="{{ asset('assets/images/transparent-logo1.svg') }}" alt="logo">
             </div>
-            <ul class="nav-items" id="nav-lists">
-                <li class="nav-item"><a href="{{ route('home') }}">Home</a></li>
-                <li class="nav-item"><a href="{{ route('about') }}">About Us</a></li>
-                <li class="nav-item"><a href="{{ route('contact') }}">Contact Us</a></li>
+            <ul class="h-nav-items" id="nav-lists">
+                <li class="h-nav-item"><a href="{{ route('home') }}">Home</a></li>
+                <li class="h-nav-item"><a href="{{ route('about') }}">About Us</a></li>
+                <li class="h-nav-item"><a href="{{ route('contact') }}">Contact Us</a></li>
                 <br>
-                <button class="started" onclick="window.location='{{ route('register') }}'">Get Started</button>   
+                <button class="h-started" onclick="window.location='{{ route('register') }}'">Get Started</button>   
             </ul>
-            <div class="menu" onclick="menuOpen();">
-                <div class="menu-list"></div>
-                <div class="menu-list"></div>
-                <div class="menu-list"></div>
+            <div class="h-menu" onclick="menuOpen();">
+                <div class="h-menu-list"></div>
+                <div class="h-menu-list"></div>
+                <div class="h-menu-list"></div>
             </div>
-            <ul class="nav-overflow unsee">
-                <li class="nav-item"><a href="{{ route('home') }}">Home</a></li>
-                <li class="nav-item"><a href="{{ route('about') }}">About Us</a></li>
-                <li class="nav-item"><a href="{{ route('contact') }}">Contact Us</a></li>
+            <ul class="h-nav-overflow unsee">
+                <li class="h-nav-item"><a href="{{ route('home') }}">Home</a></li>
+                <li class="h-nav-item"><a href="{{ route('about') }}">About Us</a></li>
+                <li class="h-nav-item"><a href="{{ route('contact') }}">Contact Us</a></li>
                 <br>
-                <button class="started" onclick="window.location='{{ route('register') }}'">Get Started</button>   
+                <button class="h-started" onclick="window.location='{{ route('register') }}'">Get Started</button>   
             </ul>
             </nav>
+            </div>
         </header>
         <section>
+            <div class="white-line"></div>
             <div class="blue-line"></div>
             <div class="container-1">
                 <div>
@@ -70,11 +74,5 @@
                 <img class="img3"src="{{ asset('assets/images/youtube-logo.svg') }}" alt="logo"><hr>
                 </div>
         </footer>
-<script>
-function menuOpen(){
-    document.querySelector('.menu').classList.toggle('o-menu');
-    document.querySelector('.nav-overflow').classList.toggle('unsee');
-}
-</script>      
 </body>
 </html>

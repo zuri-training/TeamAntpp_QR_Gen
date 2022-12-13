@@ -65,6 +65,11 @@ Route::get('/createfileqr', [QrController::class, 'createFileqr'])->middleware([
 
 Route::post('/generateqr', [QrController::class, 'generateQr'])->middleware(['auth', 'verified'])->name('generate.qr');
 
+Route::get('/fileqroute/{url}', [QrController::class, 'fileqrroute'])->middleware(['auth', 'verified'])->name('fileroute.qr');
+
+Route::get('/downloadqrpdf/{url}', [QrController::class, 'downloadqrpdf'])->middleware(['auth', 'verified'])->name('downloadf.qr');
+
+Route::get('/scanqr', [QrController::class, 'scanqr'])->middleware(['auth', 'verified'])->name('scanqr.qr');
 
 
 

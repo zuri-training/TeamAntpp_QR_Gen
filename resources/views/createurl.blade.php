@@ -4,7 +4,43 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="{{asset('css/all.min.css')}}">
+        <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
         <link rel="stylesheet" href="{{asset('assets/css/styles.css')}}" />
+        <style>
+            div#social-links {
+                
+                max-width: 10%;
+            }
+            div#social-links  ul {
+                display: flex;
+                flex-direction:row;
+                margin: 0 auto;
+                
+                
+            } 
+            div#social-links  li {
+                display: grid;
+                flex-direction:row;
+                margin: 0 auto;
+                
+                
+            }          
+            div#social-links ul li a {
+                padding: 0px;
+                
+                margin: 3px;
+                font-size: 30px;
+                color: #222;
+                background-color: #ccc;
+            }
+        </style>
+         @if (Session()->has('success'))
+            <script>
+                alert("QR Code Has Been Generated Successfully")
+            </script>
+        @endif
+       
         <title>Create Qr Code - QRGo</title>
     </head>
     <body>
@@ -20,13 +56,13 @@
                 </nav>
                 <div>
                     <div class="profile">
-                        <img src="{{asset('images/profile-img.png')}}" alt="" />
+                        <img src="{{asset('assets/images/profile-img.png')}}" alt="" />
                         <div class="profile-details">
                             <div class="profile-dropdown">
                                 <h4>
                                     <img
                                         class="arrow-down"
-                                        src="{{asset('images/keyboard_arrow_down.png')}}"
+                                        src="{{asset('assets/images/keyboard_arrow_down.png')}}"
                                         alt=""
                                     />
                                     {{Auth::user()->name}}
@@ -45,7 +81,7 @@
                         </div>
                     </div>
                 </div>
-                <img class="menubtn" src="{{asset('images/menu.svg')}}" alt="" />
+                <img class="menubtn" src="{{asset('assets/images/menu.svg')}}" alt="" />
             </div>
             <div class="white-line"></div>
             <div class="blue-line"></div>
@@ -54,13 +90,16 @@
             <aside class="sidebar">
                 <ul>
                     <li class="sidebar-link">
-                        <img src="{{asset('images/create.svg')}}" alt="" />Create
+                        <img src="{{asset('assets/images/create.svg')}}" alt="" />Create
                     </li>
                     <li class="sidebar-link">
-                        <img src="{{asset('images/myqr.svg')}}" alt="" />My Qr
+                        <img src="{{asset('assets/images/myqr.svg')}}" alt="" />My Qr
                     </li>
                     <li class="sidebar-link">
-                        <img src="{{asset('images/settings.svg')}}" alt="" />Settings
+                        <img src="{{ asset('assets/images/myqr.svg') }}" alt="" />Scan QR
+                    </li>
+                    <li class="sidebar-link">
+                        <img src="{{asset('assets/images/settings.svg')}}" alt="" />Settings
                     </li>
                 </ul>
             </aside>
@@ -71,7 +110,7 @@
                     <form class="input-url" action="{{route('generate.qr')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="input-group">
-                            <img src="{{asset('images/link.svg')}}" alt="" />
+                            <img src="{{asset('assets/images/link.svg')}}" alt="" />
                             <input
                                 type="link"
                                 
@@ -88,7 +127,8 @@
 
                 <div class="generated-qr">
                     <div class="qr">
-                        <img src="{{asset('images/qrcode.svg')}}" alt="" />
+                       
+                    {{Session::get('data')}}
                     </div>
                     <div class="track-clicks">
                         <input type="checkbox" name="track" id="track" />
@@ -96,11 +136,51 @@
                     </div>
                     <div class="download-qr">
                         <h3>Download</h3>
-                        <button class="jpg download">JPG</button>
-                        <button class="png download">PNG</button>
+                        <a href="#" id="download_jpg" class="jpg download">JPG</a>
+                        <a href="#" id="download_png" class="png download">PNG</a>
+                        <a  class="png download" href="{{url('/downloadqrpdf/'. base64_encode(Session::get('data')))}}">PDF</a>
+                        <strong>Share via social media</strong>
+                        {!! Session::get('shareComponent') !!}
                     </div>
                 </div>
             </section>
+
+            
         </main>
+        
+        <script>
+var svg = document.querySelector( "svg" );
+//var svg= document.getElementById("svg");
+var svgData = new XMLSerializer().serializeToString( svg );
+
+var canvas = document.createElement( "canvas" );
+var ctx = canvas.getContext( "2d" );
+
+var img = document.createElement( "img" );
+img.setAttribute( "src", "data:image/svg+xml;base64," + btoa( svgData ) );
+
+img.onload = function() {
+    ctx.drawImage( img, 0, 0 );
+    
+    // Now is done
+    console.log( canvas.toDataURL( "image/png" ) );
+    var imgsrc = canvas.toDataURL( "image/png" );
+	var a = document.getElementById("download_png");
+	a.download = "myqr.png"
+    a.href = imgsrc;
+
+    var imgjpg = canvas.toDataURL( "image/jpg" );
+	var a = document.getElementById("download_jpg");
+	a.download = "myqr.jpg"
+    a.href = imgjpg;
+
+
+
+}
+    
+
+</script>
+
+
     </body>
 </html>

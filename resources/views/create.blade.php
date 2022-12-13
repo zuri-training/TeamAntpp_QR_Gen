@@ -61,7 +61,10 @@
                         <img src="{{ asset('assets/images/myqr.svg') }}" alt="" />My Qr
                     </li>
                     <li class="sidebar-link">
-                        <img src="{{ asset('assets/images/settings.svg') }}" alt="" />Settings
+                        <img src="{{ asset('assets/images/myqr.svg') }}" alt="" />Scan QR
+                    </li>
+                    <li class="sidebar-link">
+                        <img src="{{ asset('assets/images/menu.svg') }}" alt="" />Settings
                     </li>
                 </ul>
             </aside>

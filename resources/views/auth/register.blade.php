@@ -30,7 +30,7 @@
                 @csrf
               <div>
                 <x-input-label class="labell" for="name" :value="__('Name')" />
-                <x-text-input id="email" class="inputt" type="text" name="name" :value="old('email')" required autofocus />
+                <x-text-input id="email" class="inputt" type="text" name="name" :value="old('name')" required autofocus />
                 <x-input-error :messages="$errors->get('name')" class="mt-2 xerror" />
               </div>
               <div class="mt-4">

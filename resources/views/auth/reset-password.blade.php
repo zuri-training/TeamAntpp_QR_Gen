@@ -22,7 +22,7 @@
         </div>
             <x-auth-session-status class="mb-4" :status="session('status')" />
             <div class="container">
-              <form method="POST" action="{{ route('password.store') }}">
+              <form method="POST" action="{{ route('password.store', $token) }}">
                 @csrf
                 <input type="hidden" name="token" value="{{ $request->route('token') }}">
               <div>

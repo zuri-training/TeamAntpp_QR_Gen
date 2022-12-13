@@ -145,7 +145,7 @@ hr {
     background-color: #0176C3;
 }
 
-@media all and (max-width: 480px) {
+@media only screen and (max-width: 962px) {
     body {
         height: 480px;
     }
@@ -155,7 +155,7 @@ hr {
     .connect {
         width: 70px;
         height: 50px;
-        margin-top: 10%;
+        margin-top: 8%;
         margin-bottom: -1%;
         margin-inline-start: 150px;
     }

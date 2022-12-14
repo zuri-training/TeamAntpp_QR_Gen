@@ -88,16 +88,14 @@
         </header>
         <main class="create-qr">
             <aside class="sidebar">
-                <ul>
+                <ul><a href="{{route('qrhome')}}" style="color:grey">
                     <li class="sidebar-link">
-                        <img src="{{asset('assets/images/create.svg')}}" alt="" />Create
-                    </li>
-                    <li class="sidebar-link">
-                        <img src="{{asset('assets/images/myqr.svg')}}" alt="" />My Qr
-                    </li>
-                    <li class="sidebar-link">
-                        <img src="{{ asset('assets/images/myqr.svg') }}" alt="" />Scan QR
-                    </li>
+                     <img src="{{asset('assets/images/create.svg')}}" alt="" />Create 
+                    </li></a>
+                    <li class="sidebar-link"><a href="{{route('dashboard')}}" style="color:grey">
+                      <img src="{{asset('assets/images/myqr.svg')}}" alt="" />My Qr
+                    </li></a>
+                   
                     <li class="sidebar-link">
                         <img src="{{asset('assets/images/settings.svg')}}" alt="" />Settings
                     </li>

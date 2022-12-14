@@ -10,27 +10,55 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 
 
+
 class QrController extends Controller
 {
 
     public function index(){
+                                /*
+|--------------------------------------------------------------------------
+| This function returns the main page
+|--------------------------------------------------------------------------
+|
+|
+*/
         return view('create');
     }
 
     public function createQrurl(){
       
-  
+                          /*
+|--------------------------------------------------------------------------
+| This function displays create qr url blade
+|--------------------------------------------------------------------------
+|
+|
+*/
 
 
         return view('createurl');
     }
     public function fileqrroute(Request $request){
+                                /*
+|--------------------------------------------------------------------------
+| This function enable  the user to download scan qr
+|--------------------------------------------------------------------------
+|
+|
+*/
      
         return Storage::download('public/'.$request->url);
     }
 
 
     public function createFileqr(){
+                                /*
+|--------------------------------------------------------------------------
+| This function Displays the create file blade
+|--------------------------------------------------------------------------
+|
+|
+*/
 
         return view('createfile');
     }
@@ -133,27 +161,7 @@ class QrController extends Controller
             }
 
 
-            public function showscanqr(){
-
-                return view('scanqr');
-            }
-
-            public function scanqr(){
-
-                        /*
-|--------------------------------------------------------------------------
-| This function takes in A QR image and Read it then return the content to user
-|--------------------------------------------------------------------------
-|
-|
-*/
-        $request->validate(['image'=>'required|image|mimes:png,jpg,svg|max:2048']);
-        $qrcode = new QrReader($request->image);
-         $text = $qrcode->text();
-         
-        return view('decoded')->with('data',$text);
-
-            }
+       
 
 
 

@@ -39,7 +39,7 @@
                                 </li>
                                 <li><a href="{{route('qrhome')}}">Create QR</a></li>
                                 <li>
-                                    <a onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="logout">Log out</a>
+                                    <a onclick="document.getElementById('logout-form').submit();" class="logout">Log out</a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf
                                     </form>

@@ -99,12 +99,13 @@
 
                 <div class="recents">
                     <h2>Recent</h2>
-                    <table>
+                   <table>
                         <thead>
                             <tr class="table-heading">
                                 <th>Name</th>
                                 <th>Date</th>
                                 <th>Clicks</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tr>
@@ -120,6 +121,7 @@
                             </td>
                             <td>12-Nov-2022</td>
                             <td>122</td>
+                            <td><a href="#seeoneroute" class="see-more">View</a></td>
                         </tr>
                         <tr>
                             <td>
@@ -134,6 +136,7 @@
                             </td>
                             <td>12-Nov-2022</td>
                             <td>122</td>
+                            <td><a href="#seeoneroute" class="see-more">View</a></td>
                         </tr>
                         <tr>
                             <td>
@@ -148,9 +151,10 @@
                             </td>
                             <td>12-Nov-2022</td>
                             <td>Not tracked</td>
+                            <td><a href="#seeoneroute" class="see-more">View</a></td>
                         </tr>
                     </table>
-                    <a href="#seeallroute" class="see-more">View All</a>
+                    <a href="{{route('viewallqr')}}" class="see-more">View All</a>
                 </div>
             </section>
         </main>

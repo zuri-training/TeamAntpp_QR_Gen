@@ -63,7 +63,7 @@
                     <li class="sidebar-link">
                      <img src="{{asset('assets/images/create.svg')}}" alt="" />Dashboard 
                     </li></a>
-                    <li class="sidebar-link"><a href="{{route('allqr')}}" style="color:grey">
+                    <li class="sidebar-link"><a href="{{route('viewallqr')}}" style="color:grey">
                       <img src="{{asset('assets/images/myqr.svg')}}" alt="" />My Qr
                     </li></a>
                     <a href="{{route('profile')}}" style="color:grey">
@@ -152,7 +152,7 @@
                             <td><a href="#seeoneroute" class="see-more">View</a></td>
                         </tr>
                     </table>
-                    <a href="#seeallroute" class="see-more">View All</a>
+                    <a href="{{route('viewallqr')}}" class="see-more">View All</a>
                 </div>
             </section>
         </main>

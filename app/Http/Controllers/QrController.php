@@ -161,7 +161,13 @@ class QrController extends Controller
             }
 
 
-       
+       public function viewAll(){
+        return view('viewall');
+       }
+
+       public function viewOne($id){
+        return view('viewqr');
+       }
 
 
 

@@ -169,6 +169,16 @@ input[type="submit"]:hover {
 .sidebar ul .sidebar-link img {
     margin-right: 1rem;
 }
+.see-more{
+    padding: 1rem;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1em;
+    text-align: center;
+    width: 100%;
+}
 .sidebar ul li:hover.sidebar-link::after {
     content: "";
     position: absolute;

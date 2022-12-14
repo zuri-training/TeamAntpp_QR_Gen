@@ -60,30 +60,40 @@
         <main class="create-qr">
             <aside class="sidebar">
                 <ul>
-                    <li class="sidebar-link activelink">
-                        <img src="{{ asset('assets/images/create.svg') }}" alt="" />Create
-                    </li>
+                    <a href="{{route('qrhome')}}" style="color:grey">
                     <li class="sidebar-link">
-                        <img src="{{ asset('assets/images/myqr.svg') }}" alt="" />My Qr
-                    </li>
+                     <img src="{{asset('assets/images/create.svg')}}" alt="" />Create 
+                    </li></a>
+                    <a href="{{route('viewallqr')}}" style="color:grey">
+                    <li class="sidebar-link">
+                      <img src="{{asset('assets/images/myqr.svg')}}" alt="" />My Qr
+                    </li></a>
+                    <a href="{{route('profile')}}" style="color:grey">
                     <li class="sidebar-link">
                         <img src="{{ asset('assets/images/settings.svg') }}" alt="" />Settings
-                    </li>
+                    </li></a>
                 </ul>
             </aside>
 
             <section class="create">
                 <div class="qr-method">
-                    <h1>Create QR for</h1>
+                    <h1>Create QR Code</h1>
                     <div class="select-qr-method">
+                    <a href="{{route('createqr.url')}}">    
                         <div class="url method">
+                     
                             <img src="{{ asset('assets/images/bluelink.svg') }}" alt="" />
-                            <h2>URL</h2>
+                            
+                            <h2 style="color:black">URL</h2>
                         </div>
+                        </a>
+                        <a href="{{route('createqr.file')}}"> 
                         <div class="file method">
-                            <img src="{{ asset('assets/images/Vector.svg') }}" alt="" />
-                            <h2>File</h2>
-                        </div>
+                         
+                        <img src="{{ asset('assets/images/Vector.svg') }}" alt="" />
+                       
+                            <h2 style="color:black" >File</h2> 
+                        </div></a>
                     </div>
                 </div>
 
@@ -140,6 +150,7 @@
                             <td>Not tracked</td>
                         </tr>
                     </table>
+                    <a href="#seeallroute" class="see-more">View All</a>
                 </div>
             </section>
         </main>

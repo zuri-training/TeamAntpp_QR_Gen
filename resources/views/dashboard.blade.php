@@ -36,7 +36,7 @@
                             </div>
                             <ul class="dropdown-content unsee unsee-mobile">
                                 <li class="dropdown">
-                                    <a href="#profile">Profile</a>
+                                    <a href="{{route('profile.edit')}}">Profile</a>
                                 </li>
                                 <li><a href="#create.html">Create QR</a></li>
                                 <li>
@@ -68,7 +68,7 @@
                     <li class="sidebar-link">
                       <img src="{{asset('assets/images/myqr.svg')}}" alt="" />My Qr
                     </li></a>
-                    <a href="{{route('profile')}}" style="color:grey">
+                    <a href="{{route('profile.edit')}}" style="color:grey">
                     <li class="sidebar-link">
                         <img src="{{ asset('assets/images/settings.svg') }}" alt="" />Settings
                     </li></a>

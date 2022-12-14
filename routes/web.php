@@ -4,7 +4,7 @@ use App\Http\Controllers\GenController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use LaravelQRCode\Facades\QRCode;
-use App\Http\Controllers\QrController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,9 +24,6 @@ Route::get('example/url', function ()
                   ->png();
                     
 });  
-
-
-
 
 Route::get('/test', [GenController::class, 'index']);
 
@@ -52,37 +49,5 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
-
-                        /*
-|--------------------------------------------------------------------------
-| The routes below handles qr code generations
-|--------------------------------------------------------------------------
-|
-|
-*/
-
-
-Route::get('/qrhome', [QrController::class, 'index'])->middleware(['auth', 'verified'])->name('qrhome');
-
-Route::get('/createurlqr', [QrController::class, 'createQrurl'])->middleware(['auth', 'verified'])->name('createqr.url');
-
-Route::get('/createfileqr', [QrController::class, 'createFileqr'])->middleware(['auth', 'verified'])->name('createqr.file');
-
-Route::post('/generateqr', [QrController::class, 'generateQr'])->middleware(['auth', 'verified'])->name('generate.qr');
-
-Route::get('/fileqroute/{url}', [QrController::class, 'fileqrroute'])->middleware(['auth', 'verified'])->name('fileroute.qr');
-
-Route::get('/downloadqrpdf/{url}', [QrController::class, 'downloadqrpdf'])->middleware(['auth', 'verified'])->name('downloadf.qr');
-
-
-
-
-
-
-
-
-
-
 
 require __DIR__.'/auth.php';

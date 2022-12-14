@@ -54,7 +54,13 @@ Route::middleware('auth')->group(function () {
 });
 
 
-
+                        /*
+|--------------------------------------------------------------------------
+| The routes below handles qr code generations
+|--------------------------------------------------------------------------
+|
+|
+*/
 
 
 Route::get('/qrhome', [QrController::class, 'index'])->middleware(['auth', 'verified'])->name('qrhome');
@@ -64,6 +70,10 @@ Route::get('/createurlqr', [QrController::class, 'createQrurl'])->middleware(['a
 Route::get('/createfileqr', [QrController::class, 'createFileqr'])->middleware(['auth', 'verified'])->name('createqr.file');
 
 Route::post('/generateqr', [QrController::class, 'generateQr'])->middleware(['auth', 'verified'])->name('generate.qr');
+
+Route::get('/fileqroute/{url}', [QrController::class, 'fileqrroute'])->middleware(['auth', 'verified'])->name('fileroute.qr');
+
+Route::get('/downloadqrpdf/{url}', [QrController::class, 'downloadqrpdf'])->middleware(['auth', 'verified'])->name('downloadf.qr');
 
 
 

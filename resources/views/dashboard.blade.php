@@ -39,7 +39,12 @@
                                     <a href="#profile">Profile</a>
                                 </li>
                                 <li><a href="#create.html">Create QR</a></li>
-                                <li><a href="{{route('logout')}}" class="logout">Log out</a></li>
+                                <li>
+                                    <a onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="logout">Log out</a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                    </form>
+                                </li>
                             </ul>
                             <div class="profile-email">
                                 <p>{{Auth::user()->email}}</p>

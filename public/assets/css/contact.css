@@ -81,6 +81,7 @@ textarea {
     }
     .section-b1 article {
         width: 100%;
+        padding: 1rem 0;
     }
     .section-b1 .article-image {
         width: 100%;

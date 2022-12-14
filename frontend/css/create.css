@@ -59,6 +59,10 @@ a {
     align-items: center;
     padding: 1rem 3rem;
     background-color: var(--light-blue);
+    box-shadow: 0 0 8px black;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
 }
 .nav-links-parent {
     display: flex;
@@ -89,11 +93,15 @@ a {
     height: 0.625rem;
     width: 100%;
     background-color: white;
+    position: absolute;
+    top: 8rem;
 }
 .blue-line {
     height: 0.625rem;
     width: 100%;
     background-color: var(--very-dark-blue);
+    position: absolute;
+    top: 8.3rem;
 }
 button:hover,
 #submit-url:hover,
@@ -155,6 +163,7 @@ input[type="submit"]:hover {
     /* background-color: yellow; */
     padding: 2rem 0rem;
     border-right: 1px solid var(--light-blue);
+    padding-top: 10rem;
 }
 .sidebar .sidebar-link {
     padding: 1rem 3rem;
@@ -182,6 +191,7 @@ input[type="submit"]:hover {
     display: flex;
     flex-direction: column;
     flex-basis: 80%;
+    padding-top: 9rem;
 }
 .qr-method {
     padding-top: 2rem;
@@ -406,7 +416,6 @@ th {
     }
     .navbar {
         padding: 1rem;
-        position: relative;
     }
     .nav-links-parent,
     .dropdown-content {
@@ -466,11 +475,19 @@ th {
     .menubtn {
         display: block;
     }
+    .blue-line {
+        top: 5.5rem;
+    }
+    .white-line {
+        background-color: blue;
+        top: 0rem;
+    }
     main {
         padding: 0 1rem;
     }
     .create {
         transform: translateY(-1rem);
+        padding-top: 1rem;
     }
     .create-qr {
         flex-direction: column;
@@ -502,7 +519,7 @@ th {
         border-right: none;
         border-bottom: 1px solid var(--light-blue);
         padding-bottom: 0;
-        padding-top: 0;
+        padding-top: 6.1rem;
     }
     .sidebar ul {
         display: flex;

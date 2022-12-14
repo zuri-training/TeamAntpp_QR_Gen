@@ -1,0 +1,132 @@
+/* IMPORT FONT FAMLY */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* VARIABLE DECLARATION */
+
+html{
+    font-size: 16px;
+}
+
+:root{
+    --primary-color: #0176C3;
+    --secondary-color: #1D242C;
+    --teritiary-color: #C7EEFF;
+    --white: #FAFAFA;
+    --light-blue: #CCE4F3;
+    --black: #000000;
+    --very-dark-blue: #0162A2;
+    --primary-btn-hover: #2B8DCD;
+    --primary-btn-clicked: var(--very-dark-blue);
+    --primary-btn-disabled: #AAD1EB;
+    --secondary-btn-hover: var(--primary-btn-disabled);
+    --secondary-btn-clicked: #80BAE1;
+    --secondary-btn-disabled: var(--white);
+    --secondary-btn-disabled-text:  #B4B6B9;
+}
+
+/* GENERAL STYLING */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+body{ 
+    min-height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: transparent;
+}
+
+.sidebar .sidebar-link.activelink {
+    background-color: var(--light-blue);
+    position: relative;
+}
+.sidebar ul .activelink.sidebar-link::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: var(--very-dark-blue);
+}
+
+/*   FOOTER   */
+.footer{
+    height: 350px;
+    width: 100%;
+    background-color: var(--very-dark-blue);
+    padding: 5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    gap:  1rem;
+}
+.footer hr{
+    background-color: var(--white);
+    color: var(--white);
+}
+.footer-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-links{
+    display: flex;
+    gap: 4rem;
+}
+.footer-links a{
+    color: var(--white);
+    opacity: 0.7;
+}
+.footer > p{
+    color: var(--white);
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-align: center;
+}
+.socials{
+    display: flex;
+    gap: 1rem;
+}
+.socials img{
+    cursor: pointer;
+}
+.unsee {
+    display: none;
+}
+@media (max-width: 992px){
+    .unsee {
+        display: block;
+    }
+    .unsee-mobile {
+        display: none;
+    }
+    .footer{
+        display: flex;
+        justify-content: center;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    .footer-links{
+        gap: 0.5rem;
+        flex-direction: column;
+    }
+    .footer-links li{
+        font-size: 0.9rem;
+    }
+    .footer-links a{
+        opacity: 1;
+    }
+    .socials{
+        flex-direction: column;
+        transform: scale(0.7);
+    }
+}

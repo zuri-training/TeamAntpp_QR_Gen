@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 * {
     box-sizing: border-box;
 }
@@ -41,7 +42,7 @@ body {
 .nav-item a {
     display: inline-flex;
     font-size: 20px;
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
     color: black;
     text-decoration: none;
 }
@@ -87,7 +88,7 @@ span {
 }
 .container-1 p {
     font-size: 40px;
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: bolder;
 }
 .images {
@@ -145,7 +146,7 @@ hr {
     background-color: #0176C3;
 }
 
-@media all and (max-width: 480px) {
+@media only screen and (max-width: 962px) {
     body {
         height: 480px;
     }
@@ -155,7 +156,7 @@ hr {
     .connect {
         width: 70px;
         height: 50px;
-        margin-top: 10%;
+        margin-top: 8%;
         margin-bottom: -1%;
         margin-inline-start: 150px;
     }

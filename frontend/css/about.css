@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
 * {
     box-sizing: border-box;
 }
@@ -40,7 +42,7 @@ body {
 .nav-item a {
     display: inline-flex;
     font-size: 20px;
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
     color: black;
     text-decoration: none;
 }
@@ -72,6 +74,9 @@ span {
     margin-top: -1%;
     cursor: pointer;
 }
+.started:hover {
+    background-color: #2B8DCD;
+}
 .blue-line {
     width: 100%;
     height: 12px;
@@ -95,56 +100,22 @@ img {
 }
 h1 {
     text-align: center;
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 40px;
-    margin-bottom: -1.5%;
+    color: #1D242C;
 }
 .contact-text {
-    margin-left: 10%;
+    margin-left: 8%;
+    letter-spacing: 1px;
+}
+.para {
+    margin-top: -8%;
 }
 .contact-text p {
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
     text-align: center;
     font-size: 20px;
-}
-.form-list {
-    margin-top: 10%;
-}
-label {
-    font-size: 16px;
-    font-family: sans-serif;
-    color: black;
-}
-input {
-    font-family: sans-serif;
-    display: block;
-    width: 100%;
-    padding: 2.4%;
-    margin-top: 1%;
-    margin-bottom: 4%;
-    border-radius: 5px;
-    border: 1px solid rgba(2, 2, 2, 0.3);
-}
-textarea {
-    width: 100%;
     height: 150px;
-    padding: 1%;
-    margin-top: 1%;
-    border-radius: 5px;
-    border: 1px solid rgba(2, 2, 2, 0.3);
-}
-.submit {
-    color: white;
-    font-size: 18px;
-    font-weight: bolder;
-    font-family: sans-serif;
-    background-color: #0176C3;
-    margin-top: 5%;
-    border-radius: 5px;
-    border: none;
-    width: 40%;
-    padding: 3%;
-    cursor: pointer;
 }
 .footer-links {
     background-color: #003B61;
@@ -181,7 +152,7 @@ textarea {
 .footer-item a {
     display: inline-flex;
     font-size: 20px;
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
     color: #FDFDFD;
     text-decoration: none;
 }
@@ -211,27 +182,58 @@ hr {
 }
 .footer-text p {
     font-size: 14px;
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
     color: #FDFDFD;
     margin-top: 3%;
     margin-left: 50%;
 }
 
-@media all and (max-width: 480px) {
+@media only screen and (max-width: 962px) {
     .container {
+        margin: auto;
         height: 100px;
     }
     .connect {
         width: 70px;
         height: 50px;
         margin-top: 8%;
-        margin-bottom: -1%;
-        margin-inline-start: 150px;
+        margin-inline-start: 10px;
+    }
+    .nav-bar{
+        flex-direction: column;
+    }
+    .nav-items{
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+    .nav-item{
+        margin: auto;
+    }
+    .nav-item a {
+        margin-top: 5%;
+        margin-left: -120%;
+        color: white;
+        font-size: 16px;
+    }
+    .menu-list {
+        background-color: black;
+    }
+    .menu {
+        display: block;
+        position: absolute;
+        top: 54px;
+        right: 30px;
+    }
+    .active {
+        display: block;
     }
     .blue-line {
-        margin-top: -1%;
+        margin-top: 27%;
     }
     .container-1 {
+        margin: auto;
         display: block;
     }
     h1 {
@@ -243,33 +245,18 @@ hr {
         background-color: none;
     }
     img {
-        margin-top: 40%;
+        margin-top: 100%;
         width: 80%;
         margin-left: 10%;
     }
     .contact-text p {
-        font-size: 15px;
-        margin-bottom: 130%;
+        font-size: 12px;
         margin-left: -10%;
-    }
-    .form-list {
-        margin-left: -2.5%;
-    }
-    input {
-        width: 90%;
-        border: 1px solid rgba(2, 2, 2, 0.3);
-        margin-top: 1%;
-    }
-    textarea {
-        width: 90%;
-        border: 1px solid rgba(2, 2, 2, 0.3);
         height: 100px;
     }
-    .submit {
-        width: 90%; 
-    }
     .footer-links {
-        margin-top: 65%;
+        margin: auto;
+        margin-top: 25%;
     }
     .footer-img {
         width: 140px;

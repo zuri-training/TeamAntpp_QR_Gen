@@ -76,6 +76,12 @@ Route::get('/fileqroute/{url}', [QrController::class, 'fileqrroute'])->middlewar
 Route::get('/downloadqrpdf/{url}', [QrController::class, 'downloadqrpdf'])->middleware(['auth', 'verified'])->name('downloadf.qr');
 
 
+// =====================================================
+// QR code fetch
+// =========================================================
+Route::get('/viewallqr', [QrController::class, 'viewAll'])->middleware(['auth', 'verified'])->name('viewallqr');
+Route::get('/viewqr/{id}', [QrController::class, 'viewOne'])->middleware(['auth', 'verified'])->name('viewqr');
+
 
 
 

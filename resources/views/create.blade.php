@@ -35,10 +35,15 @@
                             </div>
                             <ul class="dropdown-content">
                                 <li class="dropdown">
-                                    <a href="#profile">Profile</a>
+                                    <a href="{{route('profile.edit')}}">Profile</a>
                                 </li>
                                 <li><a href="{{route('qrhome')}}">Create QR</a></li>
-                                <li><a href="{{route('logout')}}" class="logout">Log out</a></li>
+                                <li>
+                                    <a onclick="document.getElementById('logout-form').submit();" class="logout">Log out</a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                    </form>
+                                </li>
                             </ul>
                             <div class="profile-email">
                                 <p>{{Auth::user()->email}}</p>
@@ -46,7 +51,7 @@
                         </div>
                     </div>
                 </div>
-                <img class="menubtn" src="{{ asset('assets/images/menu.svg') }}" alt="" />
+                <img class="menubtn" src="{{ asset('assets/images/menu.svg') }}" alt=""  onclick="mobileMenu();" />
             </div>
             <div class="white-line"></div>
             <div class="blue-line"></div>
@@ -54,16 +59,17 @@
         <main class="create-qr">
             <aside class="sidebar">
                 <ul>
-                <a href="{{route('qrhome')}}" style="color:grey">
+                <a href="{{route('dashboard')}}" style="color:grey">
                     <li class="sidebar-link">
-                     <img src="{{asset('assets/images/create.svg')}}" alt="" />Create 
+                     <img src="{{asset('assets/images/create.svg')}}" alt="" />Dashboard 
                     </li></a>
-                    <li class="sidebar-link"><a href="{{route('dashboard')}}" style="color:grey">
+                    <li class="sidebar-link"><a href="{{route('viewallqr')}}" style="color:grey">
                       <img src="{{asset('assets/images/myqr.svg')}}" alt="" />My Qr
                     </li></a>
+                    <a href="{{route('profile.edit')}}" style="color:grey">
                     <li class="sidebar-link">
-                        <img src="{{ asset('assets/images/menu.svg') }}" alt="" />Settings
-                    </li>
+                        <img src="{{ asset('assets/images/settings.svg') }}" alt="" />Settings
+                    </li></a>
                 </ul>
             </aside>
 
@@ -97,6 +103,7 @@
                                 <th>Name</th>
                                 <th>Date</th>
                                 <th>Clicks</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tr>
@@ -112,6 +119,7 @@
                             </td>
                             <td>12-Nov-2022</td>
                             <td>122</td>
+                            <td><a href="#seeoneroute" class="see-more">View</a></td>
                         </tr>
                         <tr>
                             <td>
@@ -126,6 +134,7 @@
                             </td>
                             <td>12-Nov-2022</td>
                             <td>122</td>
+                            <td><a href="#seeoneroute" class="see-more">View</a></td>
                         </tr>
                         <tr>
                             <td>
@@ -140,8 +149,10 @@
                             </td>
                             <td>12-Nov-2022</td>
                             <td>Not tracked</td>
+                            <td><a href="#seeoneroute" class="see-more">View</a></td>
                         </tr>
                     </table>
+                    <a href="{{route('viewallqr')}}" class="see-more">View All</a>
                 </div>
             </section>
         </main>

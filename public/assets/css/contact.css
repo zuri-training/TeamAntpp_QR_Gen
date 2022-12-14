@@ -38,7 +38,53 @@ textarea {
     cursor: pointer;
 }
 
+.section-b1 {
+    background-color: var(--white);
+    padding: 2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+.section-b1 article {
+    padding: 1rem 2rem;
+    width: 50%;
+}
+.section-b1 article p{
+    width: 100%; 
+    text-align: justify; 
+    display: block; 
+    line-height: 1.7; 
+    margin: 30px 0;
+    font-size: 1.2rem;
+}
+.section-b1 article h1 {
+    font-size: clamp(1.8rem, 40px, 3.5rem);
+    color: var(--secondary-color);
+    font-weight: 700;
+}
+.section-b1 .article-image {
+    width: 50%;
+}
+.section-b1 .article-image img {
+    width: 100%;
+}
 @media only screen and (max-width: 962px) {
+    .section-b1{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    .section-b1 article {
+        width: 100%;
+    }
+    .section-b1 .article-image {
+        width: 100%;
+    }
     .form-list {
         margin: auto;
     }

@@ -74,31 +74,9 @@
                     </li></a>
                 </ul>
             </aside>
-
             <section class="create">
-                <div class="qr-method">
-                    <h1>Create QR Code</h1>
-                    <div class="select-qr-method">
-                    <a href="{{route('createqr.url')}}">    
-                        <div class="url method">
-                     
-                            <img src="{{ asset('assets/images/bluelink.svg') }}" alt="" />
-                            
-                            <h2 style="color:black">URL</h2>
-                        </div>
-                        </a>
-                        <a href="{{route('createqr.file')}}"> 
-                        <div class="file method">
-                         
-                        <img src="{{ asset('assets/images/Vector.svg') }}" alt="" />
-                       
-                            <h2 style="color:black" >File</h2> 
-                        </div></a>
-                    </div>
-                </div>
-
                 <div class="recents">
-                    <h2>Recent</h2>
+                    <h2>My QR</h2>
                    <table>
                         <thead>
                             <tr class="table-heading">
@@ -108,6 +86,8 @@
                                 <th>Action</th>
                             </tr>
                         </thead>
+                        @if(count($myqrCodes) > 1)
+                            @foreach ($myqrCodes as $myqrCode)
                         <tr>
                             <td>
                                 <div>
@@ -117,14 +97,19 @@
                                         class="method-img"
                                     />
                                 </div>
-                                https://www.somefancyurl.com
+                                {{$myqrCode->qr_type}}
                             </td>
-                            <td>12-Nov-2022</td>
-                            <td>122</td>
-                            <td><a href="#seeoneroute" class="see-more">View</a></td>
+                            <td>{{$myqrCode->created_at}}</td>
+                            <td>{{$myqrCode->clicks}}</td>
+                            <td><a href="/viewqr/{{$myqrCode->id}} " class="see-more">View</a></td>
                         </tr>
+                            @endforeach
+                        @else
+                        <tr>
+                            <h1>No Data Returned</h1>
+                        </tr>
+                        @endif
                     </table>
-                    <div><a href="{{route('viewallqr')}}" class="see-all">View All</a></div>
                 </div>
             </section>
         </main>

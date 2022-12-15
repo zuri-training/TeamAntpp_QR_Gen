@@ -10,7 +10,6 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 
 
-
 class QrController extends Controller
 {
 
@@ -161,13 +160,32 @@ class QrController extends Controller
             }
 
 
-       public function viewAll(){
-        return view('viewall');
-       }
+    /*
+    *Method to get all QR Codes for Logged in User
+    */
+    public function viewAll()
+    {
+        $userId = Auth::user()->id;
 
-       public function viewOne($id){
-        return view('viewqr');
-       }
+        $myqrCodes = Qrtbl::where('user_id',$userId)->get();
+
+        return view('myqrcodes',compact('myqrCodes'));
+    }
+
+    /*
+    *Method to show a single QR Code
+    */
+    public function viewOne($id)
+    {
+        $userId = Auth::user()->id;
+        $qrCode = Qrtbl::where('user_id',$userId)
+            ->where('id',$id)
+            ->get();
+        return view('singleqrview',compact('qrCode'));
+    }
+
+
+       
 
 
 

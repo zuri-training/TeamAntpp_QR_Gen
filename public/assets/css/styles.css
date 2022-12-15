@@ -338,6 +338,20 @@ th {
     padding: 3rem;
     gap: 2rem;
 }
+.scan-qr {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 40%;
+    /* width: 100%; */
+    right: 15%;
+    max-width: 100%;
+    height: 84%;
+    margin-top: 7%;
+    border-radius: 1rem;
+    border: 2px dashed var(--secondary-color-light);
+    padding: 3rem;
+    gap: 2rem;
+}
 .qr {
     margin: auto;
 }

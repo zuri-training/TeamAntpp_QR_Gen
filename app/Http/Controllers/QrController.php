@@ -8,7 +8,7 @@ use App\Models\file;
 use App\Models\Qrtbl;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
-
+use Zxing\QrReader;
 
 class QrController extends Controller
 {
@@ -191,7 +191,34 @@ class QrController extends Controller
     }
 
 
-       
+
+    public function showscanqrp( ){
+
+        /*
+|--------------------------------------------------------------------------
+| This function returns scan qr code view page
+|--------------------------------------------------------------------------
+|
+|
+*/
+return view('scanqr');
+}
+
+public function decodeqr(Request $request){
+        /*
+|--------------------------------------------------------------------------
+| This functions takes in qr code image and decode it. it then return the result to the scanqr view
+|--------------------------------------------------------------------------
+|
+|
+*/
+
+$request->validate(['image'=>'required|image|mimes:png,jpg,svg|max:2048']);
+$qrcode = new QrReader($request->image);
+$text = $qrcode->text();
+return back()->with('success','You have successfully generated Qrcode for your url.')->with('data',$text);
+
+}
 
 
 

@@ -16,7 +16,7 @@
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
-        "libern/qr-code-reader": "^1.0",
+        
         "ph-7/qrcode-generator-php-class": "^2.2",
         "simplesoftwareio/simple-qrcode": "~4",
         "solitweb/laravel-dashboard-qr-code-tile": "^1.0",

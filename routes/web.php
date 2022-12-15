@@ -1,10 +1,11 @@
 <?php
-
+use Illuminate\Http\Request;
 use App\Http\Controllers\GenController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use LaravelQRCode\Facades\QRCode;
 use App\Http\Controllers\QrController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -76,7 +77,15 @@ Route::get('/fileqroute/{url}', [QrController::class, 'fileqrroute'])->middlewar
 Route::get('/downloadqrpdf/{url}', [QrController::class, 'downloadqrpdf'])->middleware(['auth', 'verified'])->name('downloadf.qr');
 
 
-
+                        /*
+|--------------------------------------------------------------------------
+| The routes below is responsible for decoding qr codes
+|--------------------------------------------------------------------------
+|
+|
+*/
+Route::get('/scanqr', [QrController::class, 'showscanqrp'])->middleware(['auth', 'verified'])->name('showscanp.qr');
+Route::post('/decodeqr', [QrController::class, 'decodeqr'])->middleware(['auth', 'verified'])->name('decode.qr');
 
 
 

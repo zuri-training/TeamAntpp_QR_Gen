@@ -37,8 +37,8 @@
                                 <li class="dropdown">
                                     <a href="#profile">Profile</a>
                                 </li>
-                                <li><a href="{{route('qrhome')}}">Create QR</a></li>
-                                <li><a href="{{route('logout')}}" class="logout">Log out</a></li>
+                                <li ><a href="{{route('qrhome')}}">Create QR</a></li>
+                                <li  ><a href="{{route('logout')}}" class="logout">Log out</a></li>
                             </ul>
                             <div class="profile-email">
                                 <p>{{Auth::user()->email}}</p>
@@ -57,6 +57,9 @@
                 <a href="{{route('qrhome')}}" style="color:grey">
                     <li class="sidebar-link">
                      <img src="{{asset('assets/images/create.svg')}}" alt="" />Create 
+                    </li></a>
+                    <li class="sidebar-link"><a href="{{route('showscanp.qr')}}" style="color:grey">
+                      <img src="{{asset('assets/images/qr-code-scan-icon.png')}}" alt="" />Scan Qr
                     </li></a>
                     <li class="sidebar-link"><a href="{{route('dashboard')}}" style="color:grey">
                       <img src="{{asset('assets/images/myqr.svg')}}" alt="" />My Qr

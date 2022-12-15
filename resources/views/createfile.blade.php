@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="{{ asset('assets/css/create.css') }}" />
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/footer.css') }}"/>        
         <link rel="stylesheet" href="{{asset('css/all.min.css')}}">
-        <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+        {{-- <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}"> --}}
         <script type="text/javascript" src="{{ asset('assets/js/hscript.js') }}"></script>      
                 <style>
             div#social-links {

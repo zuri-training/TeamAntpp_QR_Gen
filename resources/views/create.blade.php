@@ -153,7 +153,7 @@
                             <td><a href="#seeoneroute" class="see-more">View</a></td>
                         </tr>
                     </table>
-                    <a href="{{route('viewallqr')}}" class="see-more">View All</a>
+                    <div><a href="{{route('viewallqr')}}" class="see-all">View All</a></div>
                 </div>
             </section>
         </main>

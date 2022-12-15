@@ -108,6 +108,8 @@
                                 <th>Action</th>
                             </tr>
                         </thead>
+                        @if(count($myRecent) > 1)
+                            @foreach ($myRecent as $myqrCode)
                         <tr>
                             <td>
                                 <div>
@@ -117,12 +119,18 @@
                                         class="method-img"
                                     />
                                 </div>
-                                https://www.somefancyurl.com
+                                {{ ucfirst($myqrCode->qr_type) }}
                             </td>
-                            <td>12-Nov-2022</td>
-                            <td>122</td>
-                            <td><a href="#seeoneroute" class="see-more">View</a></td>
+                            <td>{{ $myqrCode->created_at->toDateString()}}</td>
+                            <td>{{$myqrCode->clicks}}</td>
+                            <td><a href="/viewqr/{{$myqrCode->id}} " class="see-more">View</a></td>
                         </tr>
+                            @endforeach
+                        @else
+                        <tr>
+                            <h1>You Have No QR Generated Yet</h1>
+                        </tr>
+                        @endif
                     </table>
                     <div><a href="{{route('viewallqr')}}" class="see-all">View All</a></div>
                 </div>

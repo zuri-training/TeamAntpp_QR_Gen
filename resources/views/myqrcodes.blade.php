@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="{{ asset('assets/css/create.css') }}" />
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/footer.css') }}"/>
         <script type="text/javascript" src="{{ asset('assets/js/hscript.js') }}"></script>      
-        <title>User Dashboard - QRGo</title>
+        <title>My QR - QRGo</title>
     </head>
     <body>
         <header class="header">
@@ -106,7 +106,7 @@
                             @endforeach
                         @else
                         <tr>
-                            <h1>No Data Returned</h1>
+                            <h1>You Have No QR Generated Yet</h1>
                         </tr>
                         @endif
                     </table>

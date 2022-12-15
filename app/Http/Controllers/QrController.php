@@ -159,6 +159,12 @@ class QrController extends Controller
         
             }
 
+    public function viewDashboard(){
+        $userId = Auth::user()->id;
+        $myRecent = Qrtbl::where('user_id',$userId)->orderBy('created_at', 'desc')->take(3)->get();
+        return view('dashboard',compact('myRecent'));
+    }
+
 
     /*
     *Method to get all QR Codes for Logged in User

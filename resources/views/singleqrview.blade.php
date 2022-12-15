@@ -76,55 +76,23 @@
             </aside>
 
             <section class="create">
-                <div class="qr-method">
-                    <h1>Create QR Code</h1>
-                    <div class="select-qr-method">
-                    <a href="{{route('createqr.url')}}">    
-                        <div class="url method">
-                     
-                            <img src="{{ asset('assets/images/bluelink.svg') }}" alt="" />
-                            
-                            <h2 style="color:black">URL</h2>
-                        </div>
-                        </a>
-                        <a href="{{route('createqr.file')}}"> 
-                        <div class="file method">
-                         
-                        <img src="{{ asset('assets/images/Vector.svg') }}" alt="" />
-                       
-                            <h2 style="color:black" >File</h2> 
-                        </div></a>
+                <div class="generated-qr">
+                    <h1>View QR Code</h1>
+                    <div class="qr">
+                        {{Session::get('data')}}
                     </div>
-                </div>
-
-                <div class="recents">
-                    <h2>Recent</h2>
-                   <table>
-                        <thead>
-                            <tr class="table-heading">
-                                <th>Name</th>
-                                <th>Date</th>
-                                <th>Clicks</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tr>
-                            <td>
-                                <div>
-                                    <img
-                                        src="{{ asset('assets/images/link.svg') }}"
-                                        alt=""
-                                        class="method-img"
-                                    />
-                                </div>
-                                https://www.somefancyurl.com
-                            </td>
-                            <td>12-Nov-2022</td>
-                            <td>122</td>
-                            <td><a href="#seeoneroute" class="see-more">View</a></td>
-                        </tr>
-                    </table>
-                    <a href="{{route('viewallqr')}}" class="see-more">View All</a>
+                    <div class="track-clicks">
+                        <input type="checkbox" name="track" id="track" />
+                        <label for="track">Track clicks</label>
+                    </div>
+                    <div class="download-qr">
+                        <h3>Download</h3>
+                        <a href="#" id="download_jpg" class="jpg download">JPG</a>
+                        <a href="#" id="download_png" class="png download">PNG</a>
+                        <a  class="png download" href="{{url('/downloadqrpdf/'. base64_encode(Session::get('data')))}}">PDF</a>
+                        <strong>Share via social media</strong>
+                        {!! Session::get('shareComponent') !!}
+                    </div>
                 </div>
             </section>
         </main>

@@ -14,7 +14,6 @@
 
 - [Project Modalities](ReadMe.md#Project)
 - [User Flow](ReadMe.md)
-- [Project Modalities](ReadMe.md#)
 - [Research Plan](ReadMe.md)
 - [Project Scope](ReadMe.md)
 - [Database Schema](ReadMe.md#Database)
@@ -39,6 +38,17 @@ QR_Gen
   2. Allow setting on what should happen when QR is scanned - give at least 2 options
   3. Allow user to download (allow png, jpeg and pdf download format), or share code by email or social media
   4. Allow user save data and come back to it.
+
+# User Case Scenario
+
+Case 1: “I am organizing an event, I want to send ticket invites to people, instead of going through the stress of manually sending the files to each individual, or probably using a cloud service to upload the files and send them links to access it, I can simply upload it and a QR code is generated for me. I can share this QR code and when scanned, it will automatically open and download the ticket.”
+
+Case 2: “I need to send my address or the address of an event or place to someone, or some set of people, I can also enter the address details, after which a QR code is generated for me. This QR code when scanned can display the direction on the map on how I can locate the address.”
+
+I have an option of sharing the QR code to different social media platforms directly or download it on my device.
+
+The QR-Go Web Application also gives the users (authenticated) the access to scan URLs in general, and also to read QR Codes.
+
 
 ## Database
 

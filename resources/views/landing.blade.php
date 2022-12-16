@@ -9,7 +9,12 @@
         <link rel="icon" href="{{ asset('favicon.ico') }}">
         <title>Project QR-Go</title>
     <script src="https://kit.fontawesome.com/46d7328699.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/hscript.js') }}"></script>      
+    <script type="text/javascript" src="{{ asset('assets/js/hscript.js') }}"></script>   
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://project-qr-go.herokuapp.com/">
+        <meta property="og:title" content="Project QR-Go">
+        <meta property="og:description" content="QR Go is the easiest way to generate QR codes for websites and file downloads. Simply enter the URL or select the file, and QR Go will generate a QR code that can be scanned by any QR code reader">
+        <meta property="og:image" content="https://project-qr-go.herokuapp.com/assets/images/QR%20Go.png">   
     </head>
 <body>
     <header class="hheader">

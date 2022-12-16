@@ -6,10 +6,10 @@
     --secondary-color-light: #1d242c4d;
     --secondary-color: #1d2442;
     --tertiary-color: #c7eeff;
-    --white: #fafafa;
+    --white: #ffffff;
     --light-blue: #cce4f3;
     --black: #000000;
-    --very-dark-blue: #0162a2;
+    --very-dark-blue: #003B61;
     --primary-btn-hover: #2b8dcd;
     --primary-btn-clicked: var(--very-dark-blue);
     --primary-btn-disabled: #aad1eb;

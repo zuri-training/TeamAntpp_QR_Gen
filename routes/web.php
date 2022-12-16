@@ -82,6 +82,18 @@ Route::get('/viewqr/{id}', [QrController::class, 'viewOne'])->middleware(['auth'
 
 
 
+                        /*
+|--------------------------------------------------------------------------
+| The routes below is responsible for decoding qr codes
+|--------------------------------------------------------------------------
+|
+|
+*/
+Route::get('/scanqr', [QrController::class, 'showscanqrp'])->middleware(['auth', 'verified'])->name('showscanp.qr');
+Route::post('/decodeqr', [QrController::class, 'decodeqr'])->middleware(['auth', 'verified'])->name('decode.qr');
+
+
+
 
 
 

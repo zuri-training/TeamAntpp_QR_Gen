@@ -98,6 +98,9 @@
                     <li class="sidebar-link">
                      <img src="{{asset('assets/images/create.svg')}}" alt="" />Create 
                     </li></a>
+                    <li class="sidebar-link"><a href="{{route('showscanp.qr')}}" style="color:grey">
+                      <img src="{{asset('assets/images/qr-code-scan-icon.png')}}" alt="" />Scan Qr
+                    </li></a>
                     <li class="sidebar-link"><a href="{{route('dashboard')}}" style="color:grey">
                       <img src="{{asset('assets/images/myqr.svg')}}" alt="" />My Qr
                     </li></a>

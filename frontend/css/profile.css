@@ -4,11 +4,11 @@
     --primary-color: #0176C3;
     --secondary-color: #1D242C;
     --teritiary-color: #C7EEFF;
-    --white: #FAFAFA;
+    --white: #ffffff;
     --light-blue: #CCE4F3;
     --black: #000000;
     --dark-blue: #014F82;
-    --very-dark-blue: #0162A2;
+    --very-dark-blue: #003B61;
     --primary-btn-hover: #2B8DCD;
     --primary-btn-clicked: var(--very-dark-blue);
     --primary-btn-disabled: #AAD1EB;

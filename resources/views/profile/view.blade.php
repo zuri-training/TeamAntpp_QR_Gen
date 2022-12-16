@@ -142,9 +142,9 @@
                 <div class="generated-qr">
                     <div class="download-qr">
                         <h3>Download</h3>
-                        <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6">
-                        @csrf
-                        @method('patch')
+                        <form class="input-url" action="{{route('generate.qr')}}" method="post">
+                            @csrf
+                            @method('patch')
                         <div>
                             <label for="title"><strong>URL Title</strong></label>
                             <div class="input-group">
@@ -208,7 +208,6 @@
 
     <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6">
         @csrf
-        @method('patch')
 
         <div>
             <x-input-label for="name" :value="__('Name')" />

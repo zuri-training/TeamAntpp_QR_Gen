@@ -37,6 +37,9 @@ class QrController extends Controller
 
         return view('createurl');
     }
+    public function createQrurll(){
+        return view('createurl');
+    }
     public function fileqrroute(Request $request){
                                 /*
 |--------------------------------------------------------------------------
@@ -104,6 +107,7 @@ class QrController extends Controller
                $qrtbl->user_id = Auth::user()->id;
                $qrtbl->qr_type= $request->type;
                $qrtbl->qrcode= base64_encode($qr);
+               $qrtbl->label= $request->title;
                $qrtbl->file_id=$fileid;
                $qrtbl->save();
          
@@ -128,6 +132,7 @@ class QrController extends Controller
               
                 $qrtbl->user_id = Auth::user()->id;
                 $qrtbl->qr_type= $request->type;
+                $qrtbl->label= $request->title;
                 $qrtbl->qrcode= base64_encode($qr);
                 $qrtbl->save();
 
@@ -151,6 +156,7 @@ class QrController extends Controller
               
                 $qrtbl->user_id = Auth::user()->id;
                 $qrtbl->qr_type= $request->type;
+                $qrtbl->label= $request->title;
                 $qrtbl->qrcode= base64_encode($qr);
                 $qrtbl->save();
 
@@ -222,11 +228,12 @@ class QrController extends Controller
                 // dd($qrCode); exit;
                 
                 $type = $qrCode->first()['qr_type']; 
-                $img = base64_decode($qrCode->first()['qrcode']);
+                // $img = explode("?", base64_decode($qrCode->first()['qrcode']))[1];
+                // $img = base64_decode($qrCode->first()['qrcode']);
+                $img = $qrCode->first()['qrcode'];
                 $date = $qrCode->first()['created_at'];
                 $title = $qrCode->first()['label'];
                 $id =  $qrCode->first()['id'];
-
               
 
         // return view('singleqrview',compact('qrCode'));

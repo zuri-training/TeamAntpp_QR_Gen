@@ -128,7 +128,7 @@
                                         <img src="{{ asset('assets/images/link.svg') }}" alt="" class="method-img" />
                                     @endif 
                                 </div>
-                                {{ ucfirst($myqrCode->qr_type) }}
+                                {{ ucfirst($myqrCode->label) }}
                             </td>
                             <td>{{ $myqrCode->created_at->toDateString()}}</td>
                             <td>{{$myqrCode->clicks}}</td>

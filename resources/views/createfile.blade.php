@@ -116,10 +116,33 @@
                         @csrf
                         <img src="{{asset('assets/images/Upload file (Traced).svg')}}" alt="" />
                         <p>Drag and drop file to create QR Code</p>
-                        <div class="input-group">
-                            <img src="{{asset('assets/images/link.svg')}}" alt="" />
-                            <input type="text" class="url" required name="title" placeholder="Enter Title"/>
+                        <div>
+                            <style>
+     .input-group {
+    position: relative;
+}
+.input-group img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 1rem;
+    margin: auto 0;
+    width: 1.2rem;
+}
+.input-urll .url {
+    width: 100%;
+    padding: 0.8rem 0.2rem 0.8rem 3rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--secondary-color-light);
+}                       
+                            </style>
+                            <label for="title">Event Title</label>
+                            <div class="input-group .input-urll">
+                                <img src="{{asset('assets/images/link.svg')}}" alt="" />
+                                <input type="text" class="url" required name="title" placeholder="Enter Title"/>
+                            </div>
                         </div>
+                        
                         <label class="file-label" for="file"
                             >Browse files<input
                                 type="file"

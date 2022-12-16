@@ -114,7 +114,7 @@
 
             <section class="qr-flex">
                 <div class="enter-url">
-                    {{-- <h1>Enter Url</h1> --}}
+                    <h1>Create For Event Location</h1>
                       <div class="map-container-total">
     <div class="pac-card" id="pac-card">
       <div>
@@ -148,7 +148,7 @@
         </div>
       </div>
       <div id="pac-container">
-        <input id="pac-input" type="text" placeholder="Enter a location" />
+        <input id="pac-input" type="text" placeholder="Enter event location" />
       </div>
     </div>
     <div id="map"></div>
@@ -160,13 +160,16 @@
 
                     <form class="input-url" action="{{route('generate.qr')}}" method="post" enctype="multipart/form-data">
                         @csrf
-                        <div class="input-group">
+                        {{-- <div class="input-group"> --}}
                             {{-- <img src="{{asset('assets/images/link.svg')}}" alt="" /> --}}
-                            <input type="hidden" class="url" id="event-input" name="event" />
-                        </div>
+                        {{-- </div> --}}
+                        <div>
+                            <label for="title"><strong>Event Title</strong></label>
                         <div class="input-group">
+                            <input type="hidden" class="url" id="event-input" name="event" />
                             <img src="{{asset('assets/images/link.svg')}}" alt="" />
                             <input type="text" class="url" required name="title" placeholder="Enter Title"/>
+                        </div>
                         </div>
                         <div class="track-clicks">
                             <input type="checkbox" name="track" id="track" />
@@ -176,10 +179,9 @@
                         <input type="submit" value="Generate" id="submit-url" disabled="true" />
                     </form>
                 </div>
-
                 <div class="generated-qr">
                     <div class="qr">                       
-                    {{Session::get('data')}}
+                        {{Session::get('data')}}
                     </div>
                     
                     <div class="download-qr">

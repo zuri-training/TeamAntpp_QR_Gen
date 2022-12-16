@@ -66,6 +66,7 @@ Route::middleware('auth')->group(function () {
 Route::get('/qrhome', [QrController::class, 'index'])->middleware(['auth', 'verified'])->name('qrhome');
 
 Route::get('/createurlqr', [QrController::class, 'createQrurl'])->middleware(['auth', 'verified'])->name('createqr.url');
+Route::get('/createurllqr', [QrController::class, 'createQrurll'])->middleware(['auth', 'verified'])->name('createqr.urll');
 
 Route::get('/createfileqr', [QrController::class, 'createFileqr'])->middleware(['auth', 'verified'])->name('createqr.file');
 

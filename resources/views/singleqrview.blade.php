@@ -92,7 +92,7 @@
             <div class="white-line"></div>
             <div class="blue-line"></div>
         </header>
-                  <main class="create-qr">
+                  <main class="create-qr"> 
             <aside class="sidebar">
                 <ul><a href="{{route('dashboard')}}" style="color:grey">
                     <li class="sidebar-link">
@@ -110,13 +110,14 @@
 
             <section class="qr-flex">
                 <div class="choose-file">
-                    <h1>Upload Ticket</h1>
+                    <h1>{{ ucfirst($responseImg['title']) }}</h1>
                     <div class="qr">
-                        {{ $responseImg['data'] }}
+                         {{-- {{$responseImg['data']}} --}}
+                         <img class="svg" style="display: block; width: 200px; margin: 0 auto 30px;" src="data:image/svg+xml;base64, {{$responseImg['data']}}" />
                     </div>
-                    <div> <h3>Date: {{ $responseImg['date']->format('d M Y') }}</h3> </div>
-                    <div> <h3>Type: {{ ucfirst($responseImg['type']) }}</h3> </div>
-
+                    <div> <h3>Creation Date: {{ $responseImg['date']->format('d M Y') }}</h3> </div>
+                    <div> <h3>QR Code Type: {{ ucfirst($responseImg['type']) }}</h3> </div>
+                    <br>
                     <form class="input-url" action="{{route('delete.qr')}}" method="post">
                         @csrf
                         <input type="hidden" value="{{ $responseImg['id'] }}" name="id">
@@ -158,17 +159,10 @@
             <p>Copyright@2022 Zuri Project Phase Team Ant. All Rights Reserved</p>
         </footer>
            <script>
-var svg = document.querySelector( "svg" );
-//var svg= document.getElementById("svg");
-var svgData = new XMLSerializer().serializeToString( svg );
-
 var canvas = document.createElement( "canvas" );
 var ctx = canvas.getContext( "2d" );
-
-var img = document.createElement( "img" );
-img.setAttribute( "src", "data:image/svg+xml;base64," + btoa( svgData ) );
-
-img.onload = function() {
+var  imgg = document.querySelector("img.svg");
+imgg.onload = function() {
     ctx.drawImage( img, 0, 0 );
     
     // Now is done

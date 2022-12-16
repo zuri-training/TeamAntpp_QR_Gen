@@ -57,7 +57,7 @@
                         through detailed statistics.
                     </p>
                     <button class="btn" onclick="window.location='{{ route('register') }}'">Get Started</button>
-                    <button class="btn1" onclick="window.location='{{ route('about') }}'">Learn More</button>
+                    <button class="btn1" onclick="window.location='{{ route('home') }}'">Learn More</button>
                 </div>
                 </P>
                 </div>

@@ -38,7 +38,7 @@
                                 <li class="dropdown">
                                     <a href="{{route('profile.edit')}}">Profile</a>
                                 </li>
-                                <li><a href="#create.html">Create QR</a></li>
+                                <li><a href="{{ route('qrhome') }}">Create QR</a></li>
                                 <li>
                                     <a onclick="document.getElementById('logout-form').submit();" class="logout">Log out</a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -61,7 +61,7 @@
             <aside class="sidebar">
                 <ul>
                 <a href="{{route('dashboard')}}" style="color:grey">
-                    <li class="sidebar-link activelink">
+                    <li class="sidebar-link">
                      <img src="{{asset('assets/images/create.svg')}}" alt="" />Dashboard 
                     </li></a>
                     <li class="sidebar-link"><a href="{{route('viewallqr')}}" style="color:grey">

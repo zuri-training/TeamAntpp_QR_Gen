@@ -73,7 +73,7 @@
                                 <li class="dropdown">
                                     <a href="{{route('profile.edit')}}">Profile</a>
                                 </li>
-                                <li><a href="#create.html">Create QR</a></li>
+                                <li><a href="{{ route('qrhome') }}">Create QR</a></li>
                                 <li>
                                     <a onclick="document.getElementById('logout-form').submit();" class="logout">Log out</a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -132,17 +132,17 @@
     margin: auto 0;
     width: 1.2rem;
 }
-.input-urll .url {
+.input-urll.url {
     width: 100%;
     padding: 0.8rem 0.2rem 0.8rem 3rem;
     border-radius: 0.5rem;
     border: 1px solid var(--secondary-color-light);
 }                       
                             </style>
-                            <label for="title">Event Title</label>
-                            <div class="input-group .input-urll">
+                            <label for="title"><strong>Event Title</strong></label>
+                            <div class="input-group">
                                 <img src="{{asset('assets/images/link.svg')}}" alt="" />
-                                <input type="text" class="url" required name="title" placeholder="Enter Title"/>
+                                <input type="text" class="url input-urll" required name="title" placeholder="Enter Title"/>
                             </div>
                         </div>
                         
@@ -151,7 +151,7 @@
                                 type="file"
                                 name="files"
                                 id="file"
-                               required="required"
+                               required="required" accept=".jpg, .png, .jpeg, .pdf"
                         /></label>
                          <div class="track-clicks">
                             <input type="checkbox" name="track" id="track" />

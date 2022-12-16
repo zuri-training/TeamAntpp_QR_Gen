@@ -673,6 +673,10 @@ th {
     td:nth-of-type(4):before {
         content: "Action:";
     }
+    td a {
+        width: fit-content;
+        padding: 1rem 2rem;
+    }
     .recents h2 {
         font-size: 1.25rem;
         padding: 0.5rem 0;

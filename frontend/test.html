@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>www.W3docs.com</title>
+    <style>
+      input {
+        height: 30px;
+        padding-left: 10px;
+        border-radius: 4px;
+        border: 1px solid rgb(186, 178, 178);
+        box-shadow: 0px 0px 12px #EFEFEF;
+      }
+    </style>
+   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiKmRh2vEg2hiV1ZIVeyNlxPjVegpChvE&libraries=places"></script>
+  </head>
+  <body>
+    <input type="text" id="autocomplete"/>
+
+    <a href="maps.html" style="position: absolute; bottom: 0; right: 0; font-size: 18px;">Go to Maps</a>
+    <script>
+      var input = document.getElementById('autocomplete');
+      var autocomplete = new google.maps.places.Autocomplete(input);
+      google.maps.event.addListener(autocomplete, 'place_changed', function () {
+            var place = autocomplete.getPlace();
+            console.log(place.name); //city
+            console.log(place.geometry.location.lng()); //longitude
+            console.log(place.geometry.location.lat()); //latitude
+        });
+    </script>
+  </body>
+</html>
+
+
+<!-- <script type="text/javascript">
+    function initialize() {
+        var input = document.getElementById('searchTextField');
+        var autocomplete = new google.maps.places.Autocomplete(input);
+        
+        AIzaSyAILGVlt-SOiL381JT3TQ9dxxoNIUuxrV8
+
+        AIzaSyDiKmRh2vEg2hiV1ZIVeyNlxPjVegpChvE
+        
+    }
+    google.maps.event.addDomListener(window, 'load', initialize); 
+</script> -->
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="addressBox" onkeyup="fillMap();" />
+    <br>
+    <div class="mapouter">
+        <div class="gmap_canvas">
+            <iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=28%20M%20M%20Way%20Lagos%20Nigeria&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+            <a href="https://fmovies-online.net">fmovies</a>
+            <br>
+            <style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}</style>
+            <a href="https://www.embedgooglemap.net">how to add google maps to html</a>
+            <style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function fillMap(){
+            var newAddress = document.getElementById('addressBox').value, address = newAddress.replace(" ", "%20");
+
+            var gmap = document.getElementById('gmap_canvas').src;
+            gmap = "https://maps.google.com/maps?q="+address+"&t=&z=13&ie=UTF8&iwloc=&output=embed";
+
+            console.log(address);
+            console.log(newAddress);
+            console.log(gmap);
+        }
+        // https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed
+    </script>
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+

@@ -7,13 +7,13 @@
         <link rel="stylesheet" href="{{ asset('assets/css/create.css') }}" />
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/footer.css') }}"/>
         <script type="text/javascript" src="{{ asset('assets/js/hscript.js') }}"></script>      
-        <title>Create Qr Code - QRGo</title>
+        <title>User Dashboard - QRGo</title>
     </head>
     <body>
         <header class="header">
             <div class="navbar">
                 <div class="logo">
-                    <img src="{{ asset('assets/images/transparent-logo2.svg') }}" alt="QR Go Logo" />
+                    <img src="{{ asset('assets/images/transparent-logo1.svg') }}" alt="QR Go Logo" />
                 </div>
                 <nav class="nav-links-parent unsee-mobile">
                     <li><a href="{{ route('home') }}">Home</a></li>
@@ -57,18 +57,16 @@
             <div class="white-line"></div>
             <div class="blue-line"></div>
         </header>
-            <main class="create-qr">
+        <main class="create-qr">
             <aside class="sidebar">
                 <ul>
-                <a href="{{route('dashboard')}}" style="color:grey">
-                    <li class="sidebar-link activelink">
-                     <img src="{{asset('assets/images/create.svg')}}" alt="" />Dashboard 
+                    <a href="{{route('qrhome')}}" style="color:grey">
+                    <li class="sidebar-link">
+                     <img src="{{asset('assets/images/create.svg')}}" alt="" />Create 
                     </li></a>
-                    <li class="sidebar-link"><a href="{{route('viewallqr')}}" style="color:grey">
+                    <a href="{{route('viewallqr')}}" style="color:grey">
+                    <li class="sidebar-link">
                       <img src="{{asset('assets/images/myqr.svg')}}" alt="" />My Qr
-                    </li></a>
-                    <li class="sidebar-link"><a href="{{route('showscanp.qr')}}" style="color:grey">
-                      <img src="{{asset('assets/images/qr-code-scan-icon.png')}}" alt="" />Scan Qr
                     </li></a>
                     <a href="{{route('profile.edit')}}" style="color:grey">
                     <li class="sidebar-link">
@@ -78,27 +76,23 @@
             </aside>
 
             <section class="create">
-                <div class="qr-method">
-                    <h1>Create QR Code for</h1>
-                    <div class="select-qr-method">
-                    <a href="{{route('eventqr')}}">    
-                    {{-- <a href="{{ route('') }}">See Am</a> --}}
-                        <div class="url method">
-                     
-                            <img src="{{ asset('assets/images/bluelink.svg') }}" alt="" />
-                            
-                            <h2 style="color:black">EVENT</h2>
-                        </div>
-                        </a>
-                        <a href="{{route('createqr.file')}}"> 
-                        <div class="file method">
-                         
-                        <img src="{{ asset('assets/images/Vector.svg') }}" alt="" />
-                       
-                            <h2 style="color:black" >TICKET</h2> 
-                        </div></a>
+                <div class="generated-qr">
+                    <h1>Create QR Code</h1>
+                    <div class="qr">
+                        {{Session::get('data')}}
                     </div>
-                    <div class="select-qr-method" style="padding-top: 0;"><a href=" {{ route('createqr.url') }}" class="see-url"><h2 style="transform: unset;" class="modal">Or Generic URL</h2></a></div>
+                    <div class="track-clicks">
+                        <input type="checkbox" name="track" id="track" />
+                        <label for="track">Track clicks</label>
+                    </div>
+                    <div class="download-qr">
+                        <h3>Download</h3>
+                        <a href="#" id="download_jpg" class="jpg download">JPG</a>
+                        <a href="#" id="download_png" class="png download">PNG</a>
+                        <a  class="png download" href="{{url('/downloadqrpdf/'. base64_encode(Session::get('data')))}}">PDF</a>
+                        <strong>Share via social media</strong>
+                        {!! Session::get('shareComponent') !!}
+                    </div>
                 </div>
             </section>
         </main>

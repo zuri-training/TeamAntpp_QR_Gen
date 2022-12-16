@@ -37,7 +37,7 @@
     font-size: 20px;
     font-family: sans-serif;
     color: black;
-    text-decoration: none;
+    text-decoration: none !important;
 }
 .h-nav-active a{
     color: #0176C3 !important;   

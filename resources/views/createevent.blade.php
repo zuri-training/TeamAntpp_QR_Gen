@@ -8,9 +8,12 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/footer.css') }}"/>        
         <link rel="stylesheet" href="{{asset('css/all.min.css')}}">
         {{-- <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}"> --}}
-        <script type="text/javascript" src="{{ asset('assets/js/hscript.js') }}"></script>      
+        <script type="text/javascript" src="{{ asset('assets/js/hscript.js') }}"></script>  
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/maps.css') }}" />
+        <script type="module" src="{{ asset('assets/js/maps.js') }}"></script>    
                 <style>
-            div#social-links {
+             div#social-links {
                 
                 max-width: 10%;
             }
@@ -36,6 +39,7 @@
                 color: #222;
                 background-color: #ccc;
             }
+            
         </style>
         @if (Session()->has('success'))
             <script>
@@ -94,8 +98,7 @@
         </header>
                   <main class="create-qr">
             <aside class="sidebar">
-                <ul>
-                <a href="{{route('dashboard')}}" style="color:grey">
+                <ul><a href="{{route('dashboard')}}" style="color:grey">
                     <li class="sidebar-link">
                      <img src="{{asset('assets/images/create.svg')}}" alt="" />Dashboard 
                     </li></a>
@@ -105,7 +108,7 @@
                     <li class="sidebar-link"><a href="{{route('showscanp.qr')}}" style="color:grey">
                       <img src="{{asset('assets/images/qr-code-scan-icon.png')}}" alt="" />Scan Qr
                     </li></a>
-                    <a href="{{route('profile.edit')}}" style="color:grey">
+                   <a href="{{route('profile.edit')}}" style="color:grey">
                     <li class="sidebar-link">
                         <img src="{{ asset('assets/images/settings.svg') }}" alt="" />Settings
                     </li></a>
@@ -113,61 +116,77 @@
             </aside>
 
             <section class="qr-flex">
-                <div class="choose-file">
-                    <h1>Upload Ticket</h1>
-                    <form  class="select-file"  action="{{route('generate.qr')}}" method="post" enctype="multipart/form-data">
+                <div class="enter-url">
+                    <h1>Create For Event Location</h1>
+                      <div class="map-container-total">
+    <div class="pac-card" id="pac-card">
+      <div>
+        <div id="title">Event Address</div>
+        <div id="type-selector" class="pac-controls">
+          <input type="radio" name="type" id="changetype-all" checked="checked" />
+          <label for="changetype-all">All</label>
+
+          <input type="radio" name="type" id="changetype-establishment" />
+          <label for="changetype-establishment">establishment</label>
+
+          <input type="radio" name="type" id="changetype-address" />
+          <label for="changetype-address">address</label>
+
+          <input type="radio" name="type" id="changetype-geocode" />
+          <label for="changetype-geocode">geocode</label>
+
+          <input type="radio" name="type" id="changetype-cities" />
+          <label for="changetype-cities">(cities)</label>
+
+          <input type="radio" name="type" id="changetype-regions" />
+          <label for="changetype-regions">(regions)</label>
+        </div>
+        <br />
+        <div id="strict-bounds-selector" class="pac-controls">
+          <input type="checkbox" id="use-location-bias" value="" checked />
+          <label for="use-location-bias">Bias to map viewport</label>
+
+          <input type="checkbox" id="use-strict-bounds" value="" />
+          <label for="use-strict-bounds">Strict bounds</label>
+        </div>
+      </div>
+      <div id="pac-container">
+        <input id="pac-input" type="text" placeholder="Enter event location" />
+      </div>
+    </div>
+    <div id="map"></div>
+    <div id="infowindow-content">
+      <span id="place-name" class="title"></span><br />
+      <span id="place-address"></span>
+    </div>
+</div>
+
+                    <form class="input-url" action="{{route('generate.qr')}}" method="post" enctype="multipart/form-data">
                         @csrf
-                        <img src="{{asset('assets/images/Upload file (Traced).svg')}}" alt="" />
-                        <p>Drag and drop file to create QR Code</p>
+                        {{-- <div class="input-group"> --}}
+                            {{-- <img src="{{asset('assets/images/link.svg')}}" alt="" /> --}}
+                        {{-- </div> --}}
                         <div>
-                            <style>
-     .input-group {
-    position: relative;
-}
-.input-group img {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 1rem;
-    margin: auto 0;
-    width: 1.2rem;
-}
-.input-urll .url {
-    width: 100%;
-    padding: 0.8rem 0.2rem 0.8rem 3rem;
-    border-radius: 0.5rem;
-    border: 1px solid var(--secondary-color-light);
-}                       
-                            </style>
-                            <label for="title">Event Title</label>
-                            <div class="input-group .input-urll">
-                                <img src="{{asset('assets/images/link.svg')}}" alt="" />
-                                <input type="text" class="url" required name="title" placeholder="Enter Title"/>
-                            </div>
+                            <label for="title"><strong>Event Title</strong></label>
+                        <div class="input-group">
+                            <input type="hidden" class="url" id="event-input" name="event" />
+                            <img src="{{asset('assets/images/link.svg')}}" alt="" />
+                            <input type="text" class="url" required name="title" placeholder="Enter Title"/>
                         </div>
-                        
-                        <label class="file-label" for="file"
-                            >Browse files<input
-                                type="file"
-                                name="files"
-                                id="file"
-                               required="required"
-                        /></label>
-                         <div class="track-clicks">
+                        </div>
+                        <div class="track-clicks">
                             <input type="checkbox" name="track" id="track" />
                             <label for="track">Track clicks</label>
                         </div>
-                        <input type="hidden" value="file" name="type">
-                        <input type="submit" value="Generate" id="submit-url" /> 
+                        <input type="hidden" value="event" name="type">
+                        <input type="submit" value="Generate" id="submit-url" disabled="true" />
                     </form>
-                    
                 </div>
-
                 <div class="generated-qr">
-                    <div class="qr">
+                    <div class="qr">                       
                         {{Session::get('data')}}
                     </div>
-                   
+                    
                     <div class="download-qr">
                         <h3>Download</h3>
                         <a href="#" id="download_jpg" class="jpg download">JPG</a>
@@ -198,7 +217,11 @@
             <hr>
             <p>Copyright@2022 Zuri Project Phase Team Ant. All Rights Reserved</p>
         </footer>
-               <script>
+         <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiKmRh2vEg2hiV1ZIVeyNlxPjVegpChvE&callback=initMap&libraries=places&v=weekly"
+      defer
+    ></script>
+           <script>
 var svg = document.querySelector( "svg" );
 //var svg= document.getElementById("svg");
 var svgData = new XMLSerializer().serializeToString( svg );
@@ -224,8 +247,6 @@ img.onload = function() {
 	a.download = "myqr.jpg"
     a.href = imgjpg;
 }
-    
-
 </script>
     </body>
 </html>

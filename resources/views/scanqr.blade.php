@@ -5,15 +5,50 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="{{ asset('assets/css/create.css') }}" />
-        <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/footer.css') }}"/>
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/footer.css') }}"/>        
+        <link rel="stylesheet" href="{{asset('css/all.min.css')}}">
+        {{-- <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}"> --}}
         <script type="text/javascript" src="{{ asset('assets/js/hscript.js') }}"></script>      
-        <title>Create Qr Code - QRGo</title>
+                <style>
+            div#social-links {
+                
+                max-width: 10%;
+            }
+            div#social-links  ul {
+                display: flex;
+                flex-direction:row;
+                margin: 0 auto;
+                
+                
+            } 
+            div#social-links  li {
+                display: grid;
+                flex-direction:row;
+                margin: 0 auto;
+                
+                
+            }          
+            div#social-links ul li a {
+                padding: 0px;
+                
+                margin: 3px;
+                font-size: 30px;
+                color: #222;
+                background-color: #ccc;
+            }
+        </style>
+        @if (Session()->has('success'))
+            <script>
+                alert("QR Code Read Successfully")
+            </script>
+        @endif
+        <title>Scan Qr Code - QRGo</title>
     </head>
     <body>
         <header class="header">
             <div class="navbar">
                 <div class="logo">
-                    <img src="{{ asset('assets/images/transparent-logo2.svg') }}" alt="QR Go Logo" />
+                    <img src="{{ asset('assets/images/transparent-logo.svg')}}" alt="QR Go Logo" />
                 </div>
                 <nav class="nav-links-parent unsee-mobile">
                     <li><a href="{{ route('home') }}">Home</a></li>
@@ -36,9 +71,9 @@
                             </div>
                             <ul class="dropdown-content unsee unsee-mobile">
                                 <li class="dropdown">
-                                    <a href="{{route('profile.edit')}}">Profile</a>
+                                    <a href="{{ route('profile.edit') }}">Profile</a>
                                 </li>
-                                <li><a href="#create.html">Create QR</a></li>
+                                <li><a href="{{ route('qrhome') }}">Create QR</a></li>
                                 <li>
                                     <a onclick="document.getElementById('logout-form').submit();" class="logout">Log out</a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -57,11 +92,11 @@
             <div class="white-line"></div>
             <div class="blue-line"></div>
         </header>
-            <main class="create-qr">
+                  <main class="create-qr">
             <aside class="sidebar">
                 <ul>
                 <a href="{{route('dashboard')}}" style="color:grey">
-                    <li class="sidebar-link activelink">
+                    <li class="sidebar-link">
                      <img src="{{asset('assets/images/create.svg')}}" alt="" />Dashboard 
                     </li></a>
                     <li class="sidebar-link"><a href="{{route('viewallqr')}}" style="color:grey">
@@ -77,28 +112,41 @@
                 </ul>
             </aside>
 
-            <section class="create">
-                <div class="qr-method">
-                    <h1>Create QR Code for</h1>
-                    <div class="select-qr-method">
-                    <a href="{{route('eventqr')}}">    
-                    {{-- <a href="{{ route('') }}">See Am</a> --}}
-                        <div class="url method">
-                     
-                            <img src="{{ asset('assets/images/bluelink.svg') }}" alt="" />
-                            
-                            <h2 style="color:black">EVENT</h2>
-                        </div>
-                        </a>
-                        <a href="{{route('createqr.file')}}"> 
-                        <div class="file method">
-                         
-                        <img src="{{ asset('assets/images/Vector.svg') }}" alt="" />
+            <section class="qr-flex">
+                <div class="choose-file">
+                    <h1>Upload files</h1>
+                    
+                    <form  class="select-file"  action="{{route('decode.qr')}}" method="post" enctype="multipart/form-data">
+                        @csrf
+                        <img src="{{asset('assets/images/Upload file (Traced).svg')}}" alt="" />
+                        <p>Drag and drop file to Read QR Code</p>
+                        <label class="file-label" for="file"
+                            >Browse files<input
+                                type="file"
+                                name="image"
+                                id="file"
+                                required="required"
+                        /></label>
                        
-                            <h2 style="color:black" >TICKET</h2> 
-                        </div></a>
+                        <input type="submit" value="Scan" id="submit-url" /> 
+                    </form>
+                       
+                </div>
+                
+             
+                <div class="scan-qr">
+                @if (!Session()->has('data'))
+                <h3>Result will be displayed here</h3>
+                @endif
+                    <div class="qr">
+                       <p> {{Session::get('data')}}</p>
                     </div>
-                    <div class="select-qr-method" style="padding-top: 0;"><a href=" {{ route('createqr.url') }}" class="see-url"><h2 style="transform: unset;" class="modal">Or Generic URL</h2></a></div>
+                    <div class="track-clicks">
+                     
+                    </div>
+                    <div class="download-qr">
+                       
+                    </div>
                 </div>
             </section>
         </main>

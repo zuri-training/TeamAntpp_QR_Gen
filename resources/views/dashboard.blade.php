@@ -8,6 +8,11 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/footer.css') }}"/>
         <script type="text/javascript" src="{{ asset('assets/js/hscript.js') }}"></script>      
         <title>User Dashboard - QRGo</title>
+        @if (Session()->has('deleteMsg'))
+            <script>
+                alert("QR Code deleted successfully!");
+            </script>
+        @endif
     </head>
     <body>
         <header class="header">
@@ -77,14 +82,15 @@
 
             <section class="create">
                 <div class="qr-method">
-                    <h1>Create QR Code</h1>
+                    <h1>Create QR Code for</h1>
                     <div class="select-qr-method">
-                    <a href="{{route('createqr.url')}}">    
+                    <a href="{{route('eventqr')}}">    
+                    {{-- <a href="{{ route('') }}">See Am</a> --}}
                         <div class="url method">
                      
                             <img src="{{ asset('assets/images/bluelink.svg') }}" alt="" />
                             
-                            <h2 style="color:black">URL</h2>
+                            <h2 style="color:black">EVENT</h2>
                         </div>
                         </a>
                         <a href="{{route('createqr.file')}}"> 
@@ -92,9 +98,10 @@
                          
                         <img src="{{ asset('assets/images/Vector.svg') }}" alt="" />
                        
-                            <h2 style="color:black" >File</h2> 
+                            <h2 style="color:black" >TICKET</h2> 
                         </div></a>
                     </div>
+                    <div class="select-qr-method" style="padding-top: 0;"><a href=" {{ route('createqr.url') }}" class="see-url"><h2 style="transform: unset;" class="modal">Or Generic URL</h2></a></div>
                 </div>
 
                 <div class="recents">
@@ -108,53 +115,33 @@
                                 <th>Action</th>
                             </tr>
                         </thead>
+                        @if(count($myRecent) > 1)
+                            @foreach ($myRecent as $myqrCode)
                         <tr>
                             <td>
                                 <div>
-                                    <img
-                                        src="{{ asset('assets/images/link.svg') }}"
-                                        alt=""
-                                        class="method-img"
-                                    />
+                                    @if ($myqrCode->qr_type == "url")
+                                        <img src="{{ asset('assets/images/link.svg') }}" alt="" class="method-img" />                                        
+                                    @elseif ($myqrCode->qr_type == "file")
+                                        <img src="{{ asset('assets/images/attach_file.svg') }}" alt="" class="method-img" />
+                                    @elseif($myqrCode->qr_type == "event")
+                                        <img src="{{ asset('assets/images/link.svg') }}" alt="" class="method-img" />
+                                    @endif 
                                 </div>
-                                https://www.somefancyurl.com
+                                {{ ucfirst($myqrCode->label) }}
                             </td>
-                            <td>12-Nov-2022</td>
-                            <td>122</td>
-                            <td><a href="#seeoneroute" class="see-more">View</a></td>
+                            <td>{{ $myqrCode->created_at->toDateString()}}</td>
+                            <td>{{$myqrCode->clicks}}</td>
+                            <td><a href="/viewqr/{{$myqrCode->id}} " class="see-more">View</a></td>
                         </tr>
+                            @endforeach
+                        @else
                         <tr>
-                            <td>
-                                <div>
-                                    <img
-                                        class="method-img"
-                                        src="{{ asset('assets/images/attach_file.svg') }}"
-                                        alt=""
-                                    />
-                                </div>
-                                myselfie.jpg
-                            </td>
-                            <td>12-Nov-2022</td>
-                            <td>122</td>
-                            <td><a href="#seeoneroute" class="see-more">View</a></td>
+                            <h1>You Have No QR Generated Yet</h1>
                         </tr>
-                        <tr>
-                            <td>
-                                <div>
-                                    <img
-                                        src="{{ asset('assets/images/attach_file.svg') }}"
-                                        alt=""
-                                        class="method-img"
-                                    />
-                                </div>
-                                myselfie.jpg
-                            </td>
-                            <td>12-Nov-2022</td>
-                            <td>Not tracked</td>
-                            <td><a href="#seeoneroute" class="see-more">View</a></td>
-                        </tr>
+                        @endif
                     </table>
-                    <a href="{{route('viewallqr')}}" class="see-more">View All</a>
+                    <div><a href="{{ route('viewallqr') }}" class="see-all">View All</a> </div>
                 </div>
             </section>
         </main>

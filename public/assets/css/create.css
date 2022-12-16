@@ -49,7 +49,7 @@ li {
     list-style: none;
 }
 a {
-    text-decoration: none;
+    text-decoration: none !important;
     color: transparent;
 }
 
@@ -59,6 +59,11 @@ a {
     align-items: center;
     padding: 1rem 3rem;
     background-color: var(--light-blue);
+    box-shadow: 0 0 8px black;
+    position: fixed;
+    width: 100%;
+    /* height: 112px; */
+    z-index: 1;
 }
 .nav-links-parent {
     display: flex;
@@ -89,11 +94,15 @@ a {
     height: 0.625rem;
     width: 100%;
     background-color: white;
+    position: absolute;
+    top: 8rem;
 }
 .blue-line {
     height: 0.625rem;
     width: 100%;
     background-color: var(--very-dark-blue);
+    position: absolute;
+    top: 8.3rem;
 }
 button:hover,
 #submit-url:hover,
@@ -155,6 +164,7 @@ input[type="submit"]:hover {
     /* background-color: yellow; */
     padding: 2rem 0rem;
     border-right: 1px solid var(--light-blue);
+    padding-top: 10rem;
 }
 .sidebar .sidebar-link {
     padding: 1rem 3rem;
@@ -170,7 +180,29 @@ input[type="submit"]:hover {
     margin-right: 1rem;
 }
 .see-more{
-    padding: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1em;
+    text-align: center;
+    width: 100%;
+}
+.see-url {
+    padding: 0.6rem 1.2rem;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1em;
+    text-align: center;
+}
+.recents > div {
+    margin-top: 3rem;
+}
+.see-all{
+    padding: 1rem 1.5rem;
     border-radius: 10px;
     border: none;
     background-color: var(--primary-color);
@@ -192,6 +224,7 @@ input[type="submit"]:hover {
     display: flex;
     flex-direction: column;
     flex-basis: 80%;
+    padding-top: 9rem;
 }
 .qr-method {
     padding-top: 2rem;
@@ -288,7 +321,8 @@ th {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding: 2rem 5rem 8rem;
+    flex-basis: 80%;
+    padding: 11rem 5rem 8rem;
 }
 .qr-flex h1 {
     font-size: 2em;
@@ -416,7 +450,7 @@ th {
     }
     .navbar {
         padding: 1rem;
-        position: relative;
+        /* position: relative; */
     }
     .nav-links-parent,
     .dropdown-content {
@@ -476,11 +510,19 @@ th {
     .menubtn {
         display: block;
     }
+    .blue-line {
+        top: 5.5rem;
+    }
+    .white-line {
+        background-color: blue;
+        top: 0rem;
+    }
     main {
         padding: 0 1rem;
     }
     .create {
         transform: translateY(-1rem);
+        padding-top: 1rem;
     }
     .create-qr {
         flex-direction: column;
@@ -504,7 +546,7 @@ th {
         top: 100%;
     }
     .sidebar .sidebar-link {
-        padding: 1rem 1.5rem;
+        padding: 1rem 0;
         font-weight: 700;
     }
     .sidebar {
@@ -512,13 +554,15 @@ th {
         border-right: none;
         border-bottom: 1px solid var(--light-blue);
         padding-bottom: 0;
-        padding-top: 0;
+        padding-top: 6.1rem;
     }
     .sidebar ul {
         display: flex;
+        justify-content: space-evenly;
     }
     .select-qr-method {
         gap: 1.5rem;
+        padding-bottom: 1.5rem;
     }
     .select-qr-method .method {
         border-radius: 1.2rem;
@@ -538,7 +582,9 @@ th {
         font-size: 1.25em;
         transform: translateY(-2rem);
     }
-
+    .select-qr-method h2.modal {
+        font-size: 1.25em;
+    }
     .qr-flex {
         flex-direction: column;
         padding: 1rem 2rem;
@@ -623,6 +669,9 @@ th {
     }
     td:nth-of-type(3):before {
         content: "Clicks:";
+    }
+    td:nth-of-type(4):before {
+        content: "Action:";
     }
     .recents h2 {
         font-size: 1.25rem;

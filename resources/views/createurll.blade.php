@@ -10,7 +10,7 @@
         {{-- <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}"> --}}
         <script type="text/javascript" src="{{ asset('assets/js/hscript.js') }}"></script>      
                 <style>
-            div#social-links {
+             div#social-links {
                 
                 max-width: 10%;
             }
@@ -92,20 +92,18 @@
             <div class="white-line"></div>
             <div class="blue-line"></div>
         </header>
+                        {{-- {{Session::get('data')}} --}}
+                        {{-- <script> console.log( {{Session::get('data')}} ) </script> --}}
                   <main class="create-qr">
             <aside class="sidebar">
-                <ul>
-                <a href="{{route('dashboard')}}" style="color:grey">
+                <ul><a href="{{route('dashboard')}}" style="color:grey">
                     <li class="sidebar-link">
                      <img src="{{asset('assets/images/create.svg')}}" alt="" />Dashboard 
                     </li></a>
                     <li class="sidebar-link"><a href="{{route('viewallqr')}}" style="color:grey">
                       <img src="{{asset('assets/images/myqr.svg')}}" alt="" />My Qr
                     </li></a>
-                    <li class="sidebar-link"><a href="{{route('showscanp.qr')}}" style="color:grey">
-                      <img src="{{asset('assets/images/qr-code-scan-icon.png')}}" alt="" />Scan Qr
-                    </li></a>
-                    <a href="{{route('profile.edit')}}" style="color:grey">
+                   <a href="{{route('profile.edit')}}" style="color:grey">
                     <li class="sidebar-link">
                         <img src="{{ asset('assets/images/settings.svg') }}" alt="" />Settings
                     </li></a>
@@ -113,61 +111,42 @@
             </aside>
 
             <section class="qr-flex">
-                <div class="choose-file">
-                    <h1>Upload Ticket</h1>
-                    <form  class="select-file"  action="{{route('generate.qr')}}" method="post" enctype="multipart/form-data">
+                <div class="enter-url">
+                    <h1>Create For Url</h1>
+                    <form class="input-url" action="{{route('generate.qr')}}" method="post" enctype="multipart/form-data">
                         @csrf
-                        <img src="{{asset('assets/images/Upload file (Traced).svg')}}" alt="" />
-                        <p>Drag and drop file to create QR Code</p>
                         <div>
-                            <style>
-     .input-group {
-    position: relative;
-}
-.input-group img {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 1rem;
-    margin: auto 0;
-    width: 1.2rem;
-}
-.input-urll .url {
-    width: 100%;
-    padding: 0.8rem 0.2rem 0.8rem 3rem;
-    border-radius: 0.5rem;
-    border: 1px solid var(--secondary-color-light);
-}                       
-                            </style>
-                            <label for="title">Event Title</label>
-                            <div class="input-group .input-urll">
+                            <label for="title"><strong>URL Title</strong></label>
+                            <div class="input-group">
                                 <img src="{{asset('assets/images/link.svg')}}" alt="" />
                                 <input type="text" class="url" required name="title" placeholder="Enter Title"/>
                             </div>
                         </div>
-                        
-                        <label class="file-label" for="file"
-                            >Browse files<input
-                                type="file"
-                                name="files"
-                                id="file"
-                               required="required"
-                        /></label>
-                         <div class="track-clicks">
+                        <div>
+                            <label for="title"><strong>URL Link</strong></label>
+                            <div class="input-group">
+                                <img src="{{asset('assets/images/link.svg')}}" alt="" />
+                                <input
+                                    type="link"
+                                    class="url"
+                                    name="url"
+                                    placeholder="www.example.com"
+                                />
+                            </div>
+                        </div>
+                        <div class="track-clicks">
                             <input type="checkbox" name="track" id="track" />
                             <label for="track">Track clicks</label>
                         </div>
-                        <input type="hidden" value="file" name="type">
-                        <input type="submit" value="Generate" id="submit-url" /> 
+                        <input type="hidden" value="url" name="type">
+                        <input type="submit" value="Generate" id="submit-url" />
                     </form>
-                    
                 </div>
-
                 <div class="generated-qr">
                     <div class="qr">
                         {{Session::get('data')}}
                     </div>
-                   
+                    
                     <div class="download-qr">
                         <h3>Download</h3>
                         <a href="#" id="download_jpg" class="jpg download">JPG</a>
@@ -198,7 +177,7 @@
             <hr>
             <p>Copyright@2022 Zuri Project Phase Team Ant. All Rights Reserved</p>
         </footer>
-               <script>
+           <script>
 var svg = document.querySelector( "svg" );
 //var svg= document.getElementById("svg");
 var svgData = new XMLSerializer().serializeToString( svg );
@@ -224,8 +203,6 @@ img.onload = function() {
 	a.download = "myqr.jpg"
     a.href = imgjpg;
 }
-    
-
 </script>
     </body>
 </html>

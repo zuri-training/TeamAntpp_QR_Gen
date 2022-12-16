@@ -188,9 +188,7 @@ class QrController extends Controller
             ->where('id',$id)
             ->get();
 
-        foreach($qrCode as $qr){
-            $qrc=$qr->qrcode;
-        }
+        $qrc=$qrCode[0]->qrcode;
 
         $social_url= url('/downloadqrpdf/'. $qrc);
         $shareComponent = \Share::page(
@@ -201,7 +199,8 @@ class QrController extends Controller
         ->twitter()
         
         ->whatsapp() ;  
-        return view('singleqrview')->with('data',base64_decode($qrc))->with('shareComponent',$shareComponent);
+    
+     return view('singleqrview')->with('data',base64_decode($qrc))->with('shareComponent',$shareComponent);
     }
 
 

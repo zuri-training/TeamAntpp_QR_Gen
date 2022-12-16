@@ -77,7 +77,7 @@
             <section class="create">
                 <div class="recents">
                     <h2>My QR</h2>
-                   <table>
+                   <table> 
                         <thead>
                             <tr class="table-heading">
                                 <th>Name</th>

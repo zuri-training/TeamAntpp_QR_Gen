@@ -61,7 +61,7 @@
             <aside class="sidebar">
                 <ul>
                 <a href="{{route('dashboard')}}" style="color:grey">
-                    <li class="sidebar-link">
+                    <li class="sidebar-link activelink">
                      <img src="{{asset('assets/images/create.svg')}}" alt="" />Dashboard 
                     </li></a>
                     <li class="sidebar-link"><a href="{{route('viewallqr')}}" style="color:grey">
@@ -76,14 +76,15 @@
 
             <section class="create">
                 <div class="qr-method">
-                    <h1>Create QR for</h1>
+                    <h1>Create QR Code for</h1>
                     <div class="select-qr-method">
-                    <a href="{{route('createqr.url')}}">    
+                    <a href="{{route('eventqr')}}">    
+                    {{-- <a href="{{ route('') }}">See Am</a> --}}
                         <div class="url method">
                      
                             <img src="{{ asset('assets/images/bluelink.svg') }}" alt="" />
                             
-                            <h2 style="color:black">URL</h2>
+                            <h2 style="color:black">EVENT</h2>
                         </div>
                         </a>
                         <a href="{{route('createqr.file')}}"> 
@@ -91,69 +92,10 @@
                          
                         <img src="{{ asset('assets/images/Vector.svg') }}" alt="" />
                        
-                            <h2 style="color:black" >File</h2> 
+                            <h2 style="color:black" >TICKET</h2> 
                         </div></a>
                     </div>
-                </div>
-
-                <div class="recents">
-                    <h2>Recent</h2>
-                    <table>
-                        <thead>
-                            <tr class="table-heading">
-                                <th>Name</th>
-                                <th>Date</th>
-                                <th>Clicks</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tr>
-                            <td>
-                                <div>
-                                    <img
-                                        src="{{ asset('assets/images/link.svg') }}"
-                                        alt=""
-                                        class="method-img"
-                                    />
-                                </div>
-                                https://www.somefancyurl.com
-                            </td>
-                            <td>12-Nov-2022</td>
-                            <td>122</td>
-                            <td><a href="#seeoneroute" class="see-more">View</a></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div>
-                                    <img
-                                        class="method-img"
-                                        src="{{ asset('assets/images/attach_file.svg') }}"
-                                        alt=""
-                                    />
-                                </div>
-                                myselfie.jpg
-                            </td>
-                            <td>12-Nov-2022</td>
-                            <td>122</td>
-                            <td><a href="#seeoneroute" class="see-more">View</a></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div>
-                                    <img
-                                        src="{{ asset('assets/images/attach_file.svg') }}"
-                                        alt=""
-                                        class="method-img"
-                                    />
-                                </div>
-                                myselfie.jpg
-                            </td>
-                            <td>12-Nov-2022</td>
-                            <td>Not tracked</td>
-                            <td><a href="#seeoneroute" class="see-more">View</a></td>
-                        </tr>
-                    </table>
-                    <div><a href="{{route('viewallqr')}}" class="see-all">View All</a></div>
+                    <div class="select-qr-method" style="padding-top: 0;"><a href=" {{ route('createqr.url') }}" class="see-url"><h2 style="transform: unset;" class="modal">Or Generic URL</h2></a></div>
                 </div>
             </section>
         </main>

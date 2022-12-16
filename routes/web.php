@@ -43,6 +43,8 @@ Route::get('/', function () {
     return view('landing');
 });
 
+Route::get('/eventqr', function () { return view('createevent'); })->name('eventqr');
+
 Route::get('/dashboard', [QrController::class, 'viewDashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -68,6 +70,7 @@ Route::get('/createurlqr', [QrController::class, 'createQrurl'])->middleware(['a
 Route::get('/createfileqr', [QrController::class, 'createFileqr'])->middleware(['auth', 'verified'])->name('createqr.file');
 
 Route::post('/generateqr', [QrController::class, 'generateQr'])->middleware(['auth', 'verified'])->name('generate.qr');
+Route::post('/deleteqr', [QrController::class, 'deleteQr'])->middleware(['auth', 'verified'])->name('delete.qr');
 
 Route::get('/fileqroute/{url}', [QrController::class, 'fileqrroute'])->middleware(['auth', 'verified'])->name('fileroute.qr');
 

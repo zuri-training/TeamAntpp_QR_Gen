@@ -8,7 +8,10 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/footer.css') }}"/>        
         <link rel="stylesheet" href="{{asset('css/all.min.css')}}">
         {{-- <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}"> --}}
-        <script type="text/javascript" src="{{ asset('assets/js/hscript.js') }}"></script>      
+        <script type="text/javascript" src="{{ asset('assets/js/hscript.js') }}"></script>  
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/maps.css') }}" />
+        <script type="module" src="{{ asset('assets/js/maps.js') }}"></script>    
                 <style>
              div#social-links {
                 
@@ -36,6 +39,7 @@
                 color: #222;
                 background-color: #ccc;
             }
+            
         </style>
         @if (Session()->has('success'))
             <script>
@@ -110,34 +114,71 @@
 
             <section class="qr-flex">
                 <div class="enter-url">
-                    <h1>Enter Url</h1>
+                    {{-- <h1>Enter Url</h1> --}}
+                      <div class="map-container-total">
+    <div class="pac-card" id="pac-card">
+      <div>
+        <div id="title">Event Address</div>
+        <div id="type-selector" class="pac-controls">
+          <input type="radio" name="type" id="changetype-all" checked="checked" />
+          <label for="changetype-all">All</label>
+
+          <input type="radio" name="type" id="changetype-establishment" />
+          <label for="changetype-establishment">establishment</label>
+
+          <input type="radio" name="type" id="changetype-address" />
+          <label for="changetype-address">address</label>
+
+          <input type="radio" name="type" id="changetype-geocode" />
+          <label for="changetype-geocode">geocode</label>
+
+          <input type="radio" name="type" id="changetype-cities" />
+          <label for="changetype-cities">(cities)</label>
+
+          <input type="radio" name="type" id="changetype-regions" />
+          <label for="changetype-regions">(regions)</label>
+        </div>
+        <br />
+        <div id="strict-bounds-selector" class="pac-controls">
+          <input type="checkbox" id="use-location-bias" value="" checked />
+          <label for="use-location-bias">Bias to map viewport</label>
+
+          <input type="checkbox" id="use-strict-bounds" value="" />
+          <label for="use-strict-bounds">Strict bounds</label>
+        </div>
+      </div>
+      <div id="pac-container">
+        <input id="pac-input" type="text" placeholder="Enter a location" />
+      </div>
+    </div>
+    <div id="map"></div>
+    <div id="infowindow-content">
+      <span id="place-name" class="title"></span><br />
+      <span id="place-address"></span>
+    </div>
+</div>
+
                     <form class="input-url" action="{{route('generate.qr')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="input-group">
-                            <img src="{{asset('assets/images/link.svg')}}" alt="" />
-                            <input type="text" class="url" required name="title" placeholder="Enter Title"/>
+                            {{-- <img src="{{asset('assets/images/link.svg')}}" alt="" /> --}}
+                            <input type="hidden" class="url" id="event-input" name="event" />
                         </div>
                         <div class="input-group">
                             <img src="{{asset('assets/images/link.svg')}}" alt="" />
-                            <input
-                                type="link"
-                                
-                                class="url"
-                                name="url"
-                                placeholder="www.example.com"
-                            />
+                            <input type="text" class="url" required name="title" placeholder="Enter Title"/>
                         </div>
                         <div class="track-clicks">
                             <input type="checkbox" name="track" id="track" />
                             <label for="track">Track clicks</label>
                         </div>
-                        <input type="hidden" value="url" name="type">
-                        <input type="submit" value="Generate" id="submit-url" />
+                        <input type="hidden" value="event" name="type">
+                        <input type="submit" value="Generate" id="submit-url" disabled="true" />
                     </form>
                 </div>
+
                 <div class="generated-qr">
-                    <div class="qr">
-                       
+                    <div class="qr">                       
                     {{Session::get('data')}}
                     </div>
                     
@@ -171,6 +212,10 @@
             <hr>
             <p>Copyright@2022 Zuri Project Phase Team Ant. All Rights Reserved</p>
         </footer>
+         <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiKmRh2vEg2hiV1ZIVeyNlxPjVegpChvE&callback=initMap&libraries=places&v=weekly"
+      defer
+    ></script>
            <script>
 var svg = document.querySelector( "svg" );
 //var svg= document.getElementById("svg");

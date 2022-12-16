@@ -95,33 +95,42 @@
                   <main class="create-qr">
             <aside class="sidebar">
                 <ul>
-                <a href="{{route('qrhome')}}" style="color:grey">
+                <a href="{{route('dashboard')}}" style="color:grey">
                     <li class="sidebar-link">
-                     <img src="{{asset('assets/images/create.svg')}}" alt="" />Create 
+                     <img src="{{asset('assets/images/create.svg')}}" alt="" />Dashboard 
                     </li></a>
-                    <li class="sidebar-link"><a href="{{route('dashboard')}}" style="color:grey">
+                    <li class="sidebar-link"><a href="{{route('viewallqr')}}" style="color:grey">
                       <img src="{{asset('assets/images/myqr.svg')}}" alt="" />My Qr
                     </li></a>
+                    <a href="{{route('profile.edit')}}" style="color:grey">
                     <li class="sidebar-link">
-                        <img src="{{asset('assets/images/settings.svg')}}" alt="" />Settings
-                    </li>
+                        <img src="{{ asset('assets/images/settings.svg') }}" alt="" />Settings
+                    </li></a>
                 </ul>
             </aside>
 
             <section class="qr-flex">
                 <div class="choose-file">
-                    <h1>Upload files</h1>
+                    <h1>Upload Ticket</h1>
                     <form  class="select-file"  action="{{route('generate.qr')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <img src="{{asset('assets/images/Upload file (Traced).svg')}}" alt="" />
                         <p>Drag and drop file to create QR Code</p>
+                        <div class="input-group">
+                            <img src="{{asset('assets/images/link.svg')}}" alt="" />
+                            <input type="text" class="url" required name="title" placeholder="Enter Title"/>
+                        </div>
                         <label class="file-label" for="file"
                             >Browse files<input
                                 type="file"
                                 name="files"
                                 id="file"
-                               
+                               required="required"
                         /></label>
+                         <div class="track-clicks">
+                            <input type="checkbox" name="track" id="track" />
+                            <label for="track">Track clicks</label>
+                        </div>
                         <input type="hidden" value="file" name="type">
                         <input type="submit" value="Generate" id="submit-url" /> 
                     </form>
@@ -132,10 +141,7 @@
                     <div class="qr">
                         {{Session::get('data')}}
                     </div>
-                    <div class="track-clicks">
-                        <input type="checkbox" name="track" id="track" />
-                        <label for="track">Track clicks</label>
-                    </div>
+                   
                     <div class="download-qr">
                         <h3>Download</h3>
                         <a href="#" id="download_jpg" class="jpg download">JPG</a>

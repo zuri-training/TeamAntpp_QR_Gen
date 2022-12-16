@@ -225,38 +225,51 @@ class QrController extends Controller
             ->where('id',$id)
             ->get();
 
+            $qrc=$qrCode[0]->qrcode;
+
+            $social_url= url('/downloadqrpdf/'. $qrc);
+            $shareComponent = \Share::page(
+                $social_url,
+                'Qr Code',
+            )
+            ->facebook()
+            ->twitter()
+
+            ->whatsapp() ;  
+
+        return view('singleqrview')->with('data',base64_decode($qrc))->with('shareComponent',$shareComponent);
                 // dd($qrCode); exit;
                 
-                $type = $qrCode->first()['qr_type']; 
+                // $type = $qrCode->first()['qr_type']; 
                 // $img = explode("?", base64_decode($qrCode->first()['qrcode']))[1];
                 // $img = base64_decode($qrCode->first()['qrcode']);
-                $img = $qrCode->first()['qrcode'];
-                $date = $qrCode->first()['created_at'];
-                $title = $qrCode->first()['label'];
-                $id =  $qrCode->first()['id'];
+                // $img = $qrCode->first()['qrcode'];
+                // $date = $qrCode->first()['created_at'];
+                // $title = $qrCode->first()['label'];
+                // $id =  $qrCode->first()['id'];
               
 
         // return view('singleqrview',compact('qrCode'));
 
-                $social_url= url('/downloadqrpdf/'. $qrCode->first()['qrcode']);
-                $shareComponent = \Share::page(
-                    $social_url,
-                    'Qr Code',
-                )
-                ->facebook()
-                ->twitter()
-                ->whatsapp();       
+                // $social_url= url('/downloadqrpdf/'. $qrCode->first()['qrcode']);
+                // $shareComponent = \Share::page(
+                //     $social_url,
+                //     'Qr Code',
+                // )
+                // ->facebook()
+                // ->twitter()
+                // ->whatsapp();       
                
-                $singleResp = [
-                    'id' => $qrCode->first()['id'],
-                    'title' => $title,
-                    'date' => $date,
-                    'type' => $type,
-                    'shareComponent' => $shareComponent,
-                    'data' => $img
-                ];
+                // $singleResp = [
+                //     'id' => $qrCode->first()['id'],
+                //     'title' => $title,
+                //     'date' => $date,
+                //     'type' => $type,
+                //     'shareComponent' => $shareComponent,
+                //     'data' => $img
+                // ];
 
-                return view('singleqrview')->with('responseImg', $singleResp);
+                // return view('singleqrview')->with('responseImg', $singleResp);
     }
 
 

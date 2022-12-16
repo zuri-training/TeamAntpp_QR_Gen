@@ -73,7 +73,7 @@
                                 <li class="dropdown">
                                     <a href="{{route('profile.edit')}}">Profile</a>
                                 </li>
-                                <li><a href="#create.html">Create QR</a></li>
+                                <li><a href="{{ route('qrhome') }}">Create QR</a></li>
                                 <li>
                                     <a onclick="document.getElementById('logout-form').submit();" class="logout">Log out</a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -113,17 +113,18 @@
 
             <section class="qr-flex">
                 <div class="choose-file">
-                    <h1>{{ ucfirst($responseImg['title']) }}</h1>
+                    {{-- <h1>{{ ucfirst($responseImg['title']) }}</h1> --}}
                     <div class="qr">
+                        {!!  $data !!}
                          {{-- {{$responseImg['data']}} --}}
-                         <img class="svg" style="display: block; width: 200px; margin: 0 auto 30px;" src="data:image/svg+xml;base64, {{$responseImg['data']}}" />
+                         {{-- <img class="svg" style="display: block; width: 200px; margin: 0 auto 30px;" src="data:image/svg+xml;base64, {{$responseImg['data']}}" /> --}}
                     </div>
-                    <div> <h3>Creation Date: {{ $responseImg['date']->format('d M Y') }}</h3> </div>
-                    <div> <h3>QR Code Type: {{ ucfirst($responseImg['type']) }}</h3> </div>
+                    {{-- <div> <h3>Creation Date: {{ $responseImg['date']->format('d M Y') }}</h3> </div>
+                    <div> <h3>QR Code Type: {{ ucfirst($responseImg['type']) }}</h3> </div> --}}
                     <br>
                     <form class="input-url" action="{{route('delete.qr')}}" method="post">
                         @csrf
-                        <input type="hidden" value="{{ $responseImg['id'] }}" name="id">
+                        {{-- <input type="hidden" value="{{ $responseImg['id'] }}" name="id"> --}}
                         <input type="submit" value="Delete" id="submit-url" />
                     </form>
                 </div>
@@ -135,9 +136,9 @@
                         <h3>Download</h3>
                         <a href="#" id="download_jpg" class="jpg download">JPG</a>
                         <a href="#" id="download_png" class="png download">PNG</a>
-                        <a  class="png download" href="{{url('/downloadqrpdf/'. base64_encode($responseImg['data']))}}">PDF</a>
+                        <a  class="png download" href="{{url('/downloadqrpdf/'. base64_encode($data))}}">PDF</a>
                         <strong>Share via social media</strong>
-                            {!! $responseImg['shareComponent'] !!}
+                            {!! $shareComponent !!}
                     </div>
                 </div>
             </section>
@@ -162,10 +163,14 @@
             <p>Copyright@2022 Zuri Project Phase Team Ant. All Rights Reserved</p>
         </footer>
            <script>
+var svg = document.querySelector( "svg" );
+//var svg= document.getElementById("svg");
+var svgData = new XMLSerializer().serializeToString( svg );
 var canvas = document.createElement( "canvas" );
 var ctx = canvas.getContext( "2d" );
-var  imgg = document.querySelector("img.svg");
-imgg.onload = function() {
+var img = document.createElement( "img" );
+img.setAttribute( "src", "data:image/svg+xml;base64," + btoa( svgData ) );
+img.onload = function() {
     ctx.drawImage( img, 0, 0 );
     
     // Now is done
@@ -174,7 +179,6 @@ imgg.onload = function() {
 	var a = document.getElementById("download_png");
 	a.download = "myqr.png"
     a.href = imgsrc;
-
     var imgjpg = canvas.toDataURL( "image/jpg" );
 	var a = document.getElementById("download_jpg");
 	a.download = "myqr.jpg"

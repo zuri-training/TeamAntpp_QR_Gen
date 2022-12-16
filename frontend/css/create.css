@@ -289,7 +289,7 @@ th {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding: 2rem 5rem 8rem;
+    padding: 12rem 5rem 8rem;
 }
 .qr-flex h1 {
     font-size: 2em;
@@ -349,6 +349,11 @@ th {
     border: 2px dashed var(--secondary-color-light);
     padding: 3rem;
     gap: 2rem;
+}
+.generated-qr.view-qr-code {
+    width: 90%;
+    max-width: 400px;
+    margin: auto;
 }
 .qr {
     margin: auto;

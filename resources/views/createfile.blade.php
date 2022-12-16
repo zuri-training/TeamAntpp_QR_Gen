@@ -132,7 +132,7 @@
     margin: auto 0;
     width: 1.2rem;
 }
-.input-urll .url {
+.input-urll.url {
     width: 100%;
     padding: 0.8rem 0.2rem 0.8rem 3rem;
     border-radius: 0.5rem;
@@ -140,9 +140,9 @@
 }                       
                             </style>
                             <label for="title"><strong>Event Title</strong></label>
-                            <div class="input-group .input-urll">
+                            <div class="input-group">
                                 <img src="{{asset('assets/images/link.svg')}}" alt="" />
-                                <input type="text" class="url" required name="title" placeholder="Enter Title"/>
+                                <input type="text" class="url input-urll" required name="title" placeholder="Enter Title"/>
                             </div>
                         </div>
                         

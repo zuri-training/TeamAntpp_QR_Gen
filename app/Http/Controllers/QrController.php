@@ -187,7 +187,21 @@ class QrController extends Controller
         $qrCode = Qrtbl::where('user_id',$userId)
             ->where('id',$id)
             ->get();
-        return view('singleqrview',compact('qrCode'));
+
+        foreach($qrCode as $qr){
+            $qrc=$qr->qrcode;
+        }
+
+        $social_url= url('/downloadqrpdf/'. $qrc);
+        $shareComponent = \Share::page(
+            $social_url,
+            'Qr Code',
+        )
+        ->facebook()
+        ->twitter()
+        
+        ->whatsapp() ;  
+        return view('singleqrview')->with('data',base64_decode($qrc))->with('shareComponent',$shareComponent);
     }
 
 

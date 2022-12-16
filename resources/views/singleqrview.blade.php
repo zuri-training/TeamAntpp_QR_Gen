@@ -6,7 +6,37 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="{{ asset('assets/css/create.css') }}" />
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/footer.css') }}"/>
-        <script type="text/javascript" src="{{ asset('assets/js/hscript.js') }}"></script>      
+        <script type="text/javascript" src="{{ asset('assets/js/hscript.js') }}"></script>  
+        <link rel="stylesheet" href="{{asset('css/all.min.css')}}">
+        {{-- <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}"> --}}
+        <style>
+             div#social-links {
+                
+                max-width: 10%;
+            }
+            div#social-links  ul {
+                display: flex;
+                flex-direction:row;
+                margin: 0 auto;
+                
+                
+            } 
+            div#social-links  li {
+                display: grid;
+                flex-direction:row;
+                margin: 0 auto;
+                
+                
+            }          
+            div#social-links ul li a {
+                padding: 0px;
+                
+                margin: 3px;
+                font-size: 30px;
+                color: #222;
+                background-color: #ccc;
+            }
+        </style>
         <title>User Dashboard - QRGo</title>
     </head>
     <body>
@@ -79,7 +109,7 @@
                 <div class="generated-qr">
                     <h1>View QR Code</h1>
                     <div class="qr">
-                        {{Session::get('data')}}
+                        {!!  $data !!}
                     </div>
                     <div class="track-clicks">
                         <input type="checkbox" name="track" id="track" />
@@ -89,9 +119,9 @@
                         <h3>Download</h3>
                         <a href="#" id="download_jpg" class="jpg download">JPG</a>
                         <a href="#" id="download_png" class="png download">PNG</a>
-                        <a  class="png download" href="{{url('/downloadqrpdf/'. base64_encode(Session::get('data')))}}">PDF</a>
+                        <a  class="png download" href="{{url('/downloadqrpdf/'. base64_encode($data))}}">PDF</a>
                         <strong>Share via social media</strong>
-                        {!! Session::get('shareComponent') !!}
+                        {!! $shareComponent !!}
                     </div>
                 </div>
             </section>
@@ -115,5 +145,33 @@
             <hr>
             <p>Copyright@2022 Zuri Project Phase Team Ant. All Rights Reserved</p>
         </footer>
+
+        <script>
+var svg = document.querySelector( "svg" );
+//var svg= document.getElementById("svg");
+var svgData = new XMLSerializer().serializeToString( svg );
+
+var canvas = document.createElement( "canvas" );
+var ctx = canvas.getContext( "2d" );
+
+var img = document.createElement( "img" );
+img.setAttribute( "src", "data:image/svg+xml;base64," + btoa( svgData ) );
+
+img.onload = function() {
+    ctx.drawImage( img, 0, 0 );
+    
+    // Now is done
+    console.log( canvas.toDataURL( "image/png" ) );
+    var imgsrc = canvas.toDataURL( "image/png" );
+	var a = document.getElementById("download_png");
+	a.download = "myqr.png"
+    a.href = imgsrc;
+
+    var imgjpg = canvas.toDataURL( "image/jpg" );
+	var a = document.getElementById("download_jpg");
+	a.download = "myqr.jpg"
+    a.href = imgjpg;
+}
+</script>
     </body>
 </html>

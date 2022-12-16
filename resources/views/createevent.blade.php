@@ -105,6 +105,9 @@
                     <li class="sidebar-link"><a href="{{route('viewallqr')}}" style="color:grey">
                       <img src="{{asset('assets/images/myqr.svg')}}" alt="" />My Qr
                     </li></a>
+                    <li class="sidebar-link"><a href="{{route('showscanp.qr')}}" style="color:grey">
+                      <img src="{{asset('assets/images/qr-code-scan-icon.png')}}" alt="" />Scan Qr
+                    </li></a>
                    <a href="{{route('profile.edit')}}" style="color:grey">
                     <li class="sidebar-link">
                         <img src="{{ asset('assets/images/settings.svg') }}" alt="" />Settings

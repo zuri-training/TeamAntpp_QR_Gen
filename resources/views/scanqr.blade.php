@@ -125,7 +125,7 @@
                                 type="file"
                                 name="image"
                                 id="file"
-                                required="required"
+                                required="required" accept=".jpg, .png, .jpeg, .pdf"
                         /></label>
                        
                         <input type="submit" value="Scan" id="submit-url" /> 

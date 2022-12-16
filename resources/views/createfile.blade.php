@@ -139,7 +139,7 @@
     border: 1px solid var(--secondary-color-light);
 }                       
                             </style>
-                            <label for="title">Event Title</label>
+                            <label for="title"><strong>Event Title</strong></label>
                             <div class="input-group .input-urll">
                                 <img src="{{asset('assets/images/link.svg')}}" alt="" />
                                 <input type="text" class="url" required name="title" placeholder="Enter Title"/>
@@ -151,7 +151,7 @@
                                 type="file"
                                 name="files"
                                 id="file"
-                               required="required"
+                               required="required" accept=".jpg, .png, .jpeg, .pdf"
                         /></label>
                          <div class="track-clicks">
                             <input type="checkbox" name="track" id="track" />

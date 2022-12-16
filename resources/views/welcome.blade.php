@@ -63,7 +63,7 @@
                 <div>
                     <img src="{{ asset('assets/images/choose-qr.svg') }}" alt="QR code choice illustration">
                     <h3>Choose the content of your Qr Code.</h3>
-                    <p>Select either Url or File Upload</p>
+                    <p>Select either an event location, upload an event ticket, or a generic Url link</p>
                 </div>
                 <div>
                     <img src="{{ asset('assets/images/custom-qr.svg') }}" alt="Customize QR code illustration">

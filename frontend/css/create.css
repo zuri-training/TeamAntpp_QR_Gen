@@ -632,6 +632,13 @@ th {
     td:nth-of-type(3):before {
         content: "Clicks:";
     }
+    td:nth-of-type(4):before {
+        content: "Action:";
+    }
+    td button {
+        width: fit-content;
+        padding: 1rem 2rem;
+    }
     .recents h2 {
         font-size: 1.25rem;
         padding: 0.5rem 0;

@@ -31,8 +31,11 @@ body {
     overflow-x: hidden;
     position: relative;
 }
-button {
+button, a, input[type=submit] {
     cursor: pointer !important;
+}
+button:disabled,button[disabled],input[type=submit]:disabled{
+    background-color: var(--primary-btn-disabled) !important;
 }
 button,
 #submit-url,

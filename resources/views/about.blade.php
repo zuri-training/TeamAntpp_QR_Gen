@@ -57,6 +57,7 @@
             <p>QR Go is the easiest way to generate QR codes for websites and file downloads. Simply enter the URL or select the file, and QR Go will generate a QR code that can be scanned by any QR code reader.</p>
             <p>QR Go was created by a team of developers and designers who saw the potential for QR codes to revolutionize the way people access information. Since then, QR Go has been used by businesses of all sizes to generate QR codes for everything from product pages to downloadables.
             <p>QR Go is constantly evolving to make it even easier for businesses to use QR codes. Our latest features include custom branding, tracking, and analytics so businesses can see how their QR codes are being used and make changes accordingly.</p>
+                <button class="h-started" onclick="window.location='https://project-qr-go.herokuapp.com/Team Antpp QR_Gen.html'">See Our Documentation</button>   
            </div>
 
             </article>

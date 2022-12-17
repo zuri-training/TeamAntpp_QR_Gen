@@ -371,6 +371,9 @@ th {
     text-align: center;
     width: 100%;
 }
+.xerror {
+    color: red;
+  }
 .generated-qr {
     display: flex;
     flex-direction: column;

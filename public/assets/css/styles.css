@@ -99,7 +99,7 @@ a {
 .blue-line {
     height: 0.625rem;
     width: 100%;
-    background-color: var(--very-dark-blue);
+    background-color: var(--primary-color);
 }
 button:hover,
 #submit-url:hover,

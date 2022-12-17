@@ -114,7 +114,7 @@
 
             <section class="qr-flex">
                 <div class="choose-file">
-                    <h1>Upload Ticket</h1>
+                    <h1>Upload Ticket File</h1>
                     <form  class="select-file"  action="{{route('generate.qr')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <img src="{{asset('assets/images/Upload file (Traced).svg')}}" alt="" />

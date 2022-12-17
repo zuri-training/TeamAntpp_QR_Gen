@@ -134,7 +134,7 @@
                 </div>
                 
              
-                <div class="scan-qr">
+                <div class="generated-qr">
                 @if (!Session()->has('data'))
                 <h3>Result will be displayed here</h3>
                 @endif

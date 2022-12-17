@@ -57,6 +57,16 @@
                 padding: 3rem;
                 gap: 2rem;
             }
+            @media only screen and (max-width: 962px){
+                .qr-method h1, .qr-flex h1 {
+                    text-align: left;
+                    font-size: 1.5em;
+                }
+                .generated-qr {
+                    padding: 3rem 1rem;
+                }
+            }
+
         </style>
         @if (Session()->has('success'))
             <script>

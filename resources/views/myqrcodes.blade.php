@@ -100,10 +100,10 @@
                                         class="method-img"
                                     />
                                 </div>
-                                {{$myqrCode->qr_type}}
+                                {{$myqrCode->qr_title}}
                             </td>
                             <td>{{$myqrCode->created_at}}</td>
-                            <td>{{$myqrCode->clicks}}</td>
+                            <td> {{ ($myqrCode->clicks == "") ? "Untracked" : $myqrCode->clicks }} </td>
                             <td><a href="/viewqr/{{$myqrCode->id}} " class="see-more">View</a></td>
                         </tr>
                             @endforeach

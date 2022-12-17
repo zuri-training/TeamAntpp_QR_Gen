@@ -297,6 +297,7 @@ public function decodeqr(Request $request){
 
 $request->validate(['image'=>'required|image|mimes:png,jpg,svg|max:2048']);
 $qrcode = new QrReader($request->image);
+dd($qrcode); exit;
 $text = $qrcode->text();
 return back()->with('success','You have successfully generated Qrcode for your url.')->with('data',$text);
 

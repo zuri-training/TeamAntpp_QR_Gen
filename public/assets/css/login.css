@@ -11,6 +11,9 @@
   button {
     cursor: pointer !important;
 }
+input[type=submit] {
+  cursor: pointer !important;
+}
   .section {
     margin-top: 30px;
     width: 50%;
@@ -156,7 +159,7 @@
     text-decoration: none;
  }
  #loginbtn:hover {
-    color: rgb(78, 76, 76);
+    background-color: rgb(78, 76, 76);
 }
 .create {
     font-family: 'Roboto';
@@ -180,6 +183,10 @@
     line-height: 28px;
     font-family: 'Roboto';
     text-decoration: none;
+    color: #0176C3;
+  }
+  .forgot a:hover, .create a:hover {
+    color: rgb(27,27,27);
   }
   #loginbtn {
     background-color: #0176C3;

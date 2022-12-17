@@ -64,7 +64,7 @@ a{
 
 /*   FOOTER   */
 .footer{
-    height: 350px;
+    /* height: 350px; */
     width: 100%;
     background-color: var(--very-dark-blue);
     padding: 4rem 3rem;

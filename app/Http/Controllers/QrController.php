@@ -98,7 +98,7 @@ class QrController extends Controller
      $extension = $file->extension();
     $path = Storage::putFile('public', $file);
 
- $qr= QrCode::generate(url('/fileqroute/'.$name));
+ $qr= QrCode::size(200)->generate(url('/fileqroute/'.$name));
                $filtbl->url = $name;
                $filtbl->id=$fileid;
                $filtbl->user_id = Auth::user()->id;
@@ -127,7 +127,7 @@ class QrController extends Controller
         
             }elseif($request->input('type')=='url'){
       
-                $qr= QrCode::generate($request->url);
+                $qr= QrCode::size(200)->generate($request->url);
                 
               
                 $qrtbl->user_id = Auth::user()->id;
@@ -145,13 +145,13 @@ class QrController extends Controller
                 ->twitter()
                 
                 ->whatsapp() ;       
-               
+                
 
                 return back()->with('success','You have successfully generated Qrcode for your url.')->with('data',$qr)->with('shareComponent',$shareComponent);
 
               }elseif($request->input('type')=='event'){
       
-                $qr= QrCode::generate($request->event);
+                $qr= QrCode::size(200)->generate($request->event);
                 
               
                 $qrtbl->user_id = Auth::user()->id;

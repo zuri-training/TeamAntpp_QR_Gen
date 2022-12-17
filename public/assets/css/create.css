@@ -31,6 +31,9 @@ body {
     overflow-x: hidden;
     position: relative;
 }
+button {
+    cursor: pointer !important;
+}
 button,
 #submit-url,
 .file-label,

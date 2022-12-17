@@ -37,6 +37,9 @@ body{
     width: 100vw;
     overflow-x: hidden;
 }
+button {
+    cursor: pointer !important;
+}
 li{
     list-style: none;
 }
@@ -110,10 +113,10 @@ a{
         display: none;
     }
     .footer{
+        height: 250px;
+        padding: 1.5rem 2rem 2rem;
         display: flex;
         justify-content: center;
-        padding-left: 2rem;
-        padding-right: 2rem;
     }
     .footer-links{
         gap: 0.5rem;

@@ -52,20 +52,20 @@
                 <div>
                     <P>
                     <span>Create a QR code</span> to both Safeguard your data and <span>advertise</span> your business or <span>idea.</span>
+                    <img class="imagesmall" src="{{ asset('assets/images/image 6.png') }}" alt="logo">
                     <div class="text">
-                    <p>
-                        Our platform allows you to effortlessly generate QR codes,<br>
-                        keep track of them, and analyze their performance through detailed statistics.
-                    </p>
-                    <button class="btn" onclick="window.location='{{ route('register') }}'">Get Started</button>
-                    <button class="btn1" onclick="window.location='{{ route('home') }}'">Learn More</button>
-                </div>
+                        <p>
+                            Our platform allows you to effortlessly generate QR codes,<br>
+                            keep track of them, and analyze their performance through detailed statistics.
+                        </p>
+                        <button class="btn" onclick="window.location='{{ route('register') }}'">Get Started</button>
+                        <button class="btn1" onclick="window.location='{{ route('home') }}'">Learn More</button>
+                    </div>
                 </P>
                 </div>
-            <div class="images">
-                <img class="images" src="{{ asset('assets/images/image 6.png') }}" alt="logo">
-            
-            </div>
+                <div class="images">
+                    <img class="images" src="{{ asset('assets/images/image 6.png') }}" alt="logo">
+                </div>
         </section>
     
         <footer>

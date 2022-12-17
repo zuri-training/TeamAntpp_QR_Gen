@@ -2,21 +2,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;700&display=swap");
 
 :root {
-    --primary-color: #0176c3;
-    --secondary-color-light: #1d242c4d;
-    --secondary-color: #1d2442;
-    --tertiary-color: #c7eeff;
+    --primary-color: #0176C3;
+    --secondary-color: rgb(241,111,4);
+    --secondary-container: rgb(255,244,235);
+    --on-secondary-container: rgb(121,55,2);
+    --teritiary-color: #C7EEFF;
     --white: #ffffff;
-    --light-blue: #cce4f3;
+    --light-blue: #CCE4F3;
+    --text-color: rgb(18,18,18);
     --black: #000000;
     --very-dark-blue: #003B61;
-    --primary-btn-hover: #2b8dcd;
+    --primary-btn-hover: #2B8DCD;
     --primary-btn-clicked: var(--very-dark-blue);
-    --primary-btn-disabled: #aad1eb;
+    --primary-btn-disabled: #AAD1EB;
     --secondary-btn-hover: var(--primary-btn-disabled);
-    --secondary-btn-clicked: #80bae1;
+    --secondary-btn-clicked: #80BAE1;
     --secondary-btn-disabled: var(--white);
-    --secondary-btn-disabled-text: #b4b6b9;
+    --secondary-btn-disabled-text:  #B4B6B9;
+    --danger-color: rgb(240,55,56);
+    --danger-color-hover: rgb(254,236,236);
     --grey: #d9d9d9;
 }
 
@@ -78,7 +82,7 @@ a {
 }
 .nav-links-parent li a,
 .dropdown-content li a {
-    color: var(--secondary-color);
+    color: var(--text-color);
     font-size: 1rem;
     font-weight: 500;
 }
@@ -109,6 +113,9 @@ a {
     background-color: var(--primary-color);
     position: absolute;
     top: 8.3rem;
+}
+.profile-details:hover{
+    color: var(--secondary-color);
 }
 button:hover,
 #submit-url:hover,
@@ -189,20 +196,28 @@ input[type="submit"]:hover {
     padding: 0.5rem 1rem;
     border-radius: 10px;
     border: none;
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     color: white;
     font-size: 1em;
     text-align: center;
     width: 100%;
 }
+.see-more:hover {
+    background-color: var(--on-secondary-container);
+}
 .see-url {
     padding: 0.6rem 1.2rem;
     border-radius: 10px;
     border: none;
-    background-color: var(--primary-color);
-    color: white;
+    background-color: var(--secondary-btn-clicked);
+    color: var(--white);
+    border: 1px solid var(--primary-color); 
     font-size: 1em;
     text-align: center;
+}
+.see-url:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
 }
 .recents > div {
     margin-top: 3rem;
@@ -211,11 +226,29 @@ input[type="submit"]:hover {
     padding: 1rem 1.5rem;
     border-radius: 10px;
     border: none;
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     color: white;
     font-size: 1em;
     text-align: center;
     width: 100%;
+}
+.see-all:hover {
+    background-color: var(--secondary-container);
+    color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+}
+.deletebtn{
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    border: 1px solid var(--danger-color);
+    background-color: var(--danger-color);
+    color: white;
+    font-size: 1em;
+    text-align: center;
+}
+.deletebtn:hover{
+    color: var(--danger-color);
+    background-color: var(--danger-color-hover);
 }
 .sidebar ul li:hover.sidebar-link::after {
     content: "";
@@ -224,7 +257,7 @@ input[type="submit"]:hover {
     height: 100%;
     top: 0;
     right: 0;
-    background-color: var(--very-dark-blue);
+    background-color: var(--secondary-color);
 }
 .create {
     display: flex;

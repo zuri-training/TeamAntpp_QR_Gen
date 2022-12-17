@@ -240,7 +240,7 @@
                 <div class="generated-qr" style="margin-bottom: 30px;">
                     <div class="download-qr">
                         <x-danger-button
-                            x-data=""
+                            x-data="" class="deletebtn"
                             x-on:click.prevent="$dispatch('open-modal', 'confirm-user-deletion')"
                         >{{ __('Delete Account') }}</x-danger-button>
 

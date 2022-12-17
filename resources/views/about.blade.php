@@ -33,8 +33,8 @@
                 <div class="h-menu-list"></div>
             </div>
             <ul class="h-nav-overflow unsee">
-                <li class="h-nav-item h-nav-active"><a href="{{ route('home') }}">Home</a></li>
-                <li class="h-nav-item"><a href="{{ route('about') }}">About Us</a></li>
+                <li class="h-nav-item"><a href="{{ route('home') }}">Home</a></li>
+                <li class="h-nav-item h-nav-active"><a href="{{ route('about') }}">About Us</a></li>
                 <li class="h-nav-item"><a href="{{ route('contact') }}">Contact Us</a></li>
                 <br>
                 <button class="h-started" onclick="window.location='{{ route('register') }}'">Get Started</button>   

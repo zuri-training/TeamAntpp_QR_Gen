@@ -47,18 +47,18 @@ span {
 .btn {
     color: white;
     font-size: 18px;
-    background-color: #0176C3;
+    background-color: rgb(241,111,4);
     border-radius: 5px;
     padding: 1rem;
     margin-top: 2%;
     cursor: pointer;
-    border: 1px solid #0176C3;
+    border: 1px solid rgb(241,111,4);
 }
 .btn1 {
-    background-color: white;
+    background-color: rgb(255,244,235);
     margin-left: 1%;
-    border: 1px solid #0176C3;
-    color: #0176C3;
+    border: 1px solid rgb(241,111,4);
+    color: rgb(121,55,2);
     font-size: 18px;
     font-weight: bolder;
     border-radius: 5px;
@@ -67,12 +67,12 @@ span {
     cursor: pointer;
 }
 .btn1:hover{
-    background-color: #0176C3;
-    color: white;
+    background-color: rgb(121,55,2);
+    color: rgb(255,244,235);
 }
 .btn:hover {
-    color: #0176C3;
-    background-color: white;
+    color: rgb(121,55,2);
+    background-color: rgb(255,244,235);
 }
 footer {
     display: flex;

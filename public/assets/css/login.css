@@ -8,6 +8,27 @@
   body {
     background-color: white;
   }
+
+  :root{
+    --primary-color: #0176C3;
+    --secondary-color: rgb(241,111,4);
+    --secondary-container: rgb(255,244,235);
+    --on-secondary-container: rgb(121,55,2);
+    --teritiary-color: #C7EEFF;
+    --white: #ffffff;
+    --light-blue: #CCE4F3;
+    --text-color: rgb(18,18,18);
+    --black: #000000;
+    --very-dark-blue: #003B61;
+    --primary-btn-hover: #2B8DCD;
+    --primary-btn-clicked: var(--very-dark-blue);
+    --primary-btn-disabled: #AAD1EB;
+    --secondary-btn-hover: var(--primary-btn-disabled);
+    --secondary-btn-clicked: #80BAE1;
+    --secondary-btn-disabled: var(--white);
+    --secondary-btn-disabled-text:  #B4B6B9;
+}
+
   button {
     cursor: pointer !important;
 }
@@ -139,6 +160,9 @@ input[type=submit] {
     color: rgb(10, 9, 9);
     font-weight: 100;
   }
+  input:focus{
+    border: 1px solid var(--secondary-color);
+  }
   #loginbtn {
     font-family: 'Roboto';
     font-style: normal;
@@ -148,18 +172,18 @@ input[type=submit] {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #FDFDFD;
+    background-color: var(--secondary-container);
+    border: 1px solid var(--secondary-color);
+    color: var(--on-secondary-container);
     width: 80%;
     height: 50px;
-    border: none;
-    background-color: #0176C3;
     border-radius: 8px;
-    color:white;
     margin: 30px auto;
     text-decoration: none;
  }
  #loginbtn:hover {
-    background-color: rgb(78, 76, 76);
+    background-color: var(--secondary-color);
+    color: var(--secondary-container);
 }
 .create {
     font-family: 'Roboto';
@@ -188,9 +212,7 @@ input[type=submit] {
   .forgot a:hover, .create a:hover {
     color: rgb(27,27,27);
   }
-  #loginbtn {
-    background-color: #0176C3;
-  }
+
   @media all and (max-width: 480px) {
     .body {
         display: block;

@@ -100,7 +100,7 @@
                                         class="method-img"
                                     />
                                 </div>
-                                {{$myqrCode->qr_title}}
+                                {{$myqrCode->label}}
                             </td>
                             <td>{{$myqrCode->created_at}}</td>
                             <td> {{ ($myqrCode->clicks == "") ? "Untracked" : $myqrCode->clicks }} </td>

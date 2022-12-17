@@ -1,3 +1,5 @@
+
+
 .form-list {
     margin-top: 10%;
 }
@@ -28,17 +30,21 @@ textarea {
     border: 1px solid rgba(2, 2, 2, 0.3);
 }
 .submit {
-    color: white;
+    background-color: var(--secondary-container);
+    border: 1px solid var(--secondary-color);
+    color: var(--on-secondary-container);
     font-size: 18px;
     font-weight: bolder;
     font-family: sans-serif;
-    background-color: #0176C3;
     margin-top: 5%;
     border-radius: 5px;
-    border: none;
     width: 40%;
     padding: 3%;
     cursor: pointer;
+}
+.submit:hover {
+    background-color: var(--secondary-color);
+    color: var(--secondary-container);
 }
 
 .section-b1 {
@@ -64,7 +70,7 @@ textarea {
 }
 .section-b1 article h1 {
     font-size: clamp(1.8rem, 40px, 3.5rem);
-    color: var(--secondary-color);
+    color: var(--text-color);
     font-weight: 700;
 }
 .section-b1 .article-image {

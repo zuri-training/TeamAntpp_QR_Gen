@@ -134,45 +134,138 @@
                 </ul>
             </aside>
 
-            <section class="qr-flex">
+            <section class="qr-flex" style="flex-wrap: wrap;">
                 <div class="enter-url">
                     <h1>Profile Information</h1>
                     <p>Update your account's profile information and email address.</p>
                 </div>
-                <div class="generated-qr">
+                <div class="generated-qr" style="margin-bottom: 30px;">
                     <div class="download-qr">
-                        <h3>Download</h3>
-                        <form class="input-url" action="{{route('generate.qr')}}" method="post">
+                        <form class="input-url" action="{{route('profile.update')}}" method="post">
                             @csrf
                             @method('patch')
                         <div>
-                            <label for="title"><strong>URL Title</strong></label>
+                            <label for="name"><strong>Name</strong></label>
                             <div class="input-group">
                                 <img src="{{asset('assets/images/link.svg')}}" alt="" />
-                                <input type="text" class="url" required name="title" placeholder="Enter Title"/>
+                                <input type="text" class="url" id="name" name="name" required :value="old('name', $user->name)" autofocus autocomplete="name" />
+                                <x-input-error class="xerror" :messages="$errors->get('name')" />
                             </div>
                         </div>
                         <div>
-                            <label for="title"><strong>URL Link</strong></label>
+                            <label for="name"><strong>Email</strong></label>
                             <div class="input-group">
                                 <img src="{{asset('assets/images/link.svg')}}" alt="" />
-                                <input
-                                    type="link"
-                                    class="url"
-                                    name="url"
-                                    placeholder="www.example.com"
-                                />
+                                <input type="text" class="url" id="email" name="email" type="email" :value="old('email', $user->email)" required autocomplete="email" />
+                                <x-input-error class="xerror" :messages="$errors->get('email')" />
                             </div>
                         </div>
-                        <div class="track-clicks">
-                            <input type="checkbox" name="track" id="track" />
-                            <label for="track">Track clicks</label>
-                        </div>
-                        <input type="hidden" value="url" name="type">
-                        <input type="submit" value="Generate" id="submit-url" />
+                        <input type="submit" value="Save" id="submit-profile" />
+                        @if (session('status') === 'profile-updated')
+                            <p
+                                x-data="{ show: true }"
+                                x-show="show"
+                                x-transition
+                                x-init="setTimeout(() => show = false, 2000)"
+                                style="color: gray;"
+                            >{{ __('Saved.') }}</p>
+                        @endif
                     </form>
                     </div>
                 </div>
+
+
+                 <div class="enter-url">
+                    <h1>Update Password</h1>
+                    <p>Ensure your account is using a long, random password to stay secure.</p>
+                </div>
+                <div class="generated-qr" style="margin-bottom: 30px;">
+                    <div class="download-qr">
+                        <form class="input-url" action="{{ route('password.update') }}" method="post">
+                            @csrf
+                            @method('put')
+                        <div>
+                            <label for="current_password"><strong>Current Password</strong></label>
+                            <div class="input-group">
+                                <img src="{{asset('assets/images/link.svg')}}" alt="" />
+                                <input class="url" id="current_password" name="current_password" type="password" autocomplete="current-password" />
+                                <x-input-error :messages="$errors->updatePassword->get('current_password')" class="xerror" />
+                            </div>
+                        </div>
+                        <div>
+                            <label for="password"><strong>New Password</strong></label>
+                            <div class="input-group">
+                                <img src="{{asset('assets/images/link.svg')}}" alt="" />
+                                <input type="password" class="url" id="password" name="password" autocomplete="new-password" />
+                                <x-input-error :messages="$errors->updatePassword->get('password')" class="xerror" />
+                            </div>
+                        </div>
+                        <div>
+                            <label for="password_confirmation"><strong>Confirm Password</strong></label>
+                            <div class="input-group">
+                                <img src="{{asset('assets/images/link.svg')}}" alt="" />
+                                <input type="password" class="url" id="password_confirmation" name="password_confirmation" autocomplete="new-password" />
+                                <x-input-error :messages="$errors->updatePassword->get('password_confirmation')" class="xerror" />
+                            </div>
+                        </div>
+                        <input type="submit" value="Generate" id="submit-url" />
+                        @if (session('status') === 'password-updated')
+                            <p
+                                x-data="{ show: true }"
+                                x-show="show"
+                                x-transition
+                                x-init="setTimeout(() => show = false, 2000)"
+                                class="text-sm text-gray-600"
+                            >{{ __('Saved.') }}</p>
+                        @endif
+                    </form>
+                    </div>
+                </div>
+
+                 <div class="enter-url">
+                    <h1>Delete Account</h1>
+                    <p>Once your account is deleted, all of its resources and data will be permanently deleted. Before deleting your account, please download any data or information that you wish to retain.</p>
+                </div>
+                    
+                <div class="generated-qr" style="margin-bottom: 30px;">
+                    <div class="download-qr">
+                        <x-danger-button
+                            x-data=""
+                            x-on:click.prevent="$dispatch('open-modal', 'confirm-user-deletion')"
+                        >{{ __('Delete Account') }}</x-danger-button>
+
+                        <x-modal name="confirm-user-deletion" :show="$errors->userDeletion->isNotEmpty()" focusable>
+                        <form method="post" action="{{ route('profile.destroy') }}" class="input-url">
+                            @csrf
+                            @method('delete')
+                            <h3>Are you sure your want to delete your account?</h3>
+                            <p style="color: gray;">
+                                {{ __('Once your account is deleted, all of its resources and data will be permanently deleted. Please enter your password to confirm you would like to permanently delete your account.') }}
+                            </p>
+                        <div>
+                            <label for="password"><strong>Password</strong></label>
+                            <div class="input-group">
+                                <img src="{{asset('assets/images/link.svg')}}" alt="" />
+                                <input type="password" class="url" name="password" placeholder="Password" />
+                                <x-input-error :messages="$errors->userDeletion->get('password')" class="xerror" />
+                            </div>
+                        </div>
+                        <div>
+                            <div style="margin-top: 2rem; display: flex; justify-content: flex-end">
+                                <x-secondary-button x-on:click="$dispatch('close')">
+                                    {{ __('Cancel') }}
+                                </x-secondary-button>
+
+                                <x-danger-button style="margin-left: 2rem;">
+                                    {{ __('Delete Account') }}
+                                </x-danger-button>
+                            </div>
+                        </div>
+                         </form>
+                    </x-modal>
+                    </div>
+                </div>
+
             </section>
         </main>
         <footer class="footer">
@@ -199,58 +292,4 @@
 </html>
 
 
-<section>
-   
 
-    <form id="send-verification" method="post" action="{{ route('verification.send') }}">
-        @csrf
-    </form>
-
-    <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6">
-        @csrf
-
-        <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" name="name" type="text" class="mt-1 block w-full" :value="old('name', $user->name)" required autofocus autocomplete="name" />
-            <x-input-error class="mt-2" :messages="$errors->get('name')" />
-        </div>
-
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" name="email" type="email" class="mt-1 block w-full" :value="old('email', $user->email)" required autocomplete="email" />
-            <x-input-error class="mt-2" :messages="$errors->get('email')" />
-
-            @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! $user->hasVerifiedEmail())
-                <div>
-                    <p class="text-sm mt-2 text-gray-800">
-                        {{ __('Your email address is unverified.') }}
-
-                        <button form="send-verification" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                            {{ __('Click here to re-send the verification email.') }}
-                        </button>
-                    </p>
-
-                    @if (session('status') === 'verification-link-sent')
-                        <p class="mt-2 font-medium text-sm text-green-600">
-                            {{ __('A new verification link has been sent to your email address.') }}
-                        </p>
-                    @endif
-                </div>
-            @endif
-        </div>
-
-        <div class="flex items-center gap-4">
-            <x-primary-button>{{ __('Save') }}</x-primary-button>
-
-            @if (session('status') === 'profile-updated')
-                <p
-                    x-data="{ show: true }"
-                    x-show="show"
-                    x-transition
-                    x-init="setTimeout(() => show = false, 2000)"
-                    class="text-sm text-gray-600"
-                >{{ __('Saved.') }}</p>
-            @endif
-        </div>
-    </form>
-</section>

@@ -12,9 +12,8 @@
     margin-bottom: 0.5rem;
     margin-inline-start: 75px;
 }
-.h-nav-logo {
-   /* margin-left: 7px; */
-   /* margin-top: 1%; */
+button {
+    cursor: pointer !important;
 }
 .h-nav-bar {
     display: flex;
@@ -68,7 +67,7 @@
     cursor: pointer;
 }
 .h-started:hover{
-    font-weight: 600;
+    background-color: #2B8DCD;
 }
 
 .hheader {

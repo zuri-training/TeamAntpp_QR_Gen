@@ -290,10 +290,10 @@ a {
 
 /*   FOOTER   */
 .footer {
-    height: 350px;
+    height: 250px;
     width: 100%;
     background-color: var(--footer-blue);
-    padding: 5rem 3rem;
+    padding: 2rem 3rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;

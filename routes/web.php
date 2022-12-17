@@ -42,6 +42,9 @@ Route::get('/contact', function () {
 Route::get('/', function () {
     return view('landing');
 });
+Route::get('/documentation', function () {
+    return view('documentation');
+})->name('documentation');
 
 Route::get('/eventqr', function () { return view('createevent'); })->name('eventqr');
 

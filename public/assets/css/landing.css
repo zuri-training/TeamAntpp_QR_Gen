@@ -6,7 +6,23 @@ body {
     margin: 0;
     padding: 0;
 }
-
+button {
+    cursor: pointer !important;
+}
+.imagesmall{
+    display: none;
+    width: 80%;
+    margin: 0 auto;
+}
+.container-1 > div:nth-child(1) {
+    width: 50%;
+}
+.container-1 > div:nth-child(2) {
+    width: 50%;
+}
+.container-1 > div:nth-child(2) > img {
+    width: 100%;
+}
 .container-1 {
     width: 90%;
     margin: auto;
@@ -87,6 +103,15 @@ hr {
         width: 90%;
         display: block;
     }
+    .container-1 > div:nth-child(1) {
+        width: 100%;
+    }
+    .container-1 > div:nth-child(2) {
+        display: none;
+    }
+    .imagesmall{
+        display: block;
+    }
     .container-1 p {
         text-align: center;
         font-size: 28px;
@@ -108,6 +133,8 @@ hr {
         font-size: 18px;
         font-weight: 500;
         cursor: pointer;
+        margin: 0 auto;
+        display: block;
     }
     footer {
         /* margin-top: 150%; */

@@ -31,6 +31,12 @@ body {
     overflow-x: hidden;
     position: relative;
 }
+button, a, input[type=submit] {
+    cursor: pointer !important;
+}
+button:disabled,button[disabled],input[type=submit]:disabled{
+    background-color: var(--primary-btn-disabled) !important;
+}
 button,
 #submit-url,
 .file-label,
@@ -371,6 +377,9 @@ th {
     text-align: center;
     width: 100%;
 }
+.xerror {
+    color: red;
+  }
 .generated-qr {
     display: flex;
     flex-direction: column;

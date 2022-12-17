@@ -134,7 +134,7 @@
                                 {{ ucfirst($myqrCode->label) }}
                             </td>
                             <td>{{ $myqrCode->created_at->toDateString()}}</td>
-                            <td>{{$myqrCode->clicks}}</td>
+                            <td> {{ ($myqrCode->clicks == "") ? "Untracked" : $myqrCode->clicks }} </td>
                             <td><a href="/viewqr/{{$myqrCode->id}} " class="see-more">View</a></td>
                         </tr>
                             @endforeach

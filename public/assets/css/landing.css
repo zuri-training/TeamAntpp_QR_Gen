@@ -20,6 +20,9 @@ button {
 .container-1 > div:nth-child(2) {
     width: 50%;
 }
+.container-1 > div:nth-child(2) > img {
+    width: 100%;
+}
 .container-1 {
     width: 90%;
     margin: auto;

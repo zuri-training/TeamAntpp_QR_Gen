@@ -67,7 +67,7 @@ button {
     cursor: pointer;
 }
 .h-started:hover{
-    font-weight: 600;
+    background-color: #2B8DCD;
 }
 
 .hheader {

@@ -10,10 +10,13 @@ html{
 
 :root{
     --primary-color: #0176C3;
-    --secondary-color: #1D242C;
+    --secondary-color: rgb(241,111,4);
+    --secondary-container: rgb(255,244,235);
+    --on-secondary-container: rgb(121,55,2);
     --teritiary-color: #C7EEFF;
     --white: #ffffff;
     --light-blue: #CCE4F3;
+    --text-color: rgb(18,18,18);
     --black: #000000;
     --very-dark-blue: #003B61;
     --primary-btn-hover: #2B8DCD;
@@ -73,20 +76,36 @@ a{
 .logo img{
     width: clamp(55px, 100%, 120px )
 }
-.cta-btn{
-    color: var(--white);
-    padding: 1rem 1.25rem;
-    border-radius:  8px;
-    background-color: var(--primary-color);
-    font-weight: 500;
-    border: none;
-    transition: background-color 0.5s;
+.cta-btn {
+    color: white;
+    font-size: 18px;
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    padding: 1rem;
+    margin-top: 2%;
+    cursor: pointer;
+    border: 1px solid var(--secondary-color);
+}
+.learn-btn {
+    background-color: var(--secondary-container);
+    margin-left: 1%;
+    border: 1px solid var(--secondary-color);
+    color: var(--on-secondary-container);
+    font-size: 18px;
+    font-weight: bolder;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-top: 2%;
     cursor: pointer;
 }
-.cta-btn:hover{
-    background-color: var(--primary-btn-hover);
+.learn-btn:hover{
+    background-color: var(--on-secondary-container);
+    color: var(--secondary-container);
 }
-
+.cta-btn:hover {
+    color: var(--on-secondary-container);
+    background-color: var(--secondary-container);
+}
 
 /*    SECTION  1   */
 .section-1{
@@ -113,7 +132,7 @@ a{
 }
 .section-1 article h1{
     font-size: clamp(1.8rem, 40px, 3.5rem);
-    color: var(--secondary-color);
+    color: var(--text-color);
     font-weight: 700;
 }
 .section-1 article h1 span{
@@ -128,19 +147,6 @@ a{
 }
 .section-1-buttons button{
     cursor: pointer;
-}
-.learn-btn{
-    padding: 1rem 1.25rem;
-    border: 1px solid var(--primary-color);
-    border-radius: 8px;
-    background-color: transparent;
-    color: var(--primary-color);
-    transition: background-color 0.5s;
-    font-weight: 600;
-    font-family: 'Roboto', sans-serif;
-}
-.learn-btn:hover{
-    background-color: var(--secondary-btn-hover);
 }
 
 
@@ -210,7 +216,7 @@ a{
 }
 .sign-in-btn{
     padding: 0.7rem 2rem;
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     color: var(--white);
     font-weight: 500;
     transition: background-color 0.5s;
@@ -219,7 +225,7 @@ a{
     border: none;
 }
 .sign-in-btn:hover{
-    background-color: var(--primary-btn-hover);
+    background-color: var(--on-secondary-container);
 }
 .section-3 .line{
     height: 10px;
@@ -249,7 +255,7 @@ a{
     top: 100px;
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--black);
+    color: var(--secondary-color);
 }
 .section-4-content{
     padding: 4rem 0rem;
@@ -285,7 +291,7 @@ a{
 
 /*   FOOTER   */
 .footer{
-    height: 350px;
+    /* height: 350px; */
     width: 100%;
     background-color: var(--very-dark-blue);
     padding: 5rem 3rem;

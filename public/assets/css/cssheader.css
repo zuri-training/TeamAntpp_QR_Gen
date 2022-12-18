@@ -35,14 +35,14 @@ button {
     display: inline-flex;
     font-size: 18px;
     font-family: sans-serif;
-    color: black;
+    color: rgb(18,18,18);
     text-decoration: none !important;
 }
 .h-nav-active a{
-    color: #0176C3 !important;   
+    color: rgb(241,111,4) !important;   
 }
 .h-nav-item a:hover {
-    color: #0176C3;
+    color: rgb(241,111,4);
 }
 .h-nav-items li, .h-nav-overflow li {
     list-style: none;
@@ -60,14 +60,14 @@ button {
 .h-started {
     color: white;
     font-size: 18px;
-    background-color: #0176C3;
+    background-color: rgb(241,111,4);
     border-radius: 5px;
-    border: 1px solid #0176C3;
+    border: 1px solid rgb(241,111,4);
     padding: 1rem 1.5rem;
     cursor: pointer;
 }
 .h-started:hover{
-    background-color: #2B8DCD;
+    background-color: rgb(121,55,2);
 }
 
 .hheader {
@@ -102,7 +102,7 @@ button {
         margin: 0;
     }
     .h-nav-active a {
-    color: black !important;   
+    color: rgb(18,18,18) !important;   
     }
     .o-menu div:nth-child(1){
         visibility: hidden;
@@ -121,7 +121,7 @@ button {
         top: 0;
         width: 35px;
         height: 3px;
-        background-color: black;
+        background-color: rgb(18,18,18);
         transform: rotate(90deg);
     }
     .h-connect {
@@ -141,11 +141,11 @@ button {
         padding: 1.5rem 0;
     }
     .h-nav-item a {
-        color: #0176C3;
+        color: rgb(241,111,4);
         font-size: 16px;
     }
     .h-menu-list {
-        background-color: black;
+        background-color: rgb(18,18,18);
     }
     .h-menu {
         display: block;

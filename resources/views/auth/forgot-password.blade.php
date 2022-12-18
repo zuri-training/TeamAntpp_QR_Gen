@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forgot - QR Go</title>
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/login.css') }}"/>
+    @if (session()->has('msg'))
+        <script> alert("User with this email doesn't exist"); </script>
+    @elseif (session()->has('msg2'))
+        <script> alert( {{ session()->get('msg2') }} ); </script>
+    @endif
 </head>
 <body>
     <main>

@@ -57,14 +57,14 @@
                 <p style="width: unset;">We’d love to hear from you. Leave a message<br>
                     and we’ll respond as soon as possible</p>
             <form class="form-list" id="survey-form">
+                    <br>
                 <label id="name-label" for="name">Name</label>
-                    <br>
                 <input id="name" name="name" type="text" placeholder="Enter name" required>
+                    <br>
                 <label id="email-label" for="name">Email</label>
-                    <br>
                 <input id="email" name="email" type="email" placeholder="Enter email" required>
-                <label>Message</label>
                     <br>
+                <label>Message</label>
                 <textarea id="message"class="input-textarea" name="message" placeholder="What can we help you with?"></textarea>
                     <br>
                 <button class="submit" type="submit">Send</button>

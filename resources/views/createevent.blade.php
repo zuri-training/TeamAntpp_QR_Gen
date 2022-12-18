@@ -98,9 +98,9 @@
         </header>
                   <main class="create-qr">
             <aside class="sidebar">
-                <ul><a href="{{route('dashboard')}}" style="color:grey">
+                <ul><a href="{{route('qrhome')}}" style="color:grey">
                     <li class="sidebar-link">
-                     <img src="{{asset('assets/images/create.svg')}}" alt="" />Dashboard 
+                     <img src="{{asset('assets/images/create.svg')}}" alt="" />Create 
                     </li></a>
                     <li class="sidebar-link"><a href="{{route('viewallqr')}}" style="color:grey">
                       <img src="{{asset('assets/images/myqr.svg')}}" alt="" />My Qr
@@ -170,7 +170,7 @@
                             <label for="title"><strong>Event Title</strong></label>
                         <div class="input-group">
                             <input type="hidden" class="url" id="event-input" name="event" />
-                            <img src="{{asset('assets/images/link.svg')}}" alt="" />
+                            <img src="{{asset('assets/images/title-com.svg')}}" alt="" />
                             <input type="text" class="url" required name="title" placeholder="Enter Title"/>
                         </div>
                         </div>

@@ -95,9 +95,9 @@
                   <main class="create-qr">
             <aside class="sidebar">
                 <ul>
-                <a href="{{route('dashboard')}}" style="color:grey">
+               <a href="{{route('qrhome')}}" style="color:grey">
                     <li class="sidebar-link">
-                     <img src="{{asset('assets/images/create.svg')}}" alt="" />Dashboard 
+                     <img src="{{asset('assets/images/create.svg')}}" alt="" />Create 
                     </li></a>
                     <li class="sidebar-link"><a href="{{route('viewallqr')}}" style="color:grey">
                       <img src="{{asset('assets/images/myqr.svg')}}" alt="" />My Qr
@@ -114,7 +114,7 @@
 
             <section class="qr-flex">
                 <div class="choose-file">
-                    <h1>Upload Ticket</h1>
+                    <h1>Upload Ticket File</h1>
                     <form  class="select-file"  action="{{route('generate.qr')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <img src="{{asset('assets/images/Upload file (Traced).svg')}}" alt="" />
@@ -141,7 +141,7 @@
                             </style>
                             <label for="title"><strong>Event Title</strong></label>
                             <div class="input-group">
-                                <img src="{{asset('assets/images/link.svg')}}" alt="" />
+                                <img src="{{asset('assets/images/title-com.svg')}}" alt="" />
                                 <input type="text" class="url input-urll" required name="title" placeholder="Enter Title"/>
                             </div>
                         </div>

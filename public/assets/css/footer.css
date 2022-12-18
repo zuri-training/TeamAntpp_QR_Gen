@@ -10,10 +10,13 @@ html{
 
 :root{
     --primary-color: #0176C3;
-    --secondary-color: #1D242C;
+    --secondary-color: rgb(241,111,4);
+    --secondary-container: rgb(255,244,235);
+    --on-secondary-container: rgb(121,55,2);
     --teritiary-color: #C7EEFF;
     --white: #ffffff;
     --light-blue: #CCE4F3;
+    --text-color: rgb(18,18,18);
     --black: #000000;
     --very-dark-blue: #003B61;
     --primary-btn-hover: #2B8DCD;
@@ -64,7 +67,7 @@ a{
 
 /*   FOOTER   */
 .footer{
-    height: 350px;
+    /* height: 350px; */
     width: 100%;
     background-color: var(--very-dark-blue);
     padding: 4rem 3rem;

@@ -1,5 +1,5 @@
 # Team Antpp QR_Gen
-# [See The Live Site Here](https://project-qr-go.herokuapp.com/)
+## [See The Live Site Here](https://project-qr-go.herokuapp.com/)
 <p align="center">
   <strong>A platform that allows users generate QR code that specifically does something when scanned</strong>
 </p>
@@ -127,8 +127,28 @@ Laravel <a href="https://laravel.com/" target="_blank" rel="noreferrer"><img src
 
 PHP <a href="https://www.php.net/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/profileme-dev/main/public/icons/skills/php-colored.svg" width="28" height="20" alt="Python" /></a>
 
+## Contributors
+
+- [Russell Ojegun - Fullstack](https://github.com/Ruxy1212)
+- [Rejoice Igwebueze - Frontend](https://github.com/Rejoice7571)
+- [Aremu Olaoluwa - FrontEnd](https://github.com/Nova-prospec)
+- [Urhoghide Justin Uyioghosa  - Frontend](https://github.com/Uyimolo)
+- [Olowookere Elizabeth - Product design](https://github.com/Lizzylade)
+- [Victor Ogungbure  - Product Design ](https://github.com/VicksArt)
+- [Ogunyemi Oluwatimilehin - Product design ](https://github.com/Theonlyrealgee)
+- [Ukoha Obinna - Product Design](https://github.com/obisco4u)
+- [Muhammed Muktar - Fullstack](https://github.com/maingate27)
+- [Emmanuel Akinyemi - Product Design](https://github.com/tm-teck)
+- [Agoro Ifeoluwa - Product Design](https://github.com/IfeoluwaUX)
+- [Jewel Osafile - PHP](https://github.com/JewelSama)
+- [odeleye Joseph Tobi - Frontend](https://github.com/koree99)
+- [Onyekwena Jennifer Nneoma - Product Design](https://github.com/Jensss-o)
+- [Ighiwiyisi Anthony Osadolor - Fullstack](https://github.com/TonyOsadolor)
+
 ## References
 
+- [Live Website](https://project-qr-go.herokuapp.com)
 - [Documentation](https://docs.google.com/document/d/18p9V39g_C216a7R_mXDo-8HAFGWnViipYBjA416KJaQ/edit?usp=sharing)
+- [Design Prototype](https://www.figma.com/proto/iKsqYnaNBsT43nqnpLkQfh/Project-Qr-Go?node-id=276%3A1924&starting-point-node-id=276%3A1924)
 - [Design Sketch](https://www.figma.com/file/iKsqYnaNBsT43nqnpLkQfh/moodboards?t=V9BLm24BScYouKT4-6)
-- [Mood Board](https://www.figma.com/file/iKsqYnaNBsT43nqnpLkQfh/moodboards?t=V9BLm24BScYouKT4-6)
+- [Mood Boards](https://www.figma.com/file/iKsqYnaNBsT43nqnpLkQfh/moodboards?t=V9BLm24BScYouKT4-6)

@@ -91,7 +91,7 @@
                     {{-- <a href="{{ route('') }}">See Am</a> --}}
                         <div class="url method">
                      
-                            <img src="{{ asset('assets/images/bluelink.svg') }}" alt="" />
+                            <img src="{{ asset('assets/images/location-com-blue.svg') }}" alt="" />
                             
                             <h2 style="color:black">EVENT</h2>
                         </div>
@@ -126,9 +126,9 @@
                                     @if ($myqrCode->qr_type == "url")
                                         <img src="{{ asset('assets/images/link.svg') }}" alt="" class="method-img" />                                        
                                     @elseif ($myqrCode->qr_type == "file")
-                                        <img src="{{ asset('assets/images/attach_file.svg') }}" alt="" class="method-img" />
+                                        <img src="{{ asset('assets/images/ticket-com.svg') }}" alt="" class="method-img" />
                                     @elseif($myqrCode->qr_type == "event")
-                                        <img src="{{ asset('assets/images/link.svg') }}" alt="" class="method-img" />
+                                        <img src="{{ asset('assets/images/location-com.svg') }}" alt="" class="method-img" />
                                     @endif 
                                 </div>
                                 {{ ucfirst($myqrCode->label) }}

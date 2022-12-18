@@ -94,11 +94,13 @@
                         <tr>
                             <td>
                                 <div>
-                                    <img
-                                        src="{{ asset('assets/images/link.svg') }}"
-                                        alt=""
-                                        class="method-img"
-                                    />
+                                    @if ($myqrCode->qr_type == "url")
+                                        <img src="{{ asset('assets/images/link.svg') }}" alt="" class="method-img" />                                        
+                                    @elseif ($myqrCode->qr_type == "file")
+                                        <img src="{{ asset('assets/images/ticket-com.svg') }}" alt="" class="method-img" />
+                                    @elseif($myqrCode->qr_type == "event")
+                                        <img src="{{ asset('assets/images/location-com.svg') }}" alt="" class="method-img" />
+                                    @endif 
                                 </div>
                                 {{$myqrCode->label}}
                             </td>

@@ -96,9 +96,9 @@
                         {{-- <script> console.log( {{Session::get('data')}} ) </script> --}}
                   <main class="create-qr">
             <aside class="sidebar">
-                <ul><a href="{{route('dashboard')}}" style="color:grey">
+                <ul><a href="{{route('qrhome')}}" style="color:grey">
                     <li class="sidebar-link">
-                     <img src="{{asset('assets/images/create.svg')}}" alt="" />Dashboard 
+                     <img src="{{asset('assets/images/create.svg')}}" alt="" />Create 
                     </li></a>
                     <li class="sidebar-link"><a href="{{route('viewallqr')}}" style="color:grey">
                       <img src="{{asset('assets/images/myqr.svg')}}" alt="" />My Qr
@@ -121,12 +121,12 @@
                         <div>
                             <label for="title"><strong>URL Title</strong></label>
                             <div class="input-group">
-                                <img src="{{asset('assets/images/link.svg')}}" alt="" />
+                                <img src="{{asset('assets/images/title-com.svg')}}" alt="" />
                                 <input type="text" class="url" required name="title" placeholder="Enter Title"/>
                             </div>
                         </div>
                         <div>
-                            <label for="title"><strong>URL Link</strong></label>
+                            <label for="url"><strong>URL Link</strong></label>
                             <div class="input-group">
                                 <img src="{{asset('assets/images/link.svg')}}" alt="" />
                                 <input

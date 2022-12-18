@@ -331,6 +331,7 @@ td div {
     background-color: var(--grey);
     left: 0;
     border-radius: 50%;
+    top: calc(50% - 1rem);
 }
 td div img {
     position: absolute;
@@ -698,7 +699,7 @@ th {
         left: 25%;
         width: 1.5rem;
         height: 1.5rem;
-        transform: translatey(0.1rem);
+        top: calc(50% - 0.75rem);
     }
     td div .method-img {
         width: 1.2rem;

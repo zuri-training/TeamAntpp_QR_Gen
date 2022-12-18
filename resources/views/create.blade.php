@@ -85,7 +85,7 @@
                     {{-- <a href="{{ route('') }}">See Am</a> --}}
                         <div class="url method">
                      
-                            <img src="{{ asset('assets/images/bluelink.svg') }}" alt="" />
+                            <img src="{{ asset('assets/images/location-com-blue.svg') }}" alt="" />
                             
                             <h2 style="color:black">EVENT</h2>
                         </div>

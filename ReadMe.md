@@ -20,6 +20,7 @@
 - [Setup and Installation](ReadMe.md#Setup)
 - [Useful Commands](Readme.md#Useful)
 - [Technologies Used](ReadMe.md)
+- [Contributors](Readme.md#Contributors)
 - [References](ReadMe.md)
 
 # Project Modalities

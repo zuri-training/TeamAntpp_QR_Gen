@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\PasswordReset;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Str;
 use App\Models\User;
@@ -33,29 +34,20 @@ class PasswordResetLinkController extends Controller
         $request->validate([
             'email' => ['required', 'email'],
         ]);
-        // $user = User::where('email', $request->email)->first();
 
-        // Password::create([
-        //     'user_id' => $user->id,
-        //     'token' => Str::random(70),
-        // ]);
+        $user = User::where('email', $request->email)->first();
 
-        // return view('reset-password', ['token' => $token]);
-        // We will send the password reset link to this user. Once we have attempted
-        // to send the link, we will examine the response then see the message we
-        // need to show to the user. Finally, we'll send out a proper response.
-        $status = Password::sendResetLink(
-            $request->only('email')
-        );
+        if (!$user) {
+            return back()->with('msg', 'not exist');
+        }
 
-        return $status == Password::RESET_LINK_SENT
-                    ? back()->with('status', __($status))
-                    : back()->withInput($request->only('email'))
-                            ->withErrors(['email' => __($status)]);
-        // $token = $request->_token; 
-        // // return env('APP_URL').'/reset-password/'.$token.'?email='.$request->email;
-        // route('reset-password/'.$token.'?email='.$request->email);
-        // return view('resetpage', ['token' => $token]);
-        // return $request;
+        $token = Str::random(70);
+        $password_reset = new PasswordReset();
+        $password_reset->email = $user->email;
+        $password_reset->token = $token;
+        $reset = $password_reset->save();
+
+        if($reset) return view('auth.reset-password', ['token' => $token, 'email' => $user->email]);
+        else return back()->with('msg2', 'reset error');
     }
 }

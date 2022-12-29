@@ -28,13 +28,14 @@
                 
                 
             }          
-            div#social-links ul li a {
-                padding: 0px;
-                
+             div#social-links ul li a {
+                padding: 0px;               
                 margin: 3px;
                 font-size: 30px;
-                color: #222;
-                background-color: #ccc;
+                color: var(--primary-color);
+            }
+            div#social-links ul li a:hover{
+                color: var(--very-dark-blue);
             }
         </style>
         @if (Session()->has('success'))

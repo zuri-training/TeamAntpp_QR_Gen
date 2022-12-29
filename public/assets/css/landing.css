@@ -127,9 +127,9 @@ hr {
        display: none;
     }
     .btn1 {
-        background-color: #0176C3;
+        /* background-color: #0176C3;
         border: 1px solid #0176C3;
-        color: #FDFDFD;
+        color: #FDFDFD; */
         font-size: 18px;
         font-weight: 500;
         cursor: pointer;

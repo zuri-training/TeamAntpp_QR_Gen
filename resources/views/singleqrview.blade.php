@@ -10,31 +10,28 @@
         {{-- <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}"> --}}
         <script type="text/javascript" src="{{ asset('assets/js/hscript.js') }}"></script>      
                 <style>
-             div#social-links {
-                
+             div#social-links {               
                 max-width: 10%;
             }
             div#social-links  ul {
                 display: flex;
                 flex-direction:row;
-                margin: 0 auto;
-                
-                
+                margin: 0 auto;                
             } 
             div#social-links  li {
                 display: grid;
                 flex-direction:row;
                 margin: 0 auto;
-                
-                
             }          
             div#social-links ul li a {
-                padding: 0px;
-                
+                padding: 0px;               
                 margin: 3px;
                 font-size: 30px;
-                color: #222;
-                background-color: #ccc;
+                color: var(--primary-color);
+                /* background-color: #ccc; */
+            }
+            div#social-links ul li a:hover{
+                color: var(--very-dark-blue);
             }
         </style>
         <title>My Qr - QRGo</title>
@@ -113,18 +110,18 @@
 
             <section class="qr-flex">
                 <div class="choose-file">
-                    {{-- <h1>{{ ucfirst($responseImg['title']) }}</h1> --}}
+                    <h1>{!! ucfirst($qrResponse['title']) !!}</h1>
                     <div class="qr">
                         {!!  $data !!}
                          {{-- {{$responseImg['data']}} --}}
                          {{-- <img class="svg" style="display: block; width: 200px; margin: 0 auto 30px;" src="data:image/svg+xml;base64, {{$responseImg['data']}}" /> --}}
                     </div>
-                    {{-- <div> <h3>Creation Date: {{ $responseImg['date']->format('d M Y') }}</h3> </div>
-                    <div> <h3>QR Code Type: {{ ucfirst($responseImg['type']) }}</h3> </div> --}}
+                    <div> <h3>Creation Date: {!! $qrResponse['date']->format('d M Y') !!}</h3> </div>
+                    <div> <h3>QR Code Type: {!! ucfirst($qrResponse['type']) !!}</h3> </div>
                     <br>
                     <form class="input-url" action="{{route('delete.qr')}}" method="post">
                         @csrf
-                        {{-- <input type="hidden" value="{{ $responseImg['id'] }}" name="id"> --}}
+                        <input type="hidden" value="{!! $qrResponse['id'] !!}" name="id">
                         <input type="submit" value="Delete" id="submit-url" />
                     </form>
                 </div>

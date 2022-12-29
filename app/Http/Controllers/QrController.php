@@ -9,6 +9,7 @@ use App\Models\Qrtbl;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 use Zxing\QrReader;
+use AshAllenDesign\ShortURL\Facades\ShortURL;
 
 class QrController extends Controller
 {
@@ -112,16 +113,7 @@ class QrController extends Controller
                $qrtbl->save();
          
                $social_url= url('/downloadqrpdf/'. base64_encode($qr));
-               $shareComponent = \Share::page(
-                   $social_url,
-                   'Qr Code',
-             
-            )
-            ->facebook()
-            ->twitter()
-            
-            ->whatsapp() ; 
-
+               $shareComponent = \Share::page($social_url, 'QrGo Code',)->facebook()->twitter()->whatsapp(); 
 
             return back()->with('success','You have successfully generated Qrcode for your file.')->with('data',$qr)->with('shareComponent',$shareComponent);
         
@@ -139,7 +131,7 @@ class QrController extends Controller
                 $social_url= url('/downloadqrpdf/'. base64_encode($qr));
                 $shareComponent = \Share::page(
                     $social_url,
-                    'Qr Code',
+                    'QrGo Code',
                 )
                 ->facebook()
                 ->twitter()
@@ -163,7 +155,7 @@ class QrController extends Controller
                 $social_url= url('/downloadqrpdf/'. base64_encode($qr));
                 $shareComponent = \Share::page(
                     $social_url,
-                    'Qr Code',
+                    'QrGo Code',
                 )
                 ->facebook()
                 ->twitter()
@@ -226,62 +218,31 @@ class QrController extends Controller
             ->get();
 
             $qrc=$qrCode[0]->qrcode;
+            $type = $qrCode->first()['qr_type']; 
+            $date = $qrCode->first()['created_at'];
+            $title = $qrCode->first()['label'];
+               
+            $singleResp = [
+                'id' => $qrCode->first()['id'],
+                'title' => $title,
+                'date' => $date,
+                'type' => $type
+            ];
 
             $social_url= url('/downloadqrpdf/'. $qrc);
-            $shareComponent = \Share::page(
-                $social_url,
-                'Qr Code',
-            )
-            ->facebook()
-            ->twitter()
+            $shortURL = \ShortURL::destinationUrl($social_url)->make()->default_short_url;
+            $shareComponent = \Share::page($shortURL, 'QrGo Code',)->facebook()->twitter()->whatsapp();  
 
-            ->whatsapp() ;  
-
-        return view('singleqrview')->with('data',base64_decode($qrc))->with('shareComponent',$shareComponent);
-                // dd($qrCode); exit;
-                
-                // $type = $qrCode->first()['qr_type']; 
-                // $img = explode("?", base64_decode($qrCode->first()['qrcode']))[1];
-                // $img = base64_decode($qrCode->first()['qrcode']);
-                // $img = $qrCode->first()['qrcode'];
-                // $date = $qrCode->first()['created_at'];
-                // $title = $qrCode->first()['label'];
-                // $id =  $qrCode->first()['id'];
-              
-
-        // return view('singleqrview',compact('qrCode'));
-
-                // $social_url= url('/downloadqrpdf/'. $qrCode->first()['qrcode']);
-                // $shareComponent = \Share::page(
-                //     $social_url,
-                //     'Qr Code',
-                // )
-                // ->facebook()
-                // ->twitter()
-                // ->whatsapp();       
-               
-                // $singleResp = [
-                //     'id' => $qrCode->first()['id'],
-                //     'title' => $title,
-                //     'date' => $date,
-                //     'type' => $type,
-                //     'shareComponent' => $shareComponent,
-                //     'data' => $img
-                // ];
-
-                // return view('singleqrview')->with('responseImg', $singleResp);
+        return view('singleqrview')->with('data',base64_decode($qrc))->with('shareComponent',$shareComponent)->with('qrResponse', $singleResp);
     }
 
 
 
     public function showscanqrp( ){
-
-        /*
+/*
 |--------------------------------------------------------------------------
 | This function returns scan qr code view page
 |--------------------------------------------------------------------------
-|
-|
 */
 return view('scanqr');
 }
@@ -295,11 +256,10 @@ public function decodeqr(Request $request){
 |
 */
 
-$request->validate(['image'=>'required|image|mimes:png,jpg,svg|max:2048']);
+$request->validate(['image'=>'required|image|mimes:png,jpeg,jpg,svg|max:2048']);
 $qrcode = new QrReader($request->image);
-dd($qrcode); exit;
-$text = $qrcode->text();
-return back()->with('success','You have successfully generated Qrcode for your url.')->with('data',$text);
+$text = $qrcode->text(); //dd($qrcode); exit;
+return back()->with('success','You have successfully scanned Qrcode.')->with('data',$text);
 
 }
 
